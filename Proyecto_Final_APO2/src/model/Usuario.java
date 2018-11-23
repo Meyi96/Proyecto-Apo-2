@@ -3,10 +3,11 @@ package model;
 public class Usuario {
 	String Nombre;
 	Tweet lista_tweets;
-	int seguidores;
-	int seguidos;
+	boolean verificado;
+	String seguidores;
+	String  seguidos;
 	
-	public Usuario(String nombre, int seguidores, int seguidos, Tweet lista_tweets) {
+	public Usuario(String nombre, String seguidores, String seguidos, Tweet lista_tweets) {
 		super();
 		Nombre = nombre;
 		this.seguidores = seguidores;
@@ -20,16 +21,16 @@ public class Usuario {
 	public void setNombre(String nombre) {
 		Nombre = nombre;
 	}
-	public int getSeguidores() {
+	public String getSeguidores() {
 		return seguidores;
 	}
-	public void setSeguidores(int seguidores) {
+	public void setSeguidores(String seguidores) {
 		this.seguidores = seguidores;
 	}
-	public int getSeguidos() {
+	public String getSeguidos() {
 		return seguidos;
 	}
-	public void setSeguidos(int seguidos) {
+	public void setSeguidos(String seguidos) {
 		this.seguidos = seguidos;
 	}
 	public Tweet getLista_tweets() {
