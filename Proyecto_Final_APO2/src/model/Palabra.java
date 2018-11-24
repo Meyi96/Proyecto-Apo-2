@@ -3,12 +3,11 @@ package model;
 public class Palabra {
 	String palabra;
 	Palabra siguiente_palabra;
-	int puntuacion_tecno;
-	int puntuacion_poli;
-	int puntuacion_depor;
+	int puntuaciones[];
 	
-	public Palabra(String palabra) {
+	public Palabra(String palabra,int puntuaciones[]) {
 		this.palabra = palabra;
+		this.puntuaciones = puntuaciones;
 	}
 
 	public Palabra getSiguiente_palabra() {
@@ -20,27 +19,27 @@ public class Palabra {
 	}
 
 	public int getPuntuacion_tecno() {
-		return puntuacion_tecno;
+		return puntuaciones[0];
 	}
 
 	public void setPuntuacion_tecno(int puntuacion_tecno) {
-		this.puntuacion_tecno = puntuacion_tecno;
+		this.puntuaciones[0] = puntuacion_tecno;
 	}
 
 	public int getPuntuacion_poli() {
-		return puntuacion_poli;
+		return puntuaciones[1];
 	}
 
 	public void setPuntuacion_poli(int puntuacion_poli) {
-		this.puntuacion_poli = puntuacion_poli;
+		this.puntuaciones[1] = puntuacion_poli;
 	}
 
 	public int getPuntuacion_depor() {
-		return puntuacion_depor;
+		return puntuaciones[2];
 	}
 
 	public void setPuntuacion_depor(int puntuacion_depor) {
-		this.puntuacion_depor = puntuacion_depor;
+		this.puntuaciones[2] = puntuacion_depor;
 	}
 
 	public void agregarUltimo(Palabra palabra2) {
