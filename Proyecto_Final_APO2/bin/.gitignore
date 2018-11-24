@@ -1,11 +1,4 @@
-/model/
-/controller/
-<<<<<<< HEAD
-/View/
-=======
 /Hilos/
-<<<<<<< HEAD
 /View/
-=======
->>>>>>> ba50a183676684fc54f1e252ae1df6c018a29cac
->>>>>>> 573bc91eed0da379affb233c69f87699a924d216
+/controller/
+/model/
