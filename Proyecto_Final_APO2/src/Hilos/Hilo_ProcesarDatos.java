@@ -1,4 +1,4 @@
-package model;
+package Hilos;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,21 +6,29 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import model.Hashtag;
+import model.Link;
+import model.Palabra;
+import model.PalabraRelevante;
+import model.Tweet;
+import model.Usuario;
+
 
 public class Hilo_ProcesarDatos implements Runnable{
 	public  FileReader read;
 	public  BufferedReader rd;
-	
-	private  Usuario creado;
-	private ArrayList<Link> links;
-	private ArrayList<Hashtag> hashtags;
+	private String nombre_archivo;
+	private Usuario creado;
+	private Link primer_link;
+	private Hashtag hashtags;
 	private PalabraRelevante raiz_relevantes;
 	
-	public Hilo_ProcesarDatos(ArrayList<Link> links, ArrayList<Hashtag> hashtags, PalabraRelevante raiz_relevantes) {
+	public Hilo_ProcesarDatos(Link primer_link, Hashtag hashtags, PalabraRelevante raiz_relevantes, String nombre_archivo) {
 		super();
-		this.links = links;
+		this.primer_link = primer_link;
 		this.hashtags = hashtags;
 		this.raiz_relevantes = raiz_relevantes;
+		this.nombre_archivo = nombre_archivo;
 	}
 	
 	@Override
@@ -142,14 +150,17 @@ public class Hilo_ProcesarDatos implements Runnable{
 		int salida[] = new int[3];
 		
 		if(s.substring(0, 5).compareToIgnoreCase("http:") == 0) {
-			Link temp = new Link("s",null);
-			if(!links.contains(temp)) {
-				links.add(temp);
+			Link temp = new Link(s,null);
+			primer_link.agregarUltimo(temp);
+			System.out.println(s+"   //// Es un LINK");
+		}else if(s.substring(0, 1).compareToIgnoreCase("#") == 0){
+			Hashtag temp = new Hashtag(s, null, 0);
+			if(hashtags.contiene(s)) {
+				hashtags.dar(s).setPuntuaion(hashtags.dar(s).getPuntuacion()+1);
 			}else {
-				
+				hashtags.agregarUltimo(temp);
 			}
-		}else if(s.substring(0, 5).compareToIgnoreCase("#") == 0){
-			
+			System.out.println(s+"   //// Es un HASHTAG");
 		}
 		
 		return salida;
