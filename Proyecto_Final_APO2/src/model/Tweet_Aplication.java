@@ -14,6 +14,8 @@ public class Tweet_Aplication {
 	private ArrayList<String> NombreArchivos;
 	
 	public Tweet_Aplication() {
+		tendencias = new Hashtag("", null, 0);
+		tendenciasLinks = new Link("", null);
 		Datos = new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,"Nombre del archivo");
 		Thread a = new Thread(Datos);
 		a.start();

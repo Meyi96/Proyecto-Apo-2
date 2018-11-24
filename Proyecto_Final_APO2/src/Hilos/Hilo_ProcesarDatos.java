@@ -34,7 +34,7 @@ public class Hilo_ProcesarDatos implements Runnable{
 	@Override
 	public void run(){
 		try {	
-			File fl = new File("./Persistencia/Usuarios/Marck_Zucaritas");
+			File fl = new File("./Persistencia/Usuarios/Elon Musk");
 			FileReader read = new FileReader(fl);
 			BufferedReader rd = new BufferedReader(read);
 			String nombre_Usuario = "";
@@ -149,19 +149,19 @@ public class Hilo_ProcesarDatos implements Runnable{
 	private int[] identificarPalabra(String s) {
 		int salida[] = new int[3];
 		
-		if(s.substring(0, 5).compareToIgnoreCase("http:") == 0) {
+		if(s.length()>=6 && s.substring(0, 5).compareToIgnoreCase("http:") == 0) {
 			Link temp = new Link(s,null);
 			primer_link.agregarUltimo(temp);
-			System.out.println(s+"   //// Es un LINK");
-		}else if(s.substring(0, 1).compareToIgnoreCase("#") == 0){
+			System.out.println(s+"                                       //// Es un LINK");
+		}else if(s.length()>=1 && s.substring(0, 1).compareToIgnoreCase("#") == 0){
 			Hashtag temp = new Hashtag(s, null, 0);
 			if(hashtags.contiene(s)) {
 				hashtags.dar(s).setPuntuaion(hashtags.dar(s).getPuntuacion()+1);
 			}else {
 				hashtags.agregarUltimo(temp);
 			}
-			System.out.println(s+"   //// Es un HASHTAG");
-		}
+			System.out.println(s+"                                        //// Es un HASHTAG");
+		}               
 		
 		return salida;
 	}
