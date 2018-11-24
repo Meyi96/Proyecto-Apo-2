@@ -14,7 +14,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
@@ -38,6 +40,15 @@ public class StartController implements Initializable {
 
     @FXML
     private Circle cir3;
+    
+    @FXML
+    private Arc semi1;
+
+    @FXML
+    private Arc semi2;
+    
+    @FXML
+    private AnchorPane contenedor;
     
     private Hilo_Interfaz hilo;
     
@@ -113,6 +124,23 @@ public class StartController implements Initializable {
     		cir2.setFill(Paint.valueOf(color[2]));
     		cir3.setFill(Paint.valueOf(color[0]));
     	}
+    }
+    
+    public boolean moverSemicirculos(boolean llego) {
+    	if(llego) {
+    		if(semi1.getLayoutX() > 35 && semi2.getLayoutX() < 165 ) {
+    			semi1.setLayoutX(semi1.getLayoutX()-1);
+    			semi2.setLayoutX(semi2.getLayoutX()+1);
+    		}else
+    			llego = false;
+    	}else {
+    		if(semi1.getLayoutX() < 51 && semi2.getLayoutX() > 148 ) {
+    			semi1.setLayoutX(semi1.getLayoutX()+1);
+    			semi2.setLayoutX(semi2.getLayoutX()-1);
+    		}else
+    			llego = true;
+    	}
+    	return llego;
     }
 
 	
