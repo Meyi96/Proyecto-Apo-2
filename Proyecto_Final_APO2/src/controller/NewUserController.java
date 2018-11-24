@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -20,6 +21,9 @@ public class NewUserController {
     void add(ActionEvent event) {
 
     }
+    
+    @FXML
+    private Hyperlink hyper;
 
     @FXML
     void clean(ActionEvent event) {
@@ -36,4 +40,11 @@ public class NewUserController {
     	stage.setScene(scene);
     	stage.show();
     }
+    
+    @FXML
+    void goToVideo(ActionEvent event) {
+    	
+    }
+
+	
 }

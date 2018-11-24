@@ -36,6 +36,7 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
+		n = new Ejemplo(12345);
 		launch(args);
 	}
 }

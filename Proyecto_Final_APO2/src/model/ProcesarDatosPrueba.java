@@ -2,12 +2,9 @@ package model;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import javax.swing.text.AbstractDocument.BranchElement;
 
 public class ProcesarDatosPrueba {
 	public static FileReader read;

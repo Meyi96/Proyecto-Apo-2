@@ -85,4 +85,6 @@ public class SelectionUserController  implements Initializable{
 		public void initialize(URL location, ResourceBundle resources) {
 			usersListView.getItems().addAll("Esto","es","una","prueba");
 		}
+		
+		
 }
