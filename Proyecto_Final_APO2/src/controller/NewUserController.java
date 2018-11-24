@@ -1,5 +1,8 @@
 package controller;
+import java.awt.Desktop;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,6 +27,10 @@ public class NewUserController {
     
     @FXML
     private Hyperlink hyper;
+    
+    public void goLink(String link) throws IOException, URISyntaxException {
+    	Desktop.getDesktop().browse(new URI(link));
+    }
 
     @FXML
     void clean(ActionEvent event) {
@@ -42,8 +49,8 @@ public class NewUserController {
     }
     
     @FXML
-    void goToVideo(ActionEvent event) {
-    	
+    void goToVideo(ActionEvent event) throws IOException, URISyntaxException {
+    	goLink("https://www.youtube.com/watch?v=MhQec4a26gU&feature=youtu.be");
     }
 
 	
