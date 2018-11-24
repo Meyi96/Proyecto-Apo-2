@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ProcesarDatosPrueba {
+public class Hilo_ProcesarDatos {
 	public static FileReader read;
 	public static BufferedReader rd;
 	public static void main(String args[]) throws IOException {
