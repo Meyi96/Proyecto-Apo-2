@@ -1,418 +1,418 @@
-Abstencionismo
-Accion Politica
-Actitud Politica
-Activismo
-Actuacion Politica
-Acuerdo Politico
-Aculturacion Politica
-Adelanto
-Administracion Publica
-Adversario Politico
-Agregacion De Grupos
-Amigo-enemigo
-Analisis Presupuestario
-Apatia Estabilizadora
-Apatia Politica
-Apoliticismo
-Apoyo Politico
-Aprendizaje Politico
-Area De Decision
-Arena Politica
-Asimilacion Politica
-Atribucion Politica
-Autocritica
-Autodireccion
+Ability to Act
+Abstentionism
+Activism
+Adaptation subsystem
+Administrative Decentralization
+Advancement
+Amplifier Feedback
+Answer's capacity
+Apathy Policy
+Apatia Stabilizer
+Apoliticism
+Appliance Matches
+Area of â€‹â€‹Decision
+Authoritarianism
+Authority
 Autogestion
-Autogobierno
-Autonomia
-Autoridad
-Autoritarismo
-Autotransformacion
-Bien Común
-Bipartidismo
-Burguesía
-Burocracia
-Burocratización
-Cadena De Mando
-Calidad De Vida
-Cambio De Metas
-Cambio Político
-Capacidad De Actuar
-Capacidad De Aprendizaje
-Capacidad De Integración
-Capacidad De Respuesta
-Capacidades Del Sistema Político
-Capitalismo
-Carga
-Carga De La Dependencia
-Carisma Político
-Centralismo Democrático
-Centro
-Ciclo De Retroalimentación
-Cierre O Clausura
-Clase Elegida
-Clase Política
-Clase Social
-Clericalismo
-Cláusula Del Bienestar General
-Coalición De Clases
-Coalición Política
-Coerción
-Cogestión
-Coherencia Política
-Cohesión Política
-Colonialismo
-Combinación Política
-Comité
-Compatibilidad De Intereses
-Compatibilidad De Valores
-Complejo Industrial-militar
-Comportamiento Electoral
-Comunicación Política
-Comunidad Internacional
-Comunidad Política
-Comunismo
-Comunismo Primitivo
-Conciencia De Clase
-Conciencia Política
-Conducción Política
-Confederación
-Conflicto Internacional
-Conflicto Político-social
-Consenso Político
-Conservadurismo
-Constitución
-Constitución Escrita
-Constitución No Escrita
-Contracultura
-Contubernio
-Cooptación Política
-Corrupción Cognoscitiva
-Corrupción Política
-Costo De Oportunidad
-Creatividad Política
-Crecimiento Político
-Crisis De Hegemonía
-Crisis Del Desarrollo Político
-Cultura Política
-Curva De Lorenz
-Decadencia Política
-Decisión Política
-Deliberación Política
-Demagogia
-Democracia Real
-Dependencia Colonial
-Dependencia Neocolonial
-Dependencia Política
-Dependencia Provincial
-Dependencia Satelital
-Derecha
-Derecho
-Derechos Humanos
-Desarrollo Desigual
-Desarrollo Mundial
-Desarrollo Político
-Descentralización Administrativa
-Descentralización Política
-Desequilibrio Político
-Desmovilización Política
-Despolitización
-Desregulación
-Dictadura Del Proletariado
-Diferenciación Política
-Diplomacia
-Dis-representacion
-Disciplina Partidaria
-Discreción Del Poder Ejecutivo
-Discriminación Política
-Disenso
-Disfuncionalidad Política
-Disociación Política
-Distribución De Recursos
-Distribución Del Poder
-Dominio Político
-Efectividad Política
-Eficacia Y Eficiencia
-Elecciones
-Elecciones Primarias
+Autonomy
+Autotransformation
+Average Voter
+Balance of Power
+Basic Valuation Orientation
+Bipartisanship
+Booty System
+Bourgeoisie
+Budget
+Budget Analysis
+Budget Prediction
+Bullying Potential
+Bureaucracy
+Bureaucratization
+Campaign Financing
+Capabilities of the Political System
+Capitalism
+Captive Vow
+Center
+Centrifugal System
+Centripetal System
+Chain of command
+Change of goals
+Chosen class
+Civil Service
+Class Awareness
+Class Coalition
+Clericalism
+Closure O Closing
+Co-management
+Coalition Potential
+Coercion
+Cognitive Corruption
+Colonial dependence
+Colonialism
+Command System
+Committee
+Common benefit
+Communication Impact
+Communism
+Compatibility Of Interests
+Confederacy
+Conflict System
+Conservatism
+Conspiracy
+Constitution
+Constitutional-pluralist regime
+Counterculture
+Coup
+Crisis of Political Development
+De Gini Index
+Decision Latitude
+Decision making
+Decision Point
+Delay
+Demagogy
+Democratic Centralism
+Democratization Process
+Demographic Transition
+Dependency Burden
+Depoliticization
+Deregulation
+Dictatorship of the Proletariat
+Diplomacy
+Direct Tax
+Dis-representation
+Discovery Policy
+Discretion Of The Executive Branch
+Dissent
+Dogmatic Policy
+Economic independence
+Economic Infrastructure
+Effectiveness and efficiency
+Elections
+Electoral Behavior
+Electoral Systems
+Electoral Volatility
 Elite
 Elite Central
-Elite De Intereses
-Elite Marginal
 Elite Media
-Endoculturación Política
-Equilibrio De Poder
-Equipo Político-administrativo
-Equivalencia Funcional
-Escala De Prioridades
-Espontaneidad Política
-Estabilidad Política
+Elite Of Interests
+Emergency Government
 Establishment
-Estado
-Estado De Excepción
-Estilo Político
-Estrategia
-Estrato Político
-Estructura Política
-Extremismo
-Factores De Poder
-Facultades Residuales
-Fases De La Realidad Política
-Federalismo
-Financiamiento Con Déficit
-Financiamiento De Campañas
-Flujo De Responsabilidad
-Fraccionalización Política
-Frecuencia De Votación
-Freno Político
-Fuerzas Politicas
-Funcion Politica
-Ganancia
-Gobierno Como Dirección
-Gobierno De Emergencia
-Gobierno De La Mayoría
-Gobierno Federal
-Gobierno Mundial
-Gobierno Parlamentario
-Gobierno Presidencialista
-Gobierno Representativo
-Gobierno Unitario
-Golpe De Estado
-Grupos De Interés
-Grupos De Presión
-Guerra
+Exception status
+Exchange Vote
+Expected Subjective Utility
+Expected Vote
+Extreme Ideology
+Extremism
+Federal government
+Federalism
+Feedback Cycle
+Financing With Deficit
+Floating Vote
+Foreign Policy of a State
+Freedom
+Friend enemy
+Functional Equivalence
+Gain
+General interest
+General Political Will
+General Welfare Clause
+Goal Search System
+Goals Search Subsystem
+Government As Directorate
+Gross national product
+Group Aggregation
+Group Solidarity
 Guerrilla
-Habilidad Política
-Hegemonía Política
-Herodianismo
-Hábitos De Los Pueblos
-Hábitos De Obediencia
-Idea De Derecho
-Identidad Política
-Identificación Partidaria
-Ideología
-Ideología De Partido
-Ideología Extrema
-Ideología Moderada
-Igualdad Política
-Ilustración
-Impacto Comunicacional
-Impacto Migratorio
-Imperialismo
-Impuesto
-Impuesto Directo
-Impuesto Indirecto
-Impuesto Progresivo
-Impuesto Regresivo
-Independencia Económica
-Independencia Política
-Indice De Gini
-Individualismo Pluralista
-Industrialización
-Inflación
-Influencia
-Infraestructura Económica
-Ingreso Nacional
-Ingreso Personal
-Innovación Política
-Instigacion Politica
-Institucionalización
-Institución Política
-Insurrección
-Integración Política
-Intención Política
-Interdependencia
-Interés General
-Interés Nacional
-Interés Político
-Izquierda
-Jacobinismo
-Juego De Suma Cero
-Juego De Suma Variable
-Justicia
-Latitud De Decisión
-Lealtad Política
-Legalidad
-Legitimidad
-Ley
-Liberalismo
-Libertad
-Liderazgo
-Líneas De Ruptura ("cleavage")
+Guidelines Maintenance Subsystem
+Habits of the Peoples
+Health
+Hegemony Crisis
+Herodianism
+Homeland
+Human rights
+I Politician
+Ideology
+Illustration
+Imperialism
+Indicative Planning
+Indirect Tax
+Industrial-military complex
+Industrialization
+Inflation
+Influence
+Influence Pyramid
+Institutionalization
+Insurrection
+Integration Capability
+Integration subsystem
+Interdependence
+Interest groups
+International community
+International conflict
+International policy
+International Polycentrism
+International relations
+Jacobinism
+Justice
+Labor union
+Law
+Leadership
+Learning capacity
+Left
+Legality
+Legitimacy
+Liability Flow
+Liberalism
+Limit Zone
+Load
+Lorenz Curve
 Macropolitica
-Manipulación Política
-Mayoría Y Minoría
-Medios De Comunicación Social
-Mercado
-Meritocracia
-Micropolitica
-Militarismo
-Mito Político
-Modernización
-Movilidad Política
-Movilidad Social
-Movilización Política
-Movilización Social
-Movimiento Político
-Multifuncionalidad
-Multipartidismo
-Nacionalismo
-Nacionalización
-Nación
-Neocolonialismo
-Neocorporativismo
-Nepotismo
-Obediencia
-Obstrucción Política
-Oligarquía
-Opinión Publica
-Orden Publico
-Orden Social
-Orientación Valorativa Básica
-Participación Política
-Partido Político
-Partidos De Aparato
-Partidos De Notables
-Partidos Electorales De Masas
-Patria
-Patriotismo
-Personalidad Modal
-Personalización Del Poder
-Pertenencia Múltiple
-Pirámide De Influencia
-Planeación Indicativa
-Pluralismo Político
-Poder Político
-Poliarquia
-Policentrismo Internacional
-Politización
-Política De Potencia
-Política Del Descubrimiento
-Política Dogmática
-Política Exterior De Un Estado
-Política Internacional
-Populismos
-Potencial De Coalición
-Potencial De Intimidación
-Pragmatismo Político
-Predicción Del Presupuesto
-Presupuesto
-Pretorianismo
-Principio De Legitimidad
-Prioridad Nacional
-Privatización
-Proceso De Democratización
-Proceso Político
-Productividad
-Producto Nacional Bruto
-Proletariado
-Propaganda Política
-Propiedad
-Protección De Las Minorías
-Pueblo
-Punto De Decisión
-Radicalismo
-Razón De Estado
-Reaccionario
-Reacción Política
-Realización Política
-Recompensa Negativa
-Recompensa Positiva
-Rectitud
-Redistribución De La Riqueza
-Reforma
-Relaciones Internacionales
-Relaciones Políticas
-Representación Política
-Reputación Política
-Resolución Pacifica De Los Conflictos
-Respeto
-Responsabilidad Política
-Responsividad Política
-Retraso
-Retroalimentación Amplificadora
-Retroalimentación Negativa
-Revolución
-Riqueza
-Régimen Constitucional-pluralista
-Régimen De Partido Único
-Régimen Político
-Salud
+Majority And Minority
+Majority Government
+Marginal Elite
+Market
+Mass Electoral Matches
+Match Systems
+Match Systems
+Matching Identification
+Membership Vote
+Merit System
+Meritocracy
+Micropolitics
+Migratory Impact
+Militarism
+Modal Personality
+Moderate Ideology
+Modern Political System
+Modern society
+Modernization
+Multi-party
+Multifunctionality
+Multiple Membership
+Nation
+National Income
+National Interest
+National Priority
+Nationalism
+Nationalization
+Negative Feedback
+Negative Reward
+Neocolonial dependence
+Neocolonialism
+Neocorporativism
+Nepotism
+Normal Vote
+Notable Matches
+Obedience
+Obedience Habits
+Oligarchy
+One party
+Opinion Vote
+Opportunity cost
+Over-representation Policy and Sub-representation
+Overload of Governments
+Pacifica Resolution of Conflicts
+Parliamentary government
+Partisan Discipline
+Party Ideology
+Patriotism
+Personal Income
+Phases of Political Reality
+Pluralistic Individualism
+Poliarchy
+Political Acculturation
+Political Action
+Political Action
+Political Adversary
+Political Agreement
+Political Arena
+Political Assimilation
+Political Attitude
+Political Attribution
+Political Awareness
+Political brake
+Political Change
+Political Charism
+Political class
+Political Coalition
+Political coherence
+Political cohesion
+Political combination
+Political Communication
+Political Community
+Political Consensus
+Political Cooptation
+Political corruption
+Political Creativity
+Political culture
+Political decay
+Political Decentralization
+Political decision
+Political deliberation
+Political Demobilization
+Political dependence
+Political Development
+Political differentiation
+Political Discrimination
+Political Dissociation
+Political Domain
+Political Driving
+Political dysfunctionality
+Political Effectiveness
+Political Endoculturation
+Political Equality
+Political Forces
+Political Fractionalization
+Political Function
+Political Growth
+Political hegemony
+Political Identity
+Political imbalance
+Political Independence
+Political Innovation
+Political Instigation
+Political Institution
+Political Integration
+Political Intention
+Political Interest
+Political Learning
+Political Loyalty
+Political manipulation
+Political Mobility
+Political Mobilization
+Political Movement
+Political Myth
+Political Obstruction
+Political participation
+Political party
+Political Pluralism
+Political power
+Political Pragmatism
+Political Process
+Political propaganda
+Political reaction
+Political Realization
+Political regime
+Political Relations
+Political Representation
+Political Reputation
+Political responsibility
+Political Responsiveness
+Political savvy
+Political Security
+Political segmentation
+Political Selection
+Political situation
+Political Socialization
+Political spontaneity
+Political stability
+Political stratum
+Political structure
+Political style
+Political Support
+Political Symbol
+Political system
+Political Transition
+Political Values
+Political Voluntarism
+Political-administrative team
+Political-social conflict
+Politicization
+Popular sovereignty
+Populisms
+Positive Reward
+Power Customization
+Power Distribution
+Power Factors
+Power Policy
+Praetorianism
+Presidential Government
+Pressure groups
+Primary elections
+Primitive Communism
+Principle of Legitimacy
+Priority Scale
+Privatization
+Productivity
+Progressive Tax
+Proletariat
+Property
+Protection of Minorities
+Provincial dependency
+Public administration
+Public opinion
+Public order
+Public sector
+Quality of life
+Radicalism
+Reactionary
+Real Democracy
+Reason
+Rectitude
+Redistribution of Wealth
+Reform
+Regressive Tax
+Representative Government
+Residual Faculties
+Resource Distribution
+Respect
+Revolution
+Right
+Right Idea
+Rupture Lines ("cleavage")
 Satelismo
-Secesión
-Sector Público
-Secularización
-Segmentación Política
-Seguridad Política
-Selección Política
-Separación De Poderes
-Servicio Civil
-Sindicalismo
-Sindicato
-Sistema Centrifugo
-Sistema Centrípeto
-Sistema De Búsqueda De Metas
-Sistema De Conflicto
-Sistema De Mando
-Sistema De Meritos
-Sistema De Partidos
-Sistema De Solidaridad
-Sistema Del Botín
-Sistema Político
-Sistema Político Moderno
-Sistema Político Tradicional
-Sistemas De Partidos
-Sistemas De Partidos
-Sistemas Electorales
-Situación Política
-Soberanía Popular
-Sobre-representación Política Y Sub-representación
-Sobrecarga De Los Gobiernos
-Social-democracia
-Socialismo
-Socialización Política
-Sociedad En Transición
-Sociedad Moderna
-Sociedad Tradicional
-Sofocracia
-Solidaridad Grupal
-Subdesarrollo
+Satellite Dependency
+Secession
+Secularization
+Self-criticism
+Self-direction
+Self-government
+Separation of powers
+Social class
+Social democracy
+Social Media
+Social Mobility
+Social Mobilization
+Social order
+Socialism
+Society In Transition
+Sofocracy
+Solidarity System
+State
+Straight
+Strategy
 Subelite
-Subsistema De Adaptación
-Subsistema De Búsqueda De Metas
-Subsistema De Integración
-Subsistema De Mantenimiento De Pautas
-Símbolo Político
-Tecnocracia
-Tiranía
-Toma De Decisión
-Totalitarismo
-Transición Demográfica
-Transición Política
-Táctica
-Unanimidad
-Unipartidismo
-Unitarismo
-Urbanización
-Utilidad Subjetiva Esperada
-Utilitarismo
-Utopía
-Valores Políticos
+Syndicalism
+System of Matches
+Tactic
+Tax
+Technocracy
+Totalitarianism
+Traditional Political System
+Traditional Society
+Tyranny
+Unanimity
+Underdevelopment
+Unequal Development
+Unique Party Regime
+Unitarianism
+Unitary Government
+Unwritten Constitution
+Urbanization
+Utilitarianism
+Utopia
+Values â€‹â€‹Compatibility
+Variable Sum Game
 Veto
-Volatilidad Electoral
-Voluntad Política General
-Voluntarismo Político
-Votante Medio
-Voto
-Voto Castigo
-Voto Cautivo
-Voto De Intercambio
-Voto De Opinión
-Voto De Pertenencia
-Voto Esperado
-Voto Flotante
-Voto Normal
-Voto Realizado
-Yo Político
-Zelotismo
-Zona Limítrofe
+Village
+Vote
+Vote Punishment
+Voting Done
+Voting Frequency
+War
+Wealth
+World Development
+World Government
+Written Constitution
+Zelotism
+Zero Sum Game
