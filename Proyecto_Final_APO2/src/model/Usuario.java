@@ -8,6 +8,8 @@ public class Usuario implements Serializable{
 	boolean verificado;
 	String seguidores;
 	String  seguidos;
+	Usuario izq;
+	Usuario der;
 	
 	public Usuario(String nombre, String seguidores, String seguidos, Tweet lista_tweets) {
 		super();
@@ -40,6 +42,23 @@ public class Usuario implements Serializable{
 	}
 	public void setLista_tweets(Tweet lista_tweets) {
 		this.lista_tweets = lista_tweets;
+	}
+
+	public void agregarArbol(Usuario creado) {
+		if(this.getNombre().compareTo(creado.getNombre()) > 0) {
+			if(this.izq != null) {
+				izq.agregarArbol(creado);
+			}else {
+				izq = creado;
+			}
+		}else if(this.getNombre().compareTo(creado.getNombre()) <= 0){
+			if(this.der != null) {
+				der.agregarArbol(creado);
+			}else {
+				der = creado;
+			}
+		}
+		
 	}
 	
 	

@@ -36,11 +36,13 @@ public class Tweet_Aplication implements Serializable{
 			tendenciasLinks = temp.tendenciasLinks;
 			NombreArchivos = temp.NombreArchivos;
 			entrada.close();
-			Datos = new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,"./Persistencia/Usuarios/Elon Musk");
-			Thread a = new Thread(Datos);
-			a.start();
-			usuarioRaiz = Datos.getCreado();
-			System.out.println(usuarioRaiz);
+			for (int I = 0; I < NombreArchivos.size(); I++) {
+				Datos = new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,NombreArchivos.get(I));
+				Thread a = new Thread(Datos);
+				a.start();
+				usuarioRaiz.agregarArbol(Datos.getCreado());
+			}
+
 		} catch (Exception e) {
 			tendencias = new Hashtag("", null, 0);
 			tendenciasLinks = new Link("", null);
@@ -49,8 +51,8 @@ public class Tweet_Aplication implements Serializable{
 			Thread a = new Thread(Datos);
 			a.start();
 			usuarioRaiz = Datos.getCreado();
-			System.out.println(usuarioRaiz);
 			guardarProgreso();
+			e.printStackTrace();
 		}
 	}
 
