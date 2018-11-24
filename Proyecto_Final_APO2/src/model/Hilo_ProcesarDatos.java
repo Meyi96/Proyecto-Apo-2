@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import javax.swing.text.AbstractDocument.BranchElement;
 
-public class ProcesarDatosPrueba {
+public class Hilo_ProcesarDatos {
 	public static FileReader read;
 	public static BufferedReader rd;
 	public static void main(String args[]) throws IOException {
@@ -19,7 +19,7 @@ public class ProcesarDatosPrueba {
 		String nombre_Usuario = "";
 		String nombre_real = "";
 		String dato = "";
-		String reTweet = "";
+		String seguidores = "";
 		String seguidos = "";
 
 		
@@ -30,9 +30,9 @@ public class ProcesarDatosPrueba {
 			if(contador == 19) {
 				nombre_Usuario = dato;
 			}else if(contador == 26) {
-				reTweet = dato;
-			}else if(contador == 29) {
 				seguidos = dato;
+			}else if(contador == 29) {
+				seguidores = dato;
 			}
 			
 			dato = rd.readLine();
@@ -50,7 +50,7 @@ public class ProcesarDatosPrueba {
 		
 		while(dato != null && dato.compareTo("Who to follow ·  Refresh · View all") != 0) {
 			Tweet temp;
-			if(dato.compareTo("Verified account") == 0) {
+			if(dato.compareTo("Verified account") == 0 ) {
 				a = recopilarTweet(Texto_Bruto,contador+1,nombre_Usuario);
 				temp = (Tweet)a[0];
 				contador = (int)a[1];
@@ -62,8 +62,10 @@ public class ProcesarDatosPrueba {
 		
 		System.out.println();
 		System.out.println(nombre_Usuario);
-		System.out.println(reTweet);
+		System.out.println(seguidores);
 		System.out.println(seguidos);
+		
+		Usuario Creado = new Usuario(nombre_Usuario, seguidores, seguidos, lista_t);
 		rd.close();
 	}
 	
@@ -78,30 +80,37 @@ public class ProcesarDatosPrueba {
 		String reTweets = "";
 		boolean seguir = false;
 		
-		while(dato != null && dato.compareTo("cuenta verificada") != 0) {
+		while(dato != null && dato.compareTo("Verified account") != 0 && dato.compareTo("Who to follow ·  Refresh · View all") != 0) {
 			String herramienta[] = dato.split(" ");
-			if(herramienta[herramienta.length-2].compareTo("Mensaje") == 0 && herramienta[herramienta.length-1].compareTo("directo") == 0) {
+			if(herramienta.length >= 6 && herramienta[herramienta.length-1].compareTo("message") == 0 && herramienta[herramienta.length-2].compareTo("Direct") == 0) {
 				reTweets = herramienta[3];
 				likes = herramienta[6];
-				seguir = true;
-			}else if(Cont_en_Tweet == 0) {
+				seguir = true;	
+				System.out.println("No agregado por Herramienta");
+			}else if(Cont_en_Tweet == 3) {
 				fecha = dato;
-			}else if(!seguir){
+			}else if(!seguir && dato.compareTo("Who to follow ·  Refresh · View all") != 0){
 				for (int i = 0; i < herramienta.length; i++) {
 					salida.agregarUltimo(new Palabra(herramienta[i]));
-				}	
-				
+				}
+			}else {
+				System.out.println("No agregado ");
 			}
 			salida.agregarUltimo(new Palabra("\n"));
 			c++;
 			Cont_en_Tweet++;
 			dato = t.get(c);
-			
+			System.out.println();
+			System.out.println(dato+" //  "+c+"   // Procesando TWEET");
+			System.out.println();
 		}
 		
+		System.out.println();
+		System.out.println(dato+" "+c+" TWEET ACABANDO de procesar");
+		System.out.println();
 		temp = new Tweet(fecha, salida, likes, reTweets);
 		
-		Object fin[] = {temp,c};
+		Object fin[] = {temp,c-1};
 		
 		return fin;
 	}
