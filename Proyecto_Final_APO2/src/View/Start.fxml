@@ -5,7 +5,8 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#closeLabel" prefHeight="365.0" prefWidth="500.0" style="-fx-background-color: #5EAADE;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StartController">
@@ -60,6 +61,12 @@
             <Image url="@../../Image/pajaro.png" />
          </image>
       </ImageView>
-      <Arc fx:id="circle" fill="DODGERBLUE" layoutX="39.0" layoutY="338.0" length="360.0" radiusX="25.0" radiusY="25.0" startAngle="270.0" stroke="DODGERBLUE" strokeType="INSIDE" type="ROUND" />
+      <HBox layoutX="211.0" layoutY="331.0" prefHeight="20.0" prefWidth="75.0" spacing="7.0">
+         <children>
+            <Circle fx:id="cir1" fill="#7bc0e3" radius="10.0" stroke="#979393" strokeType="INSIDE" strokeWidth="0.5" />
+            <Circle fx:id="cir2" fill="#9fd3ee" radius="10.0" stroke="#979393" strokeType="INSIDE" strokeWidth="0.5" />
+            <Circle fx:id="cir3" fill="#d5e6ee" radius="10.0" stroke="#979393" strokeType="INSIDE" strokeWidth="0.5" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
