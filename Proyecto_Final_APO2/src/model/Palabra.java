@@ -1,10 +1,18 @@
 package model;
 
 public class Palabra {
-	String palabra;
-	Palabra siguiente_palabra;
-	int puntuaciones[];
+	protected String palabra;
+	protected Palabra siguiente_palabra;
+	protected int puntuaciones[];
 	
+	public String getPalabra() {
+		return palabra;
+	}
+
+	public void setPalabra(String palabra) {
+		this.palabra = palabra;
+	}
+
 	public Palabra(String palabra,int puntuaciones[]) {
 		this.palabra = palabra;
 		this.puntuaciones = puntuaciones;

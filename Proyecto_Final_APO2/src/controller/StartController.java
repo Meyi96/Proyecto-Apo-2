@@ -37,7 +37,7 @@ public class StartController {
 
     @FXML
     void more(ActionEvent event) {
-    	System.out.println(Main.getN().getAlfa());
+    	System.out.println(Main.getN());
     }
 
     @FXML

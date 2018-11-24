@@ -9,11 +9,24 @@ public class Hashtag extends Palabra{
 	}
 
 	public boolean contiene(String s) {
+		if(this.getPalabra().compareTo(s) == 0) {
+			return true;
+		}else {
+			if(this.getSiguiente_palabra() != null) {
+				return ((Hashtag)this.getSiguiente_palabra()).contiene(s);
+			}
+		}
 		return false;
 	}
 
 	public Hashtag dar(String s) {
-		// TODO Auto-generated method stub
+		if(this.getPalabra().compareTo(s) == 0) {
+			return this;
+		}else {
+			if(this.getSiguiente_palabra() != null) {
+				return ((Hashtag)this.getSiguiente_palabra()).dar(s);
+			}
+		}
 		return null;
 	}
 

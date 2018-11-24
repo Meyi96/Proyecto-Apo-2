@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import View.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,8 +22,10 @@ public class NewUserController {
     private TextArea dataTextArea;
 
     @FXML
-    void add(ActionEvent event) {
-
+    void add(ActionEvent event) throws IOException {
+    	String data = dataTextArea.getText();
+    	Main.getN().RegistrarUsuario(data);
+    	System.out.println();
     }
     
     @FXML

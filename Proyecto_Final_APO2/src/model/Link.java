@@ -9,4 +9,12 @@ public class Link extends Palabra{
 		super(palabra, puntuaciones);
 	}
 
+	public URI getIdentificador() {
+		return identificador;
+	}
+
+	public void setIdentificador(URI identificador) {
+		this.identificador = identificador;
+	}
+
 }

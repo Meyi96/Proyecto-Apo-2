@@ -1,25 +1,24 @@
 package View;
 	
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import model.Ejemplo;
+import model.Tweet_Aplication;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 
 
 public class Main extends Application {
 	
-	private static Ejemplo n;
+	private static Tweet_Aplication n;
 	
 	
 	
-	public static Ejemplo getN() {
+	public static Tweet_Aplication getN() {
 		return n;
-	}
-
-	public static void setN(Ejemplo n) {
-		Main.n = n;
 	}
 
 	@Override
@@ -35,8 +34,8 @@ public class Main extends Application {
 		}
 	}
 	
-	public static void main(String[] args) {
-		n = new Ejemplo(12345);
+	public static void main(String[] args) throws IOException {
+		n = new Tweet_Aplication();
 		launch(args);
 	}
 }

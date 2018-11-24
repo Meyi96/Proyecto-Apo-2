@@ -33,8 +33,10 @@ public class Hilo_ProcesarDatos implements Runnable{
 	
 	@Override
 	public void run(){
-		try {	
-			File fl = new File("./Persistencia/Usuarios/Elon Musk");
+		try {
+			ArrayList<String> Texto_Bruto = new ArrayList<>();
+			
+			File fl = new File(nombre_archivo);
 			FileReader read = new FileReader(fl);
 			BufferedReader rd = new BufferedReader(read);
 			String nombre_Usuario = "";
@@ -44,8 +46,6 @@ public class Hilo_ProcesarDatos implements Runnable{
 	
 			
 			int contador = 0;
-			
-			ArrayList<String> Texto_Bruto = new ArrayList<>();
 			while(dato != null && dato.compareTo("Who to follow ·  Refresh · View all") != 0) {
 				if(contador == 19) {
 					nombre_Usuario = dato;
