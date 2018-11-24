@@ -9,13 +9,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.tools.FileObject;
 
 import Hilos.Hilo_ProcesarDatos;
 
-public class Tweet_Aplication {
+public class Tweet_Aplication implements Serializable{
 	private Usuario usuarioRaiz;
 	private PalabraRelevante raizRelevante;
 	private Hashtag tendencias;
@@ -23,19 +24,34 @@ public class Tweet_Aplication {
 	private Hilo_ProcesarDatos Datos;
 	private ArrayList<String> NombreArchivos;
 	
-	public Tweet_Aplication() throws IOException {
-		tendencias = new Hashtag("", null, 0);
-		tendenciasLinks = new Link("", null);
-		NombreArchivos = new ArrayList<>();
-		
-		File wr = new File("./Persistencia/Aplicacion/Aplicacion_persistente");
-		FileInputStream wow = new FileInputStream(wr);
-		ObjectInputStream entrada = new ObjectInputStream(wow);
-		Datos = new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,"./Persistencia/Usuarios/Elon Musk");
-		Thread a = new Thread(Datos);
-		a.start();
-		usuarioRaiz = Datos.getCreado();
-		System.out.println(usuarioRaiz);
+	public Tweet_Aplication() throws IOException, ClassNotFoundException {
+		try {
+			File wr = new File("./Persistencia/Aplicacion/Aplicacion_persistente");
+			FileInputStream wow = new FileInputStream(wr);
+			ObjectInputStream entrada = new ObjectInputStream(wow);
+			Tweet_Aplication temp = (Tweet_Aplication)entrada.readObject();
+			usuarioRaiz = temp.usuarioRaiz;
+			raizRelevante = temp.raizRelevante;
+			tendencias = temp.tendencias;
+			tendenciasLinks = temp.tendenciasLinks;
+			NombreArchivos = temp.NombreArchivos;
+			entrada.close();
+			Datos = new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,"./Persistencia/Usuarios/Elon Musk");
+			Thread a = new Thread(Datos);
+			a.start();
+			usuarioRaiz = Datos.getCreado();
+			System.out.println(usuarioRaiz);
+		} catch (Exception e) {
+			tendencias = new Hashtag("", null, 0);
+			tendenciasLinks = new Link("", null);
+			NombreArchivos = new ArrayList<>();
+			Datos = new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,"./Persistencia/Usuarios/Elon Musk");
+			Thread a = new Thread(Datos);
+			a.start();
+			usuarioRaiz = Datos.getCreado();
+			System.out.println(usuarioRaiz);
+			guardarProgreso();
+		}
 	}
 
 	public void RegistrarUsuario(String data) throws IOException {

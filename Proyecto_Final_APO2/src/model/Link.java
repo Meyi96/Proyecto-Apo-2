@@ -1,7 +1,8 @@
 package model;
+import java.io.Serializable;
 import java.net.*;
 
-public class Link extends Palabra{
+public class Link extends Palabra implements Serializable{
 	
 	private URI identificador;
 	

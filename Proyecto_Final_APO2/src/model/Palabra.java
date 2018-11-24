@@ -1,6 +1,8 @@
 package model;
 
-public class Palabra {
+import java.io.Serializable;
+
+public class Palabra implements Serializable{
 	protected String palabra;
 	protected Palabra siguiente_palabra;
 	protected int puntuaciones[];

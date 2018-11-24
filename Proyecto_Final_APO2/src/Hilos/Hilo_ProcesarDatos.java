@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import model.Hashtag;
@@ -14,7 +15,7 @@ import model.Tweet;
 import model.Usuario;
 
 
-public class Hilo_ProcesarDatos implements Runnable{
+public class Hilo_ProcesarDatos implements Runnable,Serializable{
 	public  FileReader read;
 	public  BufferedReader rd;
 	private String nombre_archivo;

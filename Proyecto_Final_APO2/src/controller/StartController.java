@@ -72,12 +72,9 @@ public class StartController implements Initializable {
 
     @FXML
     void more(ActionEvent event) {
-<<<<<<< HEAD
     	System.out.println(Main.getN());
-=======
     	hilo.stop();
-    	System.out.println(Main.getN().getAlfa());
->>>>>>> 573bc91eed0da379affb233c69f87699a924d216
+    	System.out.println(Main.getN());
     }
 
     @FXML

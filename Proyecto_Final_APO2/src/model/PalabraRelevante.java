@@ -1,5 +1,7 @@
 package model;
 
-public class PalabraRelevante {
+import java.io.Serializable;
+
+public class PalabraRelevante implements Serializable{
 
 }

@@ -1,6 +1,8 @@
 package model;
 
-public class Hashtag extends Palabra{
+import java.io.Serializable;
+
+public class Hashtag extends Palabra implements Serializable{
 	private int repeticiones;
 	
 	public Hashtag(String palabra, int[] puntuaciones,int repeticiones) {
