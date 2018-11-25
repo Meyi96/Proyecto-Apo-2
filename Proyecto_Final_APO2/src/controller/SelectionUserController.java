@@ -2,6 +2,7 @@ package controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.ResourceBundle;
 
 import View.Main;
@@ -60,20 +61,12 @@ public class SelectionUserController  implements Initializable{
 
 	    @FXML
 	    void orderNTweets(ActionEvent event) {
-
+	    	usersListView.getItems().addAll(inicioOrden('t'));
 	    }
 
 	    @FXML
 	    void orderName(ActionEvent event) {
-	    	usersListView.getItems().setAll("");
-	    	ArrayList<Object> usuarios = new ArrayList<Object>();
-	    	Main.getN().ordenamiento(usuarios, 'n');
-	    	for (int j = 0; j < usuarios.size() ; j++) {
-	    		String dato = ((Usuario)usuarios.get(j)).getNombre() + " Cantidad de tweets: " 
-	    				+ ((Usuario)usuarios.get(j)).getCantidad();
-	    		usersListView.getItems().add(dato);
-			}
-	    	
+	    	usersListView.getItems().addAll(inicioOrden('n'));
 	    }
 
 	    @FXML
@@ -96,6 +89,19 @@ public class SelectionUserController  implements Initializable{
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
 			usersListView.getItems().addAll("Esto","es","una","prueba");
+		}
+		
+		public Collection<String>inicioOrden(char tipo){
+			usersListView.getItems().clear();
+	    	ArrayList<Object> usuarios = new ArrayList<Object>();
+	    	Collection<String> datos = new ArrayList<String>();
+	    	Main.getN().ordenamiento(usuarios, tipo);
+	    	for (int j = 0; j < usuarios.size() ; j++) {
+	    		String dato = ((Usuario)usuarios.get(j)).getNombre() + " Cantidad de tweets: " 
+	    				+ ((Usuario)usuarios.get(j)).getCantidad();
+	    		datos.add(dato);
+			}
+	    	return datos;
 		}
 		
 		
