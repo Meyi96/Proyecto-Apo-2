@@ -3,7 +3,8 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Tweet implements Serializable{
+public class Tweet implements Serializable,Agregar{
+	static final long serialVersionUID = 42L;
 	private Tweet siguiente;
 	private String Fecha;
 	private Palabra primera_Palabra;
@@ -38,6 +39,16 @@ public class Tweet implements Serializable{
 
 	public void setParrafo(Palabra parrafo) {
 		this.primera_Palabra = parrafo;
+	}
+
+
+	@Override
+	public void agregar(Object objeto) {
+		if (objeto instanceof Tweet) {
+			Tweet temp = (Tweet) objeto;
+			agregarUltimo(temp);
+		}
+		
 	}
 
 	public void agregarUltimo(Tweet temp) {

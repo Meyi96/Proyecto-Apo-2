@@ -2,7 +2,8 @@ package model;
 
 import java.io.Serializable;
 
-public class Palabra implements Serializable{
+public class Palabra implements Serializable, Agregar{
+	static final long serialVersionUID = 42L;
 	protected String palabra;
 	protected Palabra siguiente_palabra;
 	protected int puntuaciones[];
@@ -51,6 +52,17 @@ public class Palabra implements Serializable{
 	public void setPuntuacion_depor(int puntuacion_depor) {
 		this.puntuaciones[2] = puntuacion_depor;
 	}
+
+
+	@Override
+	public void agregar(Object objeto) {
+		if (objeto instanceof Palabra) {
+			Palabra temp = (Palabra) objeto;
+			agregarUltimo(temp);
+		}
+		
+	}
+	
 
 	public void agregarUltimo(Palabra palabra2) {
 		if(this.getSiguiente_palabra() == null) {

@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 
 public class Hashtag extends Palabra implements Serializable{
+	static final long serialVersionUID = 42L;
 	private int repeticiones;
 	
 	public Hashtag(String palabra, int[] puntuaciones,int repeticiones) {

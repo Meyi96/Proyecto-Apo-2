@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Usuario implements Serializable, Ordenamiento{
+public class Usuario implements Serializable, Ordenamiento,Agregar{
+	static final long serialVersionUID = 42L;
 	private String Nombre;
 	private Tweet lista_tweets;
 	private String seguidores;
@@ -65,6 +66,14 @@ public class Usuario implements Serializable, Ordenamiento{
 		Cantidad = cantidad;
 	}
 
+	@Override
+	public void agregar(Object objeto) {
+		if (objeto instanceof Usuario) {
+			Usuario temp = (Usuario) objeto;
+			agregarArbol(temp);
+		}
+	}
+	
 	public void agregarArbol(Usuario creado) {
 		if(this.getNombre().compareTo(creado.getNombre()) > 0) {
 			if(this.izq != null) {
@@ -143,5 +152,7 @@ public class Usuario implements Serializable, Ordenamiento{
 			calcularPuntaje(l.getSiguiente());
 		}
 	}
+
+	
 	
 }

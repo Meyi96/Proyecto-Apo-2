@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class PalabraRelevante  extends Palabra implements Serializable{
+public class PalabraRelevante  extends Palabra implements Serializable,Agregar{
 
 	static final long serialVersionUID = 42L;
 	PalabraRelevante izq;

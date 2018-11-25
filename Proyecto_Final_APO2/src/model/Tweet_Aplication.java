@@ -50,7 +50,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 				while(Datos.get(I).getCreado() == null) {
 					System.out.println("Creando");
 				}
-				usuarioRaiz.agregarArbol(Datos.get(I).getCreado());
+				usuarioRaiz.agregar(Datos.get(I).getCreado());
 				tendencias = Datos.get(I).getHashtags();
 				tendenciasLinks = Datos.get(I).getPrimer_link();
 				System.out.println("                                        "+I);
@@ -62,7 +62,6 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			tendencias = new Hashtag("", null, 0);
 			tendenciasLinks = new Link("", null);
 			NombreArchivos = new ArrayList<>();
-			//Datos = new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,"./Persistencia/Usuarios/Elon Musk");
 			Thread[] a = new Thread[1];
 			Datos = new ArrayList<>();
 			Datos.add(new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,"./Persistencia/Usuarios/Elon Musk"));
@@ -95,7 +94,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			temp = Datos.get(Datos.size()-1).getCreado();
 			System.out.println("Creando");
 		}
-		usuarioRaiz.agregarArbol(temp);
+		usuarioRaiz.agregar(temp);
 		guardarProgreso();
 	}
 
@@ -121,7 +120,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			if(raizRelevante == null) {
 				raizRelevante = a;
 			}else {
-				raizRelevante.AgregarRelevante(a);
+				raizRelevante.agregar(a);
 			}
 			temp = rd.readLine();
 		}
@@ -138,7 +137,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			if(raizRelevante == null) {
 				raizRelevante = a;
 			}else {
-				raizRelevante.AgregarRelevante(a);
+				raizRelevante.agregar(a);
 			}
 			temp = rd.readLine();
 		}
@@ -155,7 +154,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			if(raizRelevante == null) {
 				raizRelevante = a;
 			}else {
-				raizRelevante.AgregarRelevante(a);
+				raizRelevante.agregar(a);
 			}
 			temp = rd.readLine();
 		}

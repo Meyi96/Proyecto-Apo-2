@@ -83,7 +83,7 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 					Puntaje_Usuario[0] += temp.getPuntajes()[0];
 					Puntaje_Usuario[1] += temp.getPuntajes()[1];
 					Puntaje_Usuario[2] += temp.getPuntajes()[2];
-					lista_t.agregarUltimo(temp);
+					lista_t.agregar(temp);
 					cantidad++;
 				}
 				contador++;
@@ -144,14 +144,14 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 					Puntaje_Tweet[0] += puntos[0];
 					Puntaje_Tweet[1] += puntos[1];
 					Puntaje_Tweet[2] += puntos[2];
-					salida.agregarUltimo(new Palabra(herramienta[i],puntos));
+					salida.agregar(new Palabra(herramienta[i],puntos));
 				}
 			}else if(herramienta.length >= 2 && herramienta[herramienta.length-1].compareTo("Retweeted") == 0){
 				seguir = true;
 				System.out.println("No agregado ");
 			}
 			
-			salida.agregarUltimo(new Palabra("\n",null));
+			salida.agregar(new Palabra("\n",null));
 			c++;
 			Cont_en_Tweet++;
 			dato = t.get(c);
@@ -177,14 +177,14 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		salida[2] = 0;
 		if(s.length()>=6 && s.substring(0, 5).compareToIgnoreCase("http:") == 0) {
 			Link temp = new Link(s,null);
-			primer_link.agregarUltimo(temp);
+			primer_link.agregar(temp);
 			System.out.println(s+"                                       //// Es un LINK");
 		}else if(s.length()>=1 && s.substring(0, 1).compareToIgnoreCase("#") == 0){
 			Hashtag temp = new Hashtag(s, null, 0);
 			if(hashtags.contiene(s)) {
 				hashtags.dar(s).setPuntuaion(hashtags.dar(s).getPuntuacion()+1);
 			}else {
-				hashtags.agregarUltimo(temp);
+				hashtags.agregar(temp);
 			}
 			System.out.println(s+"                                        //// Es un HASHTAG");
 		}else {
