@@ -26,7 +26,7 @@ public class Tweet_Aplication implements Serializable{
 	private ArrayList<String> NombreArchivos;
 	
 	public Tweet_Aplication() throws IOException, ClassNotFoundException {
-		usuarioRaiz = new Usuario("", "", "", null);
+		usuarioRaiz = new Usuario("", "", "", null,0);
 		try {
 			File wr = new File("./Persistencia/Aplicacion/Aplicacion_persistente");
 			FileInputStream wow = new FileInputStream(wr);
@@ -39,6 +39,7 @@ public class Tweet_Aplication implements Serializable{
 			entrada.close();
 			Datos = new ArrayList<>();
 			Thread[] a = new Thread[NombreArchivos.size()];
+			cargarPalabrasRelevantes();
 			for (int I = 0; I < NombreArchivos.size(); I++) {
 				System.out.println("Se agregaron usuarios ");
 				Datos.add(new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,NombreArchivos.get(I)));
@@ -48,6 +49,8 @@ public class Tweet_Aplication implements Serializable{
 					System.out.println("Creando");
 				}
 				usuarioRaiz.agregarArbol(Datos.get(I).getCreado());
+				tendencias = Datos.get(I).getHashtags();
+				tendenciasLinks = Datos.get(I).getPrimer_link();
 				System.out.println("                                        "+I);
 			}
 
@@ -66,6 +69,14 @@ public class Tweet_Aplication implements Serializable{
 			usuarioRaiz = Datos.get(0).getCreado();
 			guardarProgreso();
 		}
+	}
+
+	private void cargarPalabrasRelevantes() {
+		
+		if(raizRelevante == null) {
+			
+		}
+		
 	}
 
 	public void RegistrarUsuario(String data) throws IOException {

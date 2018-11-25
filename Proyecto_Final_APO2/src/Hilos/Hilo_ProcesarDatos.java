@@ -70,6 +70,8 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 			
 			Object a[] = new Object[2];
 			
+			int cantidad = 0;
+			
 			while(dato != null && dato.compareTo("Who to follow ·  Refresh · View all") != 0) {
 				Tweet temp;
 				if(dato.compareTo("Verified account") == 0) {
@@ -77,6 +79,7 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 					temp = (Tweet)a[0];
 					contador = (int)a[1];
 					lista_t.agregarUltimo(temp);
+					cantidad++;
 				}
 				contador++;
 				dato = Texto_Bruto.get(contador);
@@ -87,7 +90,7 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 			System.out.println(seguidores);
 			System.out.println(seguidos);
 			
-			creado = new Usuario(nombre_Usuario, seguidores, seguidos, lista_t);
+			creado = new Usuario(nombre_Usuario, seguidores, seguidos, lista_t ,cantidad);
 			rd.close();
 		}catch(IOException e) {
 			e.printStackTrace();
@@ -99,6 +102,15 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		return creado;
 	}
 	
+	
+	public Link getPrimer_link() {
+		return primer_link;
+	}
+
+	public Hashtag getHashtags() {
+		return hashtags;
+	}
+
 	private Object[] recopilarTweet(ArrayList<String> t, int c, String n) {
 		String dato = t.get(c);
 		Tweet temp;
@@ -150,7 +162,9 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 
 	private int[] identificarPalabra(String s) {
 		int salida[] = new int[3];
-		
+		salida[0] = 0;
+		salida[1] = 0;
+		salida[2] = 0;
 		if(s.length()>=6 && s.substring(0, 5).compareToIgnoreCase("http:") == 0) {
 			Link temp = new Link(s,null);
 			primer_link.agregarUltimo(temp);
@@ -163,6 +177,11 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 				hashtags.agregarUltimo(temp);
 			}
 			System.out.println(s+"                                        //// Es un HASHTAG");
+		}else {
+			//String temp = raiz_relevantes.buscarPalabra(s);
+//			if(temp != null && temp.compareTo(s) == 0) {
+//				
+//			}
 		}               
 		
 		return salida;
