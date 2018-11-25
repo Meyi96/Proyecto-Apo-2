@@ -178,11 +178,13 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 			}
 			System.out.println(s+"                                        //// Es un HASHTAG");
 		}else {
-			//String temp = raiz_relevantes.buscarPalabra(s);
-//			if(temp != null && temp.compareTo(s) == 0) {
-//				
-//			}
-		}               
+			PalabraRelevante temp = raiz_relevantes.buscarPalabra(s);
+			if(temp != null) {
+				salida[0] = temp.getPuntuacion_depor();
+				salida[1] = temp.getPuntuacion_poli();
+				salida[2] = temp.getPuntuacion_tecno();
+			}
+		}                
 		
 		return salida;
 	}

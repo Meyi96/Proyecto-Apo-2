@@ -1,10 +1,12 @@
 package model;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -33,7 +35,6 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			FileInputStream wow = new FileInputStream(wr);
 			ObjectInputStream entrada = new ObjectInputStream(wow);
 			Tweet_Aplication temp = (Tweet_Aplication)entrada.readObject();
-			raizRelevante = temp.raizRelevante;
 			tendencias = temp.tendencias;
 			tendenciasLinks = temp.tendenciasLinks;
 			NombreArchivos = temp.NombreArchivos;
@@ -72,14 +73,6 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		}
 	}
 
-	private void cargarPalabrasRelevantes() {
-		
-		if(raizRelevante == null) {
-			
-		}
-		
-	}
-
 	public void RegistrarUsuario(String data) throws IOException {
 		System.out.println(data);
 		String info[] = data.split("\n");
@@ -112,6 +105,60 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		ObjectOutputStream write = new ObjectOutputStream(wr2);
 		write.writeObject(this);
 		write.close();
+	}
+	
+	private void cargarPalabrasRelevantes() throws IOException {
+		File fl = new File("./Persistencia/Glosario/Deporte.txt");
+		FileReader read = new FileReader(fl);
+		BufferedReader rd = new BufferedReader(read);
+		
+		String temp = rd.readLine();
+		while(temp != null) {
+
+			System.out.println("Agregando "+ temp);
+			int Puntos[] = {1,0,0};
+			PalabraRelevante a = new PalabraRelevante(temp.trim(), Puntos);
+			if(raizRelevante == null) {
+				raizRelevante = a;
+			}else {
+				raizRelevante.AgregarRelevante(a);
+			}
+			temp = rd.readLine();
+		}
+		
+		fl = new File("./Persistencia/Glosario/Politica.txt");
+		read = new FileReader(fl);
+		rd = new BufferedReader(read);
+		
+		temp = rd.readLine();
+		while(temp != null) {
+			System.out.println("Agregando "+ temp);
+			int Puntos[] = {0,1,0};
+			PalabraRelevante a = new PalabraRelevante(temp.trim(), Puntos);
+			if(raizRelevante == null) {
+				raizRelevante = a;
+			}else {
+				raizRelevante.AgregarRelevante(a);
+			}
+			temp = rd.readLine();
+		}
+		
+		fl = new File("./Persistencia/Glosario/Tecnologia.txt");
+		read = new FileReader(fl);
+		rd = new BufferedReader(read);
+		
+		temp = rd.readLine();
+		while(temp != null) {
+			System.out.println("Agregando "+ temp);
+			int Puntos[] = {0,0,1};
+			PalabraRelevante a = new PalabraRelevante(temp.trim(), Puntos);
+			if(raizRelevante == null) {
+				raizRelevante = a;
+			}else {
+				raizRelevante.AgregarRelevante(a);
+			}
+			temp = rd.readLine();
+		}
 	}
 
 	@Override

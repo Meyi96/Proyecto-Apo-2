@@ -13,9 +13,39 @@ public class PalabraRelevante  extends Palabra implements Serializable{
 		der = null;
 	}
 
-	public String buscarPalabra(String s) {
+	public PalabraRelevante buscarPalabra(String s) {
+		if(this.palabra.compareTo(s) == 0) {
+			return this;
+		}else if(this.palabra.compareTo(s) <= 0){
+			if(der != null) {
+				return der.buscarPalabra(s);
+			}else {
+				return null;
+			}
+		}else {
+			if(izq != null) {
+				return izq.buscarPalabra(s);
+			}else {
+				return null;
+			}
+		}
+	}
+
+	public void AgregarRelevante(PalabraRelevante a) {
+		if(this.palabra.compareTo(a.getPalabra()) <= 0){
+			if(der != null) {
+				der.AgregarRelevante(a);;
+			}else {
+				der = a;
+			}
+		}else {
+			if(izq != null) {
+				izq.AgregarRelevante(a);
+			}else {
+				izq = a;
+			}
+		}
 		
-		return null;
 	}
 
 }
