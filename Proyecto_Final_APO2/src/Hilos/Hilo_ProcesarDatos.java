@@ -16,6 +16,7 @@ import model.Usuario;
 
 
 public class Hilo_ProcesarDatos implements Runnable,Serializable{
+	static final long serialVersionUID = 42L;
 	public  FileReader read;
 	public  BufferedReader rd;
 	private String nombre_archivo;

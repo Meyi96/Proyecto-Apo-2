@@ -17,42 +17,54 @@ import javax.tools.FileObject;
 import Hilos.Hilo_ProcesarDatos;
 
 public class Tweet_Aplication implements Serializable{
+	static final long serialVersionUID = 42L;
 	private Usuario usuarioRaiz;
 	private PalabraRelevante raizRelevante;
 	private Hashtag tendencias;
 	private Link tendenciasLinks;
-	private Hilo_ProcesarDatos Datos;
+	private ArrayList<Hilo_ProcesarDatos> Datos;
 	private ArrayList<String> NombreArchivos;
 	
 	public Tweet_Aplication() throws IOException, ClassNotFoundException {
+		usuarioRaiz = new Usuario("", "", "", null);
 		try {
 			File wr = new File("./Persistencia/Aplicacion/Aplicacion_persistente");
 			FileInputStream wow = new FileInputStream(wr);
 			ObjectInputStream entrada = new ObjectInputStream(wow);
 			Tweet_Aplication temp = (Tweet_Aplication)entrada.readObject();
-			usuarioRaiz = temp.usuarioRaiz;
 			raizRelevante = temp.raizRelevante;
 			tendencias = temp.tendencias;
 			tendenciasLinks = temp.tendenciasLinks;
 			NombreArchivos = temp.NombreArchivos;
 			entrada.close();
+			Datos = new ArrayList<>();
+			Thread[] a = new Thread[NombreArchivos.size()];
 			for (int I = 0; I < NombreArchivos.size(); I++) {
-				Datos = new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,NombreArchivos.get(I));
-				Thread a = new Thread(Datos);
-				a.start();
-				usuarioRaiz.agregarArbol(Datos.getCreado());
+				System.out.println("Se agregaron usuarios ");
+				Datos.add(new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,NombreArchivos.get(I)));
+				a[I] = new Thread(Datos.get(I));
+				a[I].start();
+				while(Datos.get(I).getCreado() == null) {
+					System.out.println("Creando");
+				}
+				usuarioRaiz.agregarArbol(Datos.get(I).getCreado());
+				System.out.println("                                        "+I);
 			}
 
+			System.out.println(NombreArchivos.size());
 		} catch (Exception e) {
+			e.printStackTrace();
 			tendencias = new Hashtag("", null, 0);
 			tendenciasLinks = new Link("", null);
 			NombreArchivos = new ArrayList<>();
-			Datos = new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,"./Persistencia/Usuarios/Elon Musk");
-			Thread a = new Thread(Datos);
-			a.start();
-			usuarioRaiz = Datos.getCreado();
+			//Datos = new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,"./Persistencia/Usuarios/Elon Musk");
+			Thread[] a = new Thread[1];
+			Datos = new ArrayList<>();
+			Datos.add(new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,"./Persistencia/Usuarios/Elon Musk"));
+			a[0] = new Thread(Datos.get(0));
+			a[0].start();
+			usuarioRaiz = Datos.get(0).getCreado();
 			guardarProgreso();
-			e.printStackTrace();
 		}
 	}
 
@@ -70,9 +82,15 @@ public class Tweet_Aplication implements Serializable{
 			writer.write("\n");
 		}
 		writer.close();
-		Datos = new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,nombre_archivo);
-		Thread a = new Thread(Datos);
+		Datos.add(new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,nombre_archivo));
+		Thread a = new Thread(Datos.get(Datos.size()-1));
 		a.start();
+		Usuario temp = null;
+		while(temp == null) {
+			temp = Datos.get(Datos.size()-1).getCreado();
+			System.out.println("Creando");
+		}
+		usuarioRaiz.agregarArbol(temp);
 		guardarProgreso();
 	}
 
