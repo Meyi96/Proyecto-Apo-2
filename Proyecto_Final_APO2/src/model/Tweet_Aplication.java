@@ -11,12 +11,13 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.tools.FileObject;
 
 import Hilos.Hilo_ProcesarDatos;
 
-public class Tweet_Aplication implements Serializable{
+public class Tweet_Aplication implements Serializable, Ordenamiento{
 	static final long serialVersionUID = 42L;
 	private Usuario usuarioRaiz;
 	private PalabraRelevante raizRelevante;
@@ -111,5 +112,33 @@ public class Tweet_Aplication implements Serializable{
 		ObjectOutputStream write = new ObjectOutputStream(wr2);
 		write.writeObject(this);
 		write.close();
+	}
+
+	@Override
+	public void ordenamiento(ArrayList<Object> objeto, char tipo) {
+		switch (tipo) {
+		case 'n': usuarioRaiz.inorden(objeto);
+			break;
+		case 't': OrdenamientoNumeroTweets(objeto);
+
+		default:
+			break;
+		}
+		
+		
+	}
+
+	private void OrdenamientoNumeroTweets(ArrayList<Object> objeto) {
+		usuarioRaiz.inorden(objeto);
+		for (int i = 0; i < objeto.size(); i++) {
+			for (int j = 0; j+1 < objeto.size(); j++) {
+				Usuario a = (Usuario)objeto.get(j);
+				Usuario b = (Usuario)objeto.get(j+1);
+				if(a.compareTo(b)<0) {
+					objeto.set(j, b);
+					objeto.set(j+1, a);
+				}
+			}
+		}
 	}
 }

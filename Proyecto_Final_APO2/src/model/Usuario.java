@@ -1,6 +1,8 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class Usuario implements Serializable{
 	private String Nombre;
@@ -72,6 +74,21 @@ public class Usuario implements Serializable{
 			}
 		}
 		
+	}
+	
+	public int compareTo(Usuario nuevo) {
+		if(Nombre.compareTo(nuevo.getNombre())==0) 
+			return Cantidad-nuevo.getCantidad();
+		else
+			return Nombre.compareTo(nuevo.getNombre());
+	}
+
+	public void inorden(ArrayList<Object> objeto) {
+		if(izq != null)
+			izq.inorden(objeto);
+		objeto.add(this);
+		if(der != null)
+			der.inorden(objeto);
 	}
 	
 	
