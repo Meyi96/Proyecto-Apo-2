@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Tweet implements Serializable{
 	private Tweet siguiente;
@@ -63,6 +64,22 @@ public class Tweet implements Serializable{
 
 	public void setPuntajes(int[] puntajes) {
 		this.puntajes = puntajes;
+	}
+	
+	public String calcularPuntajeTotal() {
+		return Integer.toString(puntajes[0]+puntajes[1]+puntajes[2]);
+	}
+	
+	public int compareTo(Tweet t) {
+		if(this.calcularPuntajeTotal().compareTo(t.calcularPuntajeTotal()) == 0) {
+			return likes.compareTo(t.likes);
+		}else {
+			return this.calcularPuntajeTotal().compareTo(t.calcularPuntajeTotal());
+		}
+	}
+	
+	public void obtenerTweets(ArrayList<Object> object) {
+		
 	}
 	
 }

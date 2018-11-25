@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Usuario implements Serializable{
+public class Usuario implements Serializable, Ordenamiento{
 	private String Nombre;
 	private Tweet lista_tweets;
 	private String seguidores;
@@ -106,6 +106,30 @@ public class Usuario implements Serializable{
 	}
 	
 
+	public void ordenamiento(ArrayList<Object> objeto, char tipo) {
+		switch (tipo) {
+		case 'n': lista_tweets.obtenerTweets(objeto);
+			break;
+		case 'o': OrdenamientoNumeroTweets(objeto);
+
+		default:
+			break;
+		}
+	}
+	
+	private void OrdenamientoNumeroTweets(ArrayList<Object> objeto) {
+		lista_tweets.obtenerTweets(objeto);
+		for (int i = 0; i < objeto.size(); i++) {
+			for (int j = 0; j+1 < objeto.size(); j++) {
+				Usuario a = (Usuario)objeto.get(j);
+				Usuario b = (Usuario)objeto.get(j+1);
+				if(a.compareTo(b)<0) {
+					objeto.set(j, b);
+					objeto.set(j+1, a);
+				}
+			}
+		}
+	}
 	
 	private void calcularPuntaje(Tweet l) {
 		if(l != null) {
