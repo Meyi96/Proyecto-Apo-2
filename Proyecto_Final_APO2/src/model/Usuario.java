@@ -108,7 +108,7 @@ public class Usuario implements Serializable, Ordenamiento{
 
 	public void ordenamiento(ArrayList<Object> objeto, char tipo) {
 		switch (tipo) {
-		case 'n': lista_tweets.obtenerTweets(objeto);
+		case 'n': lista_tweets.obtenerTweets(objeto, lista_tweets);
 			break;
 		case 'o': OrdenamientoNumeroTweets(objeto);
 
@@ -118,16 +118,20 @@ public class Usuario implements Serializable, Ordenamiento{
 	}
 	
 	private void OrdenamientoNumeroTweets(ArrayList<Object> objeto) {
-		lista_tweets.obtenerTweets(objeto);
-		for (int i = 0; i < objeto.size(); i++) {
-			for (int j = 0; j+1 < objeto.size(); j++) {
-				Usuario a = (Usuario)objeto.get(j);
-				Usuario b = (Usuario)objeto.get(j+1);
-				if(a.compareTo(b)<0) {
-					objeto.set(j, b);
-					objeto.set(j+1, a);
+		lista_tweets.obtenerTweets(objeto, lista_tweets);
+		for (int i = 0; i < objeto.size()-1; i++) {
+			Tweet mayor = (Tweet)objeto.get(i);
+			int cual = i;
+			for (int j = i+1; j < objeto.size(); j++) {
+				Tweet actual = (Tweet)objeto.get(j);
+				if(actual.compareTo(mayor) > 0) {
+					mayor = actual;
+					cual = j;
 				}
 			}
+			Tweet temp = (Tweet)objeto.get(i);
+			objeto.set(i, mayor);
+			objeto.set(cual, temp);
 		}
 	}
 	

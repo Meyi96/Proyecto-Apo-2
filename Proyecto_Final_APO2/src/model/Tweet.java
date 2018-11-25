@@ -78,8 +78,13 @@ public class Tweet implements Serializable{
 		}
 	}
 	
-	public void obtenerTweets(ArrayList<Object> object) {
-		
+	public void obtenerTweets(ArrayList<Object> object, Tweet actual) {
+		if(actual.getSiguiente() == null) {
+			object.add(actual);
+			obtenerTweets(object, actual.getSiguiente());
+		}else {
+			object.add(actual);
+		}
 	}
 	
 }
