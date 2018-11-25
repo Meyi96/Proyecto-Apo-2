@@ -14,14 +14,18 @@ public class Usuario implements Serializable{
 	private Usuario izq;
 	private Usuario der;
 	
-	public Usuario(String nombre, String seguidores, String seguidos, Tweet lista_tweets, int Cantidad) {
+	public Usuario(String nombre, String seguidores, String seguidos, Tweet lista_tweets, int Cantidad, int Puntaje[]) {
 		super();
 		Nombre = nombre;
 		this.seguidores = seguidores;
 		this.seguidos = seguidos;
 		this.lista_tweets = lista_tweets;
 		this.Cantidad = Cantidad;
-		calcularPuntaje();
+		if(Puntaje == null) {
+			calcularPuntaje(lista_tweets);
+		}else {
+			this.Puntaje = Puntaje; 
+		}
 	}
 
 	public String getNombre() {
@@ -85,6 +89,14 @@ public class Usuario implements Serializable{
 			return Cantidad-nuevo.getCantidad();
 	}
 
+	public int[] getPuntaje() {
+		return Puntaje;
+	}
+
+	public void setPuntaje(int[] puntaje) {
+		Puntaje = puntaje;
+	}
+
 	public void inorden(ArrayList<Object> objeto) {
 		if(izq != null)
 			izq.inorden(objeto);
@@ -95,9 +107,13 @@ public class Usuario implements Serializable{
 	
 
 	
-	private void calcularPuntaje() {
-		// TODO Auto-generated method stub
-		
+	private void calcularPuntaje(Tweet l) {
+		if(l != null) {
+			Puntaje[0] += l.getPuntajes()[0];
+			Puntaje[1] += l.getPuntajes()[1];
+			Puntaje[2] += l.getPuntajes()[2];
+			calcularPuntaje(l.getSiguiente());
+		}
 	}
 	
 }

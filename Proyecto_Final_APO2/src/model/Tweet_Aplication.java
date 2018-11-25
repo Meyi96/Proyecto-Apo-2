@@ -29,7 +29,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	private ArrayList<String> NombreArchivos;
 	
 	public Tweet_Aplication() throws IOException, ClassNotFoundException {
-		usuarioRaiz = new Usuario("", "", "", null,0);
+		usuarioRaiz = new Usuario("", "", "", null,0,null);
 		try {
 			File wr = new File("./Persistencia/Aplicacion/Aplicacion_persistente");
 			FileInputStream wow = new FileInputStream(wr);

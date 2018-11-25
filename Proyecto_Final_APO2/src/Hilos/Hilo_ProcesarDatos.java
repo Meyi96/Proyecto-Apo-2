@@ -64,7 +64,7 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 			}
 	
 			
-			Tweet lista_t = new Tweet("", null, "0", "0");
+			Tweet lista_t = new Tweet("", null, "0", "0",null);
 			contador = 0;
 			dato = Texto_Bruto.get(contador);
 			
@@ -72,12 +72,17 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 			
 			int cantidad = 0;
 			
+			int Puntaje_Usuario[] = new int[3];
+			
 			while(dato != null && dato.compareTo("Who to follow ·  Refresh · View all") != 0) {
 				Tweet temp;
 				if(dato.compareTo("Verified account") == 0) {
 					a = recopilarTweet(Texto_Bruto,contador+1,nombre_Usuario);
 					temp = (Tweet)a[0];
 					contador = (int)a[1];
+					Puntaje_Usuario[0] += temp.getPuntajes()[0];
+					Puntaje_Usuario[1] += temp.getPuntajes()[1];
+					Puntaje_Usuario[2] += temp.getPuntajes()[2];
 					lista_t.agregarUltimo(temp);
 					cantidad++;
 				}
@@ -90,7 +95,7 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 			System.out.println(seguidores);
 			System.out.println(seguidos);
 			
-			creado = new Usuario(nombre_Usuario, seguidores, seguidos, lista_t ,cantidad);
+			creado = new Usuario(nombre_Usuario, seguidores, seguidos, lista_t ,cantidad,Puntaje_Usuario);
 			rd.close();
 		}catch(IOException e) {
 			e.printStackTrace();
@@ -122,6 +127,8 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		String reTweets = "";
 		boolean seguir = false;
 		
+		int Puntaje_Tweet[] = new int[3];
+		
 		while(!seguir && dato != null && dato.compareTo("Verified account") != 0 && dato.compareTo("Who to follow ·  Refresh · View all") != 0) {
 			String herramienta[] = dato.split(" ");
 			if(herramienta.length >= 6 && herramienta[herramienta.length-1].compareTo("message") == 0 && herramienta[herramienta.length-2].compareTo("Direct") == 0) {
@@ -134,6 +141,9 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 			}else if(!seguir && dato.compareTo("Who to follow ·  Refresh · View all") != 0){
 				for (int i = 0; i < herramienta.length; i++) {
 					int puntos[] = identificarPalabra(herramienta[i]);
+					Puntaje_Tweet[0] += puntos[0];
+					Puntaje_Tweet[1] += puntos[1];
+					Puntaje_Tweet[2] += puntos[2];
 					salida.agregarUltimo(new Palabra(herramienta[i],puntos));
 				}
 			}else if(herramienta.length >= 2 && herramienta[herramienta.length-1].compareTo("Retweeted") == 0){
@@ -153,7 +163,7 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		System.out.println();
 		System.out.println(dato+" "+c+" TWEET ACABANDO de procesar");
 		System.out.println();
-		temp = new Tweet(fecha, salida, likes, reTweets);
+		temp = new Tweet(fecha, salida, likes, reTweets, Puntaje_Tweet);
 		
 		Object fin[] = {temp,c-1};
 		
