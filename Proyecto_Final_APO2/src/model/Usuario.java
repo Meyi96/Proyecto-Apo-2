@@ -10,6 +10,7 @@ public class Usuario implements Serializable{
 	private String seguidores;
 	private String  seguidos;
 	private int Cantidad;
+	private int Puntaje[];
 	private Usuario izq;
 	private Usuario der;
 	
@@ -20,8 +21,9 @@ public class Usuario implements Serializable{
 		this.seguidos = seguidos;
 		this.lista_tweets = lista_tweets;
 		this.Cantidad = Cantidad;
+		calcularPuntaje();
 	}
-	
+
 	public String getNombre() {
 		return Nombre;
 	}
@@ -91,5 +93,11 @@ public class Usuario implements Serializable{
 			der.inorden(objeto);
 	}
 	
+
+	
+	private void calcularPuntaje() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

@@ -3,17 +3,20 @@ package model;
 import java.io.Serializable;
 
 public class Tweet implements Serializable{
-	Tweet siguiente;
-	String Fecha;
-	Palabra primera_Palabra;
-	String likes;
-	String reTweets;
+	private Tweet siguiente;
+	private String Fecha;
+	private Palabra primera_Palabra;
+	private String likes;
+	private String reTweets;
+	private int puntajes[];
+	
 	
 	public Tweet(String Fecha,Palabra parrafo,String likes2,String reTweets2) {
 		this.Fecha = Fecha;
 		this.primera_Palabra = parrafo;
 		this.likes = likes2;
 		this.reTweets = reTweets2;
+		calcularPuntajes();
 	}
 
 	public Tweet getSiguiente() {
@@ -41,5 +44,11 @@ public class Tweet implements Serializable{
 		
 	}
 	
+
+
+	private void calcularPuntajes() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
