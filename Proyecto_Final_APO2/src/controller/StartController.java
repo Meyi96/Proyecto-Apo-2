@@ -71,10 +71,17 @@ public class StartController implements Initializable {
     }
 
     @FXML
-    void more(ActionEvent event) {
+    void more(ActionEvent event) throws IOException{
     	System.out.println(Main.getN());
     	hilo.stop();
     	System.out.println(Main.getN());
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(getClass().getResource("/View/Tendencias.fxml"));
+    	Parent parent = loader.load();
+    	Scene scene = new Scene(parent);
+    	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+    	stage.setScene(scene);
+    	stage.show();
     }
 
     @FXML
