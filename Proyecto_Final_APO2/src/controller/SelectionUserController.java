@@ -1,8 +1,10 @@
 package controller;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import View.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import model.Usuario;
 
 public class SelectionUserController  implements Initializable{
 
@@ -22,6 +25,7 @@ public class SelectionUserController  implements Initializable{
 
 	    @FXML
 	    private Button selection;
+	    
 	    
 	    @FXML
 	    void back(MouseEvent event) throws IOException {
@@ -61,7 +65,15 @@ public class SelectionUserController  implements Initializable{
 
 	    @FXML
 	    void orderName(ActionEvent event) {
-
+	    	usersListView.getItems().setAll("");
+	    	ArrayList<Object> usuarios = new ArrayList<Object>();
+	    	Main.getN().ordenamiento(usuarios, 'n');
+	    	for (int j = 0; j < usuarios.size() ; j++) {
+	    		String dato = ((Usuario)usuarios.get(j)).getNombre() + " Cantidad de tweets: " 
+	    				+ ((Usuario)usuarios.get(j)).getCantidad();
+	    		usersListView.getItems().add(dato);
+			}
+	    	
 	    }
 
 	    @FXML

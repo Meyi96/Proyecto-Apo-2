@@ -77,10 +77,10 @@ public class Usuario implements Serializable{
 	}
 	
 	public int compareTo(Usuario nuevo) {
-		if(Nombre.compareTo(nuevo.getNombre())==0) 
-			return Cantidad-nuevo.getCantidad();
-		else
+		if(Cantidad-nuevo.getCantidad()==0) 
 			return Nombre.compareTo(nuevo.getNombre());
+		else
+			return Cantidad-nuevo.getCantidad();
 	}
 
 	public void inorden(ArrayList<Object> objeto) {
