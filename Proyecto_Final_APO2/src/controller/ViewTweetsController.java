@@ -8,14 +8,17 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import model.Tweet;
 
 public class ViewTweetsController {
-	@FXML
-    private TextArea dataTextArea;
 
+	@FXML
+    private ListView<Tweet> dataListView;
+	
     @FXML
     private Label nameLabel;
 
@@ -46,7 +49,6 @@ public class ViewTweetsController {
     @FXML
     void clean(ActionEvent event) {
     	newTweetTextArea.setText("");
-    	dataTextArea.setText("nelson me la pela es un Hpta racista, que le gusta la verg...");
     }
 
     @FXML
