@@ -202,7 +202,10 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	@Override
 	public void ordenamiento(ArrayList<Object> objeto, char tipo) {
 		switch (tipo) {
-		case 'n': usuarioRaiz.inorden(objeto);
+		case 'n': {
+			usuarioRaiz.inorden(objeto);
+			objeto.remove(0);
+		}
 			break;
 		case 't': OrdenamientoNumeroTweets(objeto);
 
@@ -220,6 +223,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	*/
 	private void OrdenamientoNumeroTweets(ArrayList<Object> objeto) {
 		usuarioRaiz.inorden(objeto);
+		objeto.remove(0);
 		for (int i = 0; i < objeto.size(); i++) {
 			for (int j = 0; j+1 < objeto.size(); j++) {
 				Usuario a = (Usuario)objeto.get(j);
@@ -262,7 +266,10 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	 */
 	public void darHashtags(ArrayList<Object> objeto, char tipo) {
 		switch (tipo) {
-		case 'o': tendencias.darHashtags(objeto);
+		case 'o': {
+			tendencias.darHashtags(objeto);
+			objeto.remove(0);
+		}
 			break;
 		case 'a': ordernarHashtags(objeto);
 
@@ -279,6 +286,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	 */
 	private void ordernarHashtags(ArrayList<Object> objeto) {
 		tendencias.darHashtags(objeto);
+		objeto.remove(0);
 		for (int i = 1; i < objeto.size(); i++) {
 			Hashtag temp = (Hashtag)objeto.get(i);
 			for(int j = i; j > 0 && temp.compareTo((Hashtag)objeto.get(j-1)) > 0; j--) {

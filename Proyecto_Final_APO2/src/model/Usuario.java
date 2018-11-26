@@ -107,17 +107,19 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 	}
 
 	public void inorden(ArrayList<Object> objeto) {
-		if(izq != null)
-			izq.inorden(objeto);
-		objeto.add(this);
-		if(der != null)
-			der.inorden(objeto);
+			if(izq != null)
+				izq.inorden(objeto);
+			objeto.add(this);
+			if(der != null)
+				der.inorden(objeto);
 	}
 	
-
+	
 	public void ordenamiento(ArrayList<Object> objeto, char tipo) {
 		switch (tipo) {
-		case 'n': lista_tweets.obtenerTweets(objeto);
+		case 'n': {
+			lista_tweets.obtenerTweets(objeto);
+		}
 			break;
 		case 'o': OrdenamientoNumeroTweets(objeto);
 
