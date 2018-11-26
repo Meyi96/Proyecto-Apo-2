@@ -197,21 +197,15 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 				}
 			}else if(herramienta.length >= 2 && herramienta[herramienta.length-1].compareTo("Retweeted") == 0){
 				seguir = true;
-				System.out.println("No agregado ");
 			}
 			
 			salida.agregar(new Palabra("\n",null));
 			c++;
 			Cont_en_Tweet++;
 			dato = t.get(c);
-			System.out.println();
-			System.out.println(dato+" //  "+c+"   // Procesando TWEET");
-			System.out.println();
 		}
 		
-		System.out.println();
-		System.out.println(dato+" "+c+" TWEET ACABANDO de procesar");
-		System.out.println();
+		
 		temp = new Tweet(fecha, salida, likes, reTweets, Puntaje_Tweet);
 		
 		Object fin[] = {temp,c-1};
@@ -233,7 +227,6 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		if(s.length()>=6 && s.substring(0, 5).compareToIgnoreCase("http:") == 0) {
 			Link temp = new Link(s,null);
 			primer_link.agregar(temp);
-			System.out.println(s+"                                       //// Es un LINK");
 		}else if(s.length()>=1 && s.substring(0, 1).compareToIgnoreCase("#") == 0){
 			Hashtag temp = new Hashtag(s, null, 0);
 			if(hashtags.contiene(s)) {
@@ -241,7 +234,6 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 			}else {
 				hashtags.agregar(temp);
 			}
-			System.out.println(s+"                                        //// Es un HASHTAG");
 		}else {
 			PalabraRelevante temp = raiz_relevantes.buscarPalabra(s);
 			if(temp != null) {
