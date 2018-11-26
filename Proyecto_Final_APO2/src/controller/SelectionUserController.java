@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.ResourceBundle;
 
+import MyException.PosicionNoExistenteException;
 import View.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,8 +14,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.Usuario;
@@ -30,6 +33,7 @@ public class SelectionUserController  implements Initializable{
 	    
 	    @FXML
 	    void back(MouseEvent event) throws IOException {
+	    	Main.getN().setUsuarioActual(null);
 	    	FXMLLoader loader = new FXMLLoader();
 	    	loader.setLocation(getClass().getResource("/View/Start.fxml"));
 	    	Parent parent = loader.load();
@@ -42,31 +46,37 @@ public class SelectionUserController  implements Initializable{
 	    @FXML
 	    void filterNTweets(ActionEvent event) {
 	    	selection.setVisible(false);
+	    	Main.getN().setUsuarioActual(null);
 	    }
 
 	    @FXML
 	    void filterPolitics(ActionEvent event) {
 	    	selection.setVisible(false);
+	    	Main.getN().setUsuarioActual(null);
 	    }
 
 	    @FXML
 	    void filterSport(ActionEvent event) {
 	    	selection.setVisible(false);
+	    	Main.getN().setUsuarioActual(null);
 	    }
 
 	    @FXML
 	    void filterTechnology(ActionEvent event) {
 	    	selection.setVisible(false);
+	    	Main.getN().setUsuarioActual(null);
 	    }
 
 	    @FXML
 	    void orderNTweets(ActionEvent event) {
 	    	usersListView.getItems().addAll(inicioOrden('t'));
+	    	Main.getN().setUsuarioActual(null);
 	    }
 
 	    @FXML
 	    void orderName(ActionEvent event) {
 	    	usersListView.getItems().addAll(inicioOrden('n'));
+	    	Main.getN().setUsuarioActual(null);
 	    }
 
 	    @FXML
@@ -76,7 +86,7 @@ public class SelectionUserController  implements Initializable{
 	    	loader.setLocation(getClass().getResource("/View/ViewTweets.fxml"));
 	    	Parent parent = loader.load();
 	    	ViewTweetsController controller = (ViewTweetsController)loader.getController();
-	    	controller.usuarioSeleccionado((Usuario)usuarios.get(usersListView.getSelectionModel().getSelectedIndex()));
+	    	controller.usuarioSeleccionado(Main.getN().getUsuarioActual());
 	    	Scene scene = new Scene(parent);
 	    	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 	    	stage.setScene(scene);
@@ -85,12 +95,24 @@ public class SelectionUserController  implements Initializable{
 
 	    @FXML
 	    void userSelectionList(MouseEvent event) {
-	    	selection.setVisible(true);
+	    	if(usersListView.getSelectionModel().getSelectedIndex() != -1) {
+	    		Main.getN().setUsuarioActual((Usuario)usuarios.get(usersListView.getSelectionModel().getSelectedIndex()));
+	    		selection.setVisible(true);
+	    	}else {
+				try {
+					throw new PosicionNoExistenteException();
+				} catch (PosicionNoExistenteException e) {
+					Alert alert = new Alert(AlertType.INFORMATION);
+		    		alert.setContentText(e.getMessage());
+		    		alert.showAndWait();
+				}
+	    	}
 	    }
 
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
 			usersListView.getItems().addAll(inicioOrden('n'));
+			
 		}
 		
 		public Collection<String>inicioOrden(char tipo){

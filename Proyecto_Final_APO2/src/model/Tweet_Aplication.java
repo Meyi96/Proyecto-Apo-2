@@ -34,6 +34,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	private Link tendenciasLinks;
 	private ArrayList<Hilo_ProcesarDatos> Datos;
 	private ArrayList<String> NombreArchivos;
+	private Usuario usuarioActual;
 	
 	/**
 	 * Tweet_Aplication - Metodo constructor de la clase, se cargan los datos de prueba
@@ -49,6 +50,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	 */
 	public Tweet_Aplication() throws IOException, ClassNotFoundException, URISyntaxException {
 		usuarioRaiz = new Usuario("", "", "", null,0,null);
+		usuarioActual = null;
 		try {
 			File wr = new File("./Persistencia/Aplicacion/Aplicacion_persistente");
 			FileInputStream wow = new FileInputStream(wr);
@@ -92,6 +94,14 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		}
 	}
 	
+	public Usuario getUsuarioActual() {
+		return usuarioActual;
+	}
+
+	public void setUsuarioActual(Usuario usuarioActual) {
+		this.usuarioActual = usuarioActual;
+	}
+
 	/**
 	 * RegistrarUsuario - Metodo para agregar usuarios apartir de texto en bruto
 	 * @throws IOException
@@ -209,7 +219,11 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		}
 			break;
 		case 't': OrdenamientoNumeroTweets(objeto);
-
+			break;
+		case 'o': usuarioActual.ordenamiento(objeto, tipo);
+			break;
+		case 'a': usuarioActual.ordenamiento(objeto, tipo);
+			break;
 		default:
 			break;
 		}
@@ -235,16 +249,6 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 				}
 			}
 		}
-	}
-	
-	/**
-	 * tweetsOrdenados - Metodo que realiza la llamada al metodo de ordenar Tweets de usuario
-	 * @param objeto Es el Arraylist de objetos a organizar	objeto != null
-	 * @param tipo Es un caracter que identifica el tipo de objeto en el ArrayList	tipo != null	tipo != ''
-	 * @param actual Es el usuario que posee los Tweets actual != null 
-	 */
-	public void tweetsOrdenados(ArrayList<Object> objeto, char tipo, Usuario actual) {
-		actual.ordenamiento(objeto, tipo);
 	}
 	
 	/**

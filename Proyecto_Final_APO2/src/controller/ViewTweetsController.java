@@ -36,7 +36,7 @@ public class ViewTweetsController implements Initializable{
     @FXML
     void OrderFecha(ActionEvent event) {
     	dataListView.getItems().clear();
-    	dataListView.getItems().addAll(inicioOrden('n'));
+    	dataListView.getItems().addAll(inicioOrden('a'));
     }
 
     @FXML
@@ -68,14 +68,14 @@ public class ViewTweetsController implements Initializable{
     
     public void usuarioSeleccionado(Usuario seleccionado) {
     	this.seleccionado = seleccionado;
-    	dataListView.getItems().addAll(inicioOrden('n'));
+    	dataListView.getItems().addAll(inicioOrden('a'));
     }
     
     public Collection<String>inicioOrden(char tipo){
 		dataListView.getItems().clear();
     	ArrayList<Object> tweets = new ArrayList<Object>();
     	Collection<String> datos = new ArrayList<String>();
-    	Main.getN().tweetsOrdenados(tweets, tipo, seleccionado);
+    	Main.getN().ordenamiento(tweets, tipo);
     	for (int j = 1; j < tweets.size() ; j++) {
     		String s = " ";
     		String dato = ((Tweet)tweets.get(j)).getTweetEntero(s) + " \nPuntaje: "+((Tweet)tweets.get(j)).calcularPuntajeTotal();
