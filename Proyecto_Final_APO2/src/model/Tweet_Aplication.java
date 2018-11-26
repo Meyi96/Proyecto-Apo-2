@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.LineNumberInputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
@@ -187,4 +188,13 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			}
 		}
 	}
+	
+	public void tweetsOrdenados(ArrayList<Object> objeto, char tipo, Usuario actual) {
+		actual.ordenamiento(objeto, tipo);
+	}
+	
+	public Usuario buscarUsuario(String usuario) {
+		return usuarioRaiz.buscarUsuario(usuario);
+	}
+	
 }

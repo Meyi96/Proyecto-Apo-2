@@ -74,6 +74,8 @@ public class SelectionUserController  implements Initializable{
 	    	FXMLLoader loader = new FXMLLoader();
 	    	loader.setLocation(getClass().getResource("/View/ViewTweets.fxml"));
 	    	Parent parent = loader.load();
+	    	ViewTweetsController controller = (ViewTweetsController)loader.getController();
+	    	controller.usuarioSeleccionado(Main.getN().buscarUsuario(usersListView.getSelectionModel().getSelectedItem()));
 	    	Scene scene = new Scene(parent);
 	    	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 	    	stage.setScene(scene);
@@ -88,7 +90,7 @@ public class SelectionUserController  implements Initializable{
 
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
-			usersListView.getItems().addAll("Esto","es","una","prueba");
+			usersListView.getItems().addAll(inicioOrden('n'));
 		}
 		
 		public Collection<String>inicioOrden(char tipo){
@@ -97,8 +99,7 @@ public class SelectionUserController  implements Initializable{
 	    	Collection<String> datos = new ArrayList<String>();
 	    	Main.getN().ordenamiento(usuarios, tipo);
 	    	for (int j = 0; j < usuarios.size() ; j++) {
-	    		String dato = ((Usuario)usuarios.get(j)).getNombre() + " Cantidad de tweets: " 
-	    				+ ((Usuario)usuarios.get(j)).getCantidad();
+	    		String dato = ((Usuario)usuarios.get(j)).getNombre();
 	    		datos.add(dato);
 			}
 	    	return datos;

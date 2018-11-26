@@ -21,7 +21,8 @@ public class Hilo_Interfaz extends Thread{
 			try {
 				sleep(140);
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+				Thread.currentThread().interrupt();
+				return;
 			}
 			a++;
 			if(a==4) {

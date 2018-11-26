@@ -42,12 +42,12 @@
          </font>
       </Label>
       <TextArea fx:id="newTweetTextArea" layoutX="32.0" layoutY="465.0" prefHeight="84.0" prefWidth="419.0" promptText="Agrega aqui un Tweet" />
-      <Button alignment="CENTER" layoutX="164.0" layoutY="49.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#OrderNWord" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="# Palabras" textAlignment="CENTER" textFill="#40a7f5">
+      <Button alignment="CENTER" layoutX="164.0" layoutY="49.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#OrderFecha" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="Fecha" textAlignment="CENTER" textFill="#40a7f5">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="289.0" layoutY="49.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#orderDate" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #ffffff;" text="Fecha" textAlignment="CENTER" textFill="#40a7f5">
+      <Button alignment="CENTER" layoutX="289.0" layoutY="49.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#orderPuntajeLikes" prefHeight="26.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="Puntaje-Likes" textAlignment="CENTER" textFill="#40a7f5">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>

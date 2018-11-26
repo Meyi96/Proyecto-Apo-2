@@ -92,10 +92,17 @@ public class Tweet implements Serializable,Agregar{
 	public void obtenerTweets(ArrayList<Object> object, Tweet actual) {
 		if(actual.getSiguiente() == null) {
 			object.add(actual);
-			obtenerTweets(object, actual.getSiguiente());
 		}else {
 			object.add(actual);
+			obtenerTweets(object, actual.getSiguiente());
 		}
 	}
 	
+	public void tweetsOrdenados(ArrayList<Object> objeto, char tipo, Usuario actual) {
+		actual.ordenamiento(objeto, tipo);
+	}
+	
+	public String getTweetEntero(String s) {
+		return primera_Palabra.getTweetEntero(s);
+	}
 }

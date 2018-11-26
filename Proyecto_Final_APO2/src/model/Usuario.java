@@ -128,7 +128,7 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 	
 	private void OrdenamientoNumeroTweets(ArrayList<Object> objeto) {
 		lista_tweets.obtenerTweets(objeto, lista_tweets);
-		for (int i = 0; i < objeto.size()-1; i++) {
+		for (int i = 1; i < objeto.size()-1; i++) {
 			Tweet mayor = (Tweet)objeto.get(i);
 			int cual = i;
 			for (int j = i+1; j < objeto.size(); j++) {
@@ -141,6 +141,16 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 			Tweet temp = (Tweet)objeto.get(i);
 			objeto.set(i, mayor);
 			objeto.set(cual, temp);
+		}
+	}
+	
+	public Usuario buscarUsuario(String usuario) {
+		if (Nombre.compareTo(usuario) == 0) {
+			return this;
+		} else if (Nombre.compareTo(usuario) > 0) {
+			return (izq == null) ? null : izq.buscarUsuario(usuario);
+		} else {
+			return (der == null) ? null : der.buscarUsuario(usuario);
 		}
 	}
 	

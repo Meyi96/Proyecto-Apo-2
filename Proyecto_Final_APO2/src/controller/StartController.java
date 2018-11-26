@@ -60,7 +60,7 @@ public class StartController implements Initializable {
 
     @FXML
     void addUser(ActionEvent event) throws IOException {
-    	hilo.stop();
+    	hilo.interrupt();
     	FXMLLoader loader = new FXMLLoader();
     	loader.setLocation(getClass().getResource("/View/NewUser.fxml"));
     	Parent parent = loader.load();
@@ -73,7 +73,7 @@ public class StartController implements Initializable {
     @FXML
     void more(ActionEvent event) throws IOException{
     	System.out.println(Main.getN());
-    	hilo.stop();
+    	hilo.interrupt();
     	System.out.println(Main.getN());
     	FXMLLoader loader = new FXMLLoader();
     	loader.setLocation(getClass().getResource("/View/Tendencias.fxml"));
@@ -86,7 +86,7 @@ public class StartController implements Initializable {
 
     @FXML
     void searchUser(ActionEvent event) throws IOException {
-    	hilo.stop();
+        hilo.interrupt();
     	FXMLLoader loader = new FXMLLoader();
     	loader.setLocation(getClass().getResource("/View/SelectionUser.fxml"));
     	Parent parent = loader.load();

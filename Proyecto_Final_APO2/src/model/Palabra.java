@@ -72,5 +72,12 @@ public class Palabra implements Serializable, Agregar{
 		}
 	}
 	
+	public String getTweetEntero(String s) {
+		if(siguiente_palabra == null) {
+			return s += this.palabra;
+		}else {
+			return s += this.palabra + " " + siguiente_palabra.getTweetEntero(s);
+		}
+	}
 	
 }
