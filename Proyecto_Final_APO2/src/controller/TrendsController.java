@@ -42,29 +42,29 @@ public class TrendsController implements Initializable{
     @FXML
     void ordenOriginal(ActionEvent event) {
     	hashatagListView.getItems().clear();
-		hashatagListView.getItems().addAll(inicioOrden('o'));
+		hashatagListView.getItems().addAll(inicioOrden('e'));
     }
 
     @FXML
     void ordenarAparicionLexi(ActionEvent event) {
     	hashatagListView.getItems().clear();
-		hashatagListView.getItems().addAll(inicioOrden('a'));
+		hashatagListView.getItems().addAll(inicioOrden('i'));
     }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		hashatagListView.getItems().clear();
-		hashatagListView.getItems().addAll(inicioOrden('o'));
+		hashatagListView.getItems().addAll(inicioOrden('e'));
 	}
 	
 	public Collection<String> inicioOrden(char tipo){
 		hashatagListView.getItems().clear();
     	ArrayList<Object> hashtag = new ArrayList<Object>();
     	Collection<String> datos = new ArrayList<String>();
-    	Main.getN().darHashtags(hashtag, tipo);
+    	Main.getN().ordenamiento(hashtag, tipo);
     	for (int j = 0; j < hashtag.size() ; j++) {
     		String s = " ";
-    		String dato = ((Hashtag)hashtag.get(j)).getPalabra();
+    		String dato = ((Hashtag)hashtag.get(j)).getPalabra() + " Se repite: "+ ((Hashtag)hashtag.get(j)).getRepeticiones();
     		datos.add(dato);
 		}
     	return datos;

@@ -224,6 +224,12 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			break;
 		case 'a': usuarioActual.ordenamiento(objeto, tipo);
 			break;
+		case 'e': {
+			tendencias.darHashtags(objeto);
+			objeto.remove(0);
+		}
+			break;
+		case 'i': ordernarHashtags(objeto);
 		default:
 			break;
 		}
@@ -262,26 +268,6 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		return usuarioRaiz.buscarUsuario(usuario);
 	}
 	
-	/**
-	 * darHashtags - Metodo para obtener una coleccion de Hashtagas ordenados o no
-	 * @param objeto Un Arraylist de de objetos Hashtags objeto != null objeto solo contiene Hashtags
-	 * @param tipo Un caracter indicando el tipo de coleccion que se quiere retornar	tipo != null	tipo != ''
-	 * pre: tendencias esta incializado
-	 * pos: El ArrayList de objetos queda ordenado si el caracter tipo = 'o'
-	 */
-	public void darHashtags(ArrayList<Object> objeto, char tipo) {
-		switch (tipo) {
-		case 'o': {
-			tendencias.darHashtags(objeto);
-			objeto.remove(0);
-		}
-			break;
-		case 'a': ordernarHashtags(objeto);
-
-		default:
-			break;
-		}
-	}
 	
 	/**
 	 * ordernarHashtags - Metodo que ordena con el metodo burbuja los Hashtags
