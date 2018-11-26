@@ -8,6 +8,12 @@ public class Hashtag extends Palabra implements Serializable, Agregar{
 	private int repeticiones;
 	private Hashtag siguienteHashtag;
 	
+	/**
+	 * Hashtag - Metodo constructor de la clase Hashtag
+	 * @param palabra - Un {@link String} con la informacion de la palabra	palabra != null palabra != ""
+	 * @param puntuaciones - Una arreglo de int con la puntuacion en cada categoria puntuaciones != null
+	 * @param repeticiones - Un entero que representa la cantidad de repeticiones de la palabra	repeticiones != null
+	 */
 	public Hashtag(String palabra, int[] puntuaciones,int repeticiones) {
 		super(palabra, puntuaciones);
 		this.repeticiones = repeticiones;

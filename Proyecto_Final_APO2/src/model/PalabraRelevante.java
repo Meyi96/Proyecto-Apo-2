@@ -10,8 +10,8 @@ public class PalabraRelevante  extends Palabra implements Serializable,Agregar{
 	
 	/**
 	 * PalabraRelevante - Metodo constructor de la clase
-	 * @param palabra
-	 * @param puntuaciones
+	 * @param palabra - Un {@link String} con la informacion de la palabra	palabra != null palabra != ""
+	 * @param puntuaciones - Una arreglo de int con la puntuacion en cada categoria puntuaciones != null
 	 * pos : palabra se inicializa
 	 * pos : puntucion se inicializa
 	 * pos : der se incializa
@@ -47,7 +47,7 @@ public class PalabraRelevante  extends Palabra implements Serializable,Agregar{
 	}
 	/**
 	 * AgregarRelevante - Metodo para agregar la {@link PalabraRelevante} a al arbol
-	 * @param a La {@link PalabraRelevante} que se quiere agregar
+	 * @param a La {@link PalabraRelevante} que se quiere agregar a != null
 	 * pos : Se agrega una {@link PalabraRelevante} al arbol de busqueda
 	 */
 	public void AgregarRelevante(PalabraRelevante a) {
