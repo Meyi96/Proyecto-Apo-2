@@ -92,7 +92,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	/**
 	 * RegistrarUsuario - Metodo para agregar usuarios apartir de texto en bruto
 	 * @throws IOException
-	 * @param data : Texto en bruto traido desde Twiter
+	 * @param data : Texto en bruto traido desde Twiter data != null data != ""
 	 * pre: Arraylist de datos debe esta inicializado
 	 * pre: usuarioRaiz debe estar inicializado
 	 * pos: Se agrega un objeto al arbol de usuarios usuarioRaiz
@@ -213,9 +213,8 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	
 	/**
 	 * OrdenamientoNumeroTweets - Metodo para ordenar una coleccion de Usuarios por el metodo burbuja
-	 * @param objeto
+	 * @param objeto : Es el Arraylist de usuarios a organizar	objeto != null
 	 * pre: usuarioRaiz debe estar inicializado
-	 * pre: objeto esta inicializado
 	*/
 	private void OrdenamientoNumeroTweets(ArrayList<Object> objeto) {
 		usuarioRaiz.inorden(objeto);
@@ -232,22 +231,36 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	}
 	
 	/**
-	 * tweetsOrdenados - Metodo para ordenar Tweets
-	 * @param objeto
-	 * @param tipo
-	 * @param actual
+	 * tweetsOrdenados - Metodo que realiza la llamada al metodo de ordenar Tweets de usuario
+	 * @param objeto Es el Arraylist de objetos a organizar	objeto != null
+	 * @param tipo Es un caracter que identifica el tipo de objeto en el ArrayList	tipo != null	tipo != ''
+	 * @param actual Es el usuario que posee los Tweets actual != null 
 	 */
 	public void tweetsOrdenados(ArrayList<Object> objeto, char tipo, Usuario actual) {
 		actual.ordenamiento(objeto, tipo);
 	}
 	
+	/**
+	 * buscarUsuario - Metodo para buscar usuarios en el arbol de Usuarios
+	 * @param usuario : Nombre del usuario a buscar en el el arbol de usuarios	usuario != null	usuario != ""
+	 * @return  El usuario que posee ese nombre, en caso de no encontrarlo devulve null
+	 * pre: usuarioRaiz debe estar incializado
+	 */
+	
 	public Usuario buscarUsuario(String usuario) {
 		return usuarioRaiz.buscarUsuario(usuario);
 	}
 	
+	/**
+	 * darHashtags - Metodo para obtener una coleccion de Hashtagas ordenados o no
+	 * @param objeto Un Arraylist de de objetos Hashtags objeto != null objeto solo contiene Hashtags
+	 * @param tipo Un caracter indicando el tipo de coleccion que se quiere retornar	tipo != null	tipo != ''
+	 * pre: tendencias esta incializado
+	 * pos: El ArrayList de objetos queda ordenado si el caracter tipo = 'o'
+	 */
 	public void darHashtags(ArrayList<Object> objeto, char tipo) {
 		switch (tipo) {
-		case 'o': tendencias.darHashtags(objeto);;
+		case 'o': tendencias.darHashtags(objeto);
 			break;
 		case 'a': ordernarHashtags(objeto);
 
@@ -256,6 +269,12 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		}
 	}
 	
+	/**
+	 * ordernarHashtags - Metodo que ordena con el metodo burbuja los Hashtags
+	 * @param objeto objeto Un Arraylist de de objetos Hashtags objeto != null objeto solo contiene Hashtags
+	 * pre : tendencias esta incializado
+	 * pos : El Arraylist de objeto queda ordenado
+	 */
 	private void ordernarHashtags(ArrayList<Object> objeto) {
 		tendencias.darHashtags(objeto);
 		for (int i = 1; i < objeto.size(); i++) {

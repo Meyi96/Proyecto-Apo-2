@@ -25,6 +25,17 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 	private Hashtag hashtags;
 	private PalabraRelevante raiz_relevantes;
 	
+	/**
+	 * Hilo_ProcesarDatos - Metodo constructor de la clase
+	 * @param primer_link Una lista de tipo Link con todos los links del Usuario 	primer_link != null
+	 * @param hashtags	Una lista de Hashtag con todos los hashtag del Usuario	hashtags != null
+	 * @param raiz_relevantes Un arbol binario de busqueda de PalabraRelevante raiz_relevante != null
+	 * @param nombre_archivo Un String indicando el nombre del archivo donde se guardo la información del usuario
+	 * pos : primer_link queda inicializado
+	 * pos : hashtags queda inicializado
+	 * pos : raiz_relevante queda inicializado
+	 * pos : nombre_archivo queda inicializado
+	 */
 	public Hilo_ProcesarDatos(Link primer_link, Hashtag hashtags, PalabraRelevante raiz_relevantes, String nombre_archivo) {
 		super();
 		this.primer_link = primer_link;
@@ -33,6 +44,16 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		this.nombre_archivo = nombre_archivo;
 	}
 	
+	/**
+	 * run - Metodo para proceasar la informacion del usuario y crear un nuevo Usuario
+	 * pre : primer_link queda inicializado
+	 * pre : hashtags queda inicializado
+	 * pre : raiz_relevante queda inicializado
+	 * pre : nombre_archivo queda inicializado
+	 * pos : Se crea un nuevo Usuario con una lista de Tweet inicializada
+	 * pos : Se añaden objetos a primer_link
+	 * pos : Se añaden objetos a hashtags
+	 */
 	@Override
 	public void run(){
 		try {
@@ -103,19 +124,37 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 			
 	}
 	
+	/**
+	 * getCreado - Metodo que retorna el {@link Usuario} creado por el hilo
+	 * @return creado - El usuario creado por el hilo
+	 */
 	public Usuario getCreado() {
 		return creado;
 	}
 	
-	
+	/**
+	 * getPrimer_link - Metodo que retorna la lista de {@link Link} 
+	 * @return primer_link  - La lista de {@link Link}
+	 */
 	public Link getPrimer_link() {
 		return primer_link;
 	}
-
+	
+	/**
+	 * getHashtags - Metodo que retorna la lista de {@link Hashtag}
+	 * @return hashtags - La lis de {@link Hashtag}
+	 */
 	public Hashtag getHashtags() {
 		return hashtags;
 	}
-
+	
+	/**
+	 * recopilarTweet - Metodo para crear un Tweet
+	 * @param t - El ArrayList de String con todo el texto plano del usurio separado por " "	t != null
+	 * @param c - Un numero entero con el numero de linea que se está procesando en Arraylist	c != null c >= 15
+	 * @param n - Un String con el nombre del usuario n != null	n != ""
+	 * @return fin - Un arreglo de tipo {@link Object} que contiene el numero de la ultima linea que se estaba procesando y el Tweet creado
+	 */
 	private Object[] recopilarTweet(ArrayList<String> t, int c, String n) {
 		String dato = t.get(c);
 		Tweet temp;
@@ -132,11 +171,11 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		while(!seguir && dato != null && dato.compareTo("Verified account") != 0 && dato.compareTo("Who to follow Â·  Refresh Â· View all") != 0) {
 			String herramienta[] = dato.split(" ");
 			if(herramienta.length >= 6 && herramienta[herramienta.length-1].compareTo("message") == 0 && herramienta[herramienta.length-2].compareTo("Direct") == 0) {
-				reTweets = herramienta[3];
-				likes = herramienta[6];
+				reTweets = herramienta[5];
+				likes = herramienta[9];
 				seguir = true;	
-				System.out.println("No agregado por Herramienta   //// "+dato);
-			}else if(Cont_en_Tweet == 3) {
+				//System.out.println("No agregado por Herramienta   //// "+dato+ " LOL "+ herramienta[5] + " LOL "+herramienta[9]);
+			}else if(Cont_en_Tweet == 2) {
 				fecha = dato;
 			}else if(!seguir && dato.compareTo("Who to follow Â·  Refresh Â· View all") != 0){
 				for (int i = 0; i < herramienta.length; i++) {
@@ -169,7 +208,7 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		
 		return fin;
 	}
-
+	
 	private int[] identificarPalabra(String s) {
 		int salida[] = new int[3];
 		salida[0] = 0;
