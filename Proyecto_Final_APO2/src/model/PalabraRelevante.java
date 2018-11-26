@@ -8,12 +8,22 @@ public class PalabraRelevante  extends Palabra implements Serializable,Agregar{
 	PalabraRelevante izq;
 	PalabraRelevante der;
 	
+	/**
+	 * PalabraRelevante - Metodo constructor de la clase
+	 * @param palabra
+	 * @param puntuaciones
+	 */
 	public PalabraRelevante(String palabra, int[] puntuaciones) {
 		super(palabra, puntuaciones);
 		izq = null;
 		der = null;
 	}
-
+	
+	/**
+	 * buscarPalabra - Metodo para encontrar una {@link PalabraRelevante} a partir de un String
+	 * @param s - El String con el que se buscara la {@link PalabraRelevante} s != null s != ""
+	 * @return Una {@link PalabraRelevante} con la palabra buscada, si no se encuentra retorna null
+	 */
 	public PalabraRelevante buscarPalabra(String s) {
 		if(this.palabra.compareTo(s) == 0) {
 			return this;
@@ -31,7 +41,11 @@ public class PalabraRelevante  extends Palabra implements Serializable,Agregar{
 			}
 		}
 	}
-
+	/**
+	 * AgregarRelevante - Metodo para agregar la {@link PalabraRelevante} a al arbol
+	 * @param a La {@link PalabraRelevante} que se quiere agregar
+	 * pos : Se agrega una {@link PalabraRelevante} al arbol de busqueda
+	 */
 	public void AgregarRelevante(PalabraRelevante a) {
 		if(this.palabra.compareTo(a.getPalabra()) <= 0){
 			if(der != null) {

@@ -7,6 +7,12 @@ public class Palabra implements Serializable, Agregar{
 	protected String palabra;
 	protected Palabra siguiente_palabra;
 	protected int puntuaciones[];
+
+
+	public Palabra(String palabra,int puntuaciones[]) {
+		this.palabra = palabra;
+		this.puntuaciones = puntuaciones;
+	}
 	
 	public String getPalabra() {
 		return palabra;
@@ -14,11 +20,6 @@ public class Palabra implements Serializable, Agregar{
 
 	public void setPalabra(String palabra) {
 		this.palabra = palabra;
-	}
-
-	public Palabra(String palabra,int puntuaciones[]) {
-		this.palabra = palabra;
-		this.puntuaciones = puntuaciones;
 	}
 
 	public Palabra getSiguientePalabra() {
