@@ -8,7 +8,7 @@ public class Palabra implements Serializable, Agregar{
 	protected Palabra siguiente_palabra;
 	protected int puntuaciones[];
 
-
+	
 	public Palabra(String palabra,int puntuaciones[]) {
 		this.palabra = palabra;
 		this.puntuaciones = puntuaciones;

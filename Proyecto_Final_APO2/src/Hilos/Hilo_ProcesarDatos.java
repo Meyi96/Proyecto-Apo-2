@@ -181,6 +181,11 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 				//System.out.println("No agregado por Herramienta   //// "+dato+ " LOL "+ herramienta[5] + " LOL "+herramienta[9]);
 			}else if(Cont_en_Tweet == 2) {
 				fecha = dato;
+				int puntos[] = identificarPalabra(dato);
+				Puntaje_Tweet[0] += puntos[0];
+				Puntaje_Tweet[1] += puntos[1];
+				Puntaje_Tweet[2] += puntos[2];
+				salida.agregar(new Palabra(dato,puntos));
 			}else if(!seguir && dato.compareTo("Who to follow ·  Refresh · View all") != 0){
 				for (int i = 0; i < herramienta.length; i++) {
 					int puntos[] = identificarPalabra(herramienta[i]);
