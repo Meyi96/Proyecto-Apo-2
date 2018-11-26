@@ -226,7 +226,7 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		salida[2] = 0;
 		if(s.length()>=6 && s.substring(0, 5).compareToIgnoreCase("http:") == 0) {
 			Link temp = new Link(s,null);
-			primer_link.agregar(temp);
+			primer_link.agregarUltimoL(temp);
 		}else if(s.length()>=1 && s.substring(0, 1).compareToIgnoreCase("#") == 0){
 			Hashtag temp = new Hashtag(s, null, 0);
 			if(hashtags.contiene(s)) {

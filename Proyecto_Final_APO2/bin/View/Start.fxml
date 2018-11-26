@@ -77,5 +77,10 @@
             <Arc fx:id="semi2" fill="DODGERBLUE" layoutX="148.0" layoutY="20.0" length="180.0" radiusX="15.0" radiusY="15.0" startAngle="270.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
          </children>
       </AnchorPane>
+      <Button layoutX="370.0" layoutY="308.0" mnemonicParsing="false" onAction="#goLinks" prefHeight="30.0" prefWidth="93.0" style="-fx-background-color: #ffffff;" text="Links" textAlignment="CENTER" textFill="#40a7f5">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

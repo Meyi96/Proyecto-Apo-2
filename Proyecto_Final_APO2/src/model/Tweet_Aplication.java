@@ -230,6 +230,12 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		}
 			break;
 		case 'i': ordernarHashtags(objeto);
+			break;
+		case 'k':{ tendenciasLinks.darLinks(objeto);
+				objeto.remove(0);}
+			break;
+		case 'm': ordenarLinks(objeto);
+			break;
 		default:
 			break;
 		}
@@ -237,6 +243,21 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		
 	}
 	
+	private void ordenarLinks(ArrayList<Object> objeto) {
+		tendenciasLinks.darLinks(objeto);
+		objeto.remove(0);
+		for (int i = 0; i < objeto.size(); i++) {
+			for (int j = 0; j+1 < objeto.size() ; j++) {
+				Link a = (Link)objeto.get(j);
+				Link b = (Link)objeto.get(j+1);
+				if(a.compareTo(b)>0) {
+					objeto.set(j, b);
+					objeto.set(j+1, a);
+				}
+			}
+		}
+	}
+
 	/**
 	 * OrdenamientoNumeroTweets - Metodo para ordenar una coleccion de Usuarios por el metodo burbuja
 	 * @param objeto : Es el Arraylist de usuarios a organizar	objeto != null

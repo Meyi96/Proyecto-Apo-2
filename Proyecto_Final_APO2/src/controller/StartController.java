@@ -118,6 +118,17 @@ public class StartController implements Initializable {
     	addLabal.setVisible(true);
     }
     
+    @FXML
+    void goLinks(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(getClass().getResource("/View/TrendsLink.fxml"));
+    	Parent parent = loader.load();
+    	Scene scene = new Scene(parent);
+    	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+    	stage.setScene(scene);
+    	stage.show();
+    }
+    
     public void cambioColores(String[] color, int a) {
     	if(a ==1) {
     		cir1.setFill(Paint.valueOf(color[0]));

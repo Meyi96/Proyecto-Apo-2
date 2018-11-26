@@ -1,6 +1,7 @@
 package model;
 import java.io.Serializable;
 import java.net.*;
+import java.util.ArrayList;
 
 public class Link extends Palabra implements Serializable,Agregar{
 	static final long serialVersionUID = 42L;
@@ -16,11 +17,11 @@ public class Link extends Palabra implements Serializable,Agregar{
 		
 	}
 	
-	private void agregarUltimoL(Link temp) {
+	public void agregarUltimoL(Link temp) {
 		if(this.getSiguienteLink()== null) {
 			this.setSiguienteLink(temp);
 		}else {
-			this.getSiguienteLink().agregarUltimo(temp);
+			this.getSiguienteLink().agregarUltimoL(temp);
 		}
 		
 	}
@@ -44,6 +45,19 @@ public class Link extends Palabra implements Serializable,Agregar{
 
 	public void setIdentificador(URI identificador) {
 		this.identificador = identificador;
+	}
+	
+	public void darLinks(ArrayList<Object> links) {
+		if(siguienteLink == null)
+			links.add(this);
+		else {
+			links.add(this);
+			siguienteLink.darLinks(links);
+		}
+	}
+	
+	public int compareTo(Link nuevo) {
+		return super.palabra.compareTo(nuevo.palabra);
 	}
 
 }
