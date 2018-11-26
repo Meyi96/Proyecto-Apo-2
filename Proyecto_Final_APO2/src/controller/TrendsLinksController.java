@@ -24,11 +24,7 @@ public class TrendsLinksController implements Initializable{
 
     @FXML
     void linkSelected(MouseEvent event) {
-    	try {
-			Desktop.getDesktop().browse(new URI(hashatagListView.getSelectionModel().getSelectedItem()));
-		} catch (IOException | URISyntaxException e) {
-			e.printStackTrace();
-		}
+    	
     }
 
     @FXML
