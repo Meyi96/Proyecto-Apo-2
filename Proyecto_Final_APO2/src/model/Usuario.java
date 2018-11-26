@@ -15,6 +15,21 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 	private Usuario izq;
 	private Usuario der;
 	
+	/**
+	 * Usuario - Metodo constructor de la clase Usuario 
+	 * @param nombre - Un {@link String} con el nombre del usuario nombre != null nombre != ""
+	 * @param seguidores - Un {@link String} representando la cantidad de seguidores que tiene el usuario
+	 * @param seguidos - Un {@link String} representando la cantidad de personas que sigue el usuario	seguidos != null	seguidos != ""
+	 * @param lista_tweets - Una lista de {@link Tweet} con algunos de los Tweets publicados por el {@link Usuario} 
+	 * @param Cantidad - Un entero con la cantidad de Tweets cargados en la aplicacion del usuario
+	 * @param Puntaje - Un arreglo con todas las puntuaciones del usuario en tres categorías
+	 * pos : Se incializa el nombre
+	 * pos : Se inicializa seguidores
+	 * pos : se inicializa seguidos
+	 * pos : Se inicializa la lista_tweets
+	 * pos : Se inicializa la Cantidad 
+	 * pos : Se inicializa Puntaje
+	 */
 	public Usuario(String nombre, String seguidores, String seguidos, Tweet lista_tweets, int Cantidad, int Puntaje[]) {
 		super();
 		Nombre = nombre;
@@ -28,22 +43,48 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 			this.Puntaje = Puntaje; 
 		}
 	}
-
+	
+	/**
+	 * getNombre - Metodo para retornar el nombre del Usuario
+	 * @return Un {@link String} con el nombre del usuario
+	 */
 	public String getNombre() {
 		return Nombre;
 	}
+	
+	/**
+	 * serNombre - Actualiza el nombre del Usuario
+	 * @param nombre - Un metodo con el nuevo nombre del Usuario
+	 */
 	public void setNombre(String nombre) {
 		Nombre = nombre;
 	}
+	
+	/**
+	 * getSeguidores - Metodo para obtener la cantidad de seguidores del usuario
+	 * @return Un {@link String} con la cantidad de seguidores
+	 */
 	public String getSeguidores() {
 		return seguidores;
 	}
+	/**
+	 * setSeguidores -  Un metodo con para actualizar el valor de los seguidores
+	 * @param seguidores - El nuevo valor para los seguidores	seguidores != null seguidores != ""
+	 */
 	public void setSeguidores(String seguidores) {
 		this.seguidores = seguidores;
 	}
+	/**
+	 * getSeguidos - Un metodo que retorna el valor de los seguidores
+	 * @return Un {@link String} con el valor de los seguidores
+	 */
 	public String getSeguidos() {
 		return seguidos;
 	}
+	/**
+	 * setSeguidos - Metodo para actualizar el valor de seguidos
+	 * @param seguidos - Un {@link String}
+	 */
 	public void setSeguidos(String seguidos) {
 		this.seguidos = seguidos;
 	}
