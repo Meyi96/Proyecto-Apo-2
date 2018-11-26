@@ -21,7 +21,7 @@ public class Palabra implements Serializable, Agregar{
 		this.puntuaciones = puntuaciones;
 	}
 
-	public Palabra getSiguienteHashtag() {
+	public Palabra getSiguientePalabra() {
 		return siguiente_palabra;
 	}
 
@@ -65,10 +65,10 @@ public class Palabra implements Serializable, Agregar{
 	
 
 	public void agregarUltimo(Palabra palabra2) {
-		if(this.getSiguienteHashtag() == null) {
+		if(this.getSiguientePalabra() == null) {
 			this.setSiguiente_palabra(palabra2);
 		}else {
-			this.getSiguienteHashtag().agregarUltimo(palabra2);
+			this.getSiguientePalabra().agregarUltimo(palabra2);
 		}
 	}
 	

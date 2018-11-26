@@ -65,7 +65,7 @@ public class Tweet implements Serializable,Agregar{
 			puntajes[0] = p.getPuntuacion_depor();
 			puntajes[1] = p.getPuntuacion_poli();
 			puntajes[2] = p.getPuntuacion_tecno();
-			calcularPuntajes(p.getSiguienteHashtag());
+			calcularPuntajes(p.getSiguientePalabra());
 		}
 	}
 

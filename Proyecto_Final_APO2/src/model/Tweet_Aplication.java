@@ -15,10 +15,15 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-
 import javax.tools.FileObject;
-
 import Hilos.Hilo_ProcesarDatos;
+
+/**
+ *Clase {@link Tweet_Aplication} / Maneja las operaciones de serializar,cargar,agregar,ordenar informacion de todo el modelo.
+ *Nelson Quiñones Virgen - Fabio Andres Mejía - Marco Antonio Perez 
+ *Version 1.0 
+ *27/Noviembre/2018 
+*/
 
 public class Tweet_Aplication implements Serializable, Ordenamiento{
 	static final long serialVersionUID = 42L;
@@ -29,6 +34,17 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	private ArrayList<Hilo_ProcesarDatos> Datos;
 	private ArrayList<String> NombreArchivos;
 	
+	/**
+	 * Tweet_Aplication - Metodo constructor de la clase, se cargan los datos de prueba
+	 * @throws IOException
+	 * @throws ClassNotFoundException
+	 * pos: Se instancia y se agregan elementos al arbol usuarioRaiz
+	 * pos: Se instancia y se agregan elementos al arbol raizRelevante
+	 * pos: Se instancia y se agregan elementos a la lista de tendencias
+	 * pos: Se instancia y se agregan elementos a la lista de tendenciasLinks
+	 * pos: Se instancia y se agregan elementos al ArrayList de Datos
+	 * pos: Se instancia y se agregan elementos al ArrayList de NombresAechivos 
+	 */
 	public Tweet_Aplication() throws IOException, ClassNotFoundException {
 		usuarioRaiz = new Usuario("", "", "", null,0,null);
 		try {
@@ -72,6 +88,15 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			guardarProgreso();
 		}
 	}
+	
+	/**
+	 * RegistrarUsuario - Metodo para agregar usuarios apartir de texto en bruto
+	 * @throws IOException
+	 * @param data : Texto en bruto traido desde Twiter
+	 * pre: Arraylist de datos debe esta inicializado
+	 * pre: usuarioRaiz debe estar inicializado
+	 * pos: Se agrega un objeto al arbol de usuarios usuarioRaiz
+	*/
 
 	public void RegistrarUsuario(String data) throws IOException {
 		System.out.println(data);
@@ -98,7 +123,11 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		usuarioRaiz.agregar(temp);
 		guardarProgreso();
 	}
-
+	/**
+	 * guardarProgreso - Metodo para serializar el estado actual del modelo
+	 * @throws IOException
+	 * pre: el archivo Aplicacion_persistente debería existir
+	 */
 	private void guardarProgreso() throws IOException {
 		File wr = new File("./Persistencia/Aplicacion/Aplicacion_persistente");
 		FileOutputStream wr2 = new FileOutputStream(wr);
@@ -106,7 +135,14 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		write.writeObject(this);
 		write.close();
 	}
-	
+	/**
+	 * cargarPalabrasRelevantes - Metodo para inicializar las palabras relevantes en cada categoria y añadirlas a un arbol de busqueda
+	 * @throws IOException
+	 * pre: El archivo Deporte.txt debería existir
+	 * pre: El archivo Politica.txt debería existir
+	 * pre: El archivo Tecnologia.txt debería existir
+	 * pos: Se inicializa y agregan objetos al arbol raizRelevante
+	 */
 	private void cargarPalabrasRelevantes() throws IOException {
 		File fl = new File("./Persistencia/Glosario/Deporte.txt");
 		FileReader read = new FileReader(fl);
@@ -174,7 +210,13 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		
 		
 	}
-
+	
+	/**
+	 * OrdenamientoNumeroTweets - Metodo para ordenar una coleccion de Usuarios por el metodo burbuja
+	 * @param objeto
+	 * pre: usuarioRaiz debe estar inicializado
+	 * pre: objeto esta inicializado
+	*/
 	private void OrdenamientoNumeroTweets(ArrayList<Object> objeto) {
 		usuarioRaiz.inorden(objeto);
 		for (int i = 0; i < objeto.size(); i++) {
@@ -189,6 +231,12 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		}
 	}
 	
+	/**
+	 * tweetsOrdenados - Metodo para ordenar Tweets
+	 * @param objeto
+	 * @param tipo
+	 * @param actual
+	 */
 	public void tweetsOrdenados(ArrayList<Object> objeto, char tipo, Usuario actual) {
 		actual.ordenamiento(objeto, tipo);
 	}

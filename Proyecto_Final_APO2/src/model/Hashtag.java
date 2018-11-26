@@ -32,12 +32,16 @@ public class Hashtag extends Palabra implements Serializable, Agregar{
 	@Override
 	public void agregar(Object o) {
 		if(o instanceof Hashtag) {
-			if(this.getSiguienteHashtag() == null) {
 				Hashtag temp = (Hashtag) o;
-				this.setSiguienteHashtag(temp);
-			}else {
-				getSiguienteHashtag().agregar(o);
-			}
+				this.agregarUltimo(temp);
+		}
+	}
+	
+	public void agregarUltimo(Hashtag p) {
+		if(this.getSiguientePalabra() == null) {
+			this.setSiguiente_palabra(p);
+		}else {
+			this.getSiguientePalabra().agregarUltimo(p);
 		}
 	}
 	
