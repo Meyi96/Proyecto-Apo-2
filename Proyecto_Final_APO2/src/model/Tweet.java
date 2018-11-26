@@ -65,7 +65,7 @@ public class Tweet implements Serializable,Agregar{
 			puntajes[0] = p.getPuntuacion_depor();
 			puntajes[1] = p.getPuntuacion_poli();
 			puntajes[2] = p.getPuntuacion_tecno();
-			calcularPuntajes(p.getSiguiente_palabra());
+			calcularPuntajes(p.getSiguienteHashtag());
 		}
 	}
 
@@ -89,12 +89,12 @@ public class Tweet implements Serializable,Agregar{
 		}
 	}
 	
-	public void obtenerTweets(ArrayList<Object> object, Tweet actual) {
-		if(actual.getSiguiente() == null) {
-			object.add(actual);
+	public void obtenerTweets(ArrayList<Object> object) {
+		if(this.getSiguiente() == null) {
+			object.add(this);
 		}else {
-			object.add(actual);
-			obtenerTweets(object, actual.getSiguiente());
+			object.add(this);
+			this.getSiguiente().obtenerTweets(object);
 		}
 	}
 	

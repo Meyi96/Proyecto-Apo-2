@@ -2,8 +2,10 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.ResourceBundle;
-
+import View.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,11 +16,12 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.fxml.Initializable;
+import model.Hashtag;
 
 public class TrendsController implements Initializable{
 
     @FXML
-    private ListView<?> hashatagListView;
+    private ListView<String> hashatagListView;
 
     @FXML
     void OrderNWord(ActionEvent event) {
@@ -37,13 +40,34 @@ public class TrendsController implements Initializable{
     }
 
     @FXML
-    void orderDate(ActionEvent event) {
-
+    void ordenOriginal(ActionEvent event) {
+    	hashatagListView.getItems().clear();
+		hashatagListView.getItems().addAll(inicioOrden('o'));
     }
-	
+
+    @FXML
+    void ordenarAparicionLexi(ActionEvent event) {
+    	hashatagListView.getItems().clear();
+		hashatagListView.getItems().addAll(inicioOrden('a'));
+    }
+
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		
+	public void initialize(URL location, ResourceBundle resources) {
+		hashatagListView.getItems().clear();
+		hashatagListView.getItems().addAll(inicioOrden('o'));
+	}
+	
+	public Collection<String> inicioOrden(char tipo){
+		hashatagListView.getItems().clear();
+    	ArrayList<Object> hashtag = new ArrayList<Object>();
+    	Collection<String> datos = new ArrayList<String>();
+    	Main.getN().darHashtags(hashtag, tipo);
+    	for (int j = 0; j < hashtag.size() ; j++) {
+    		String s = " ";
+    		String dato = ((Hashtag)hashtag.get(j)).getPalabra();
+    		datos.add(dato);
+		}
+    	return datos;
 	}
 
 }

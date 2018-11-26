@@ -197,4 +197,27 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		return usuarioRaiz.buscarUsuario(usuario);
 	}
 	
+	public void darHashtags(ArrayList<Object> objeto, char tipo) {
+		switch (tipo) {
+		case 'o': tendencias.darHashtags(objeto);;
+			break;
+		case 'a': ordernarHashtags(objeto);
+
+		default:
+			break;
+		}
+	}
+	
+	private void ordernarHashtags(ArrayList<Object> objeto) {
+		tendencias.darHashtags(objeto);
+		for (int i = 1; i < objeto.size(); i++) {
+			Hashtag temp = (Hashtag)objeto.get(i);
+			for(int j = i; j > 0 && temp.compareTo((Hashtag)objeto.get(j-1)) > 0; j--) {
+				Hashtag temp2 = (Hashtag)objeto.get(j);
+				objeto.set(j, objeto.get(j-1));
+				objeto.set(j-1, temp2);
+			}
+		}
+	}
+	
 }
