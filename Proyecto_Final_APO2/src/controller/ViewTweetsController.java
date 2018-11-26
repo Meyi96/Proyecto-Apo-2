@@ -78,7 +78,7 @@ public class ViewTweetsController implements Initializable{
     	Main.getN().tweetsOrdenados(tweets, tipo, seleccionado);
     	for (int j = 1; j < tweets.size() ; j++) {
     		String s = " ";
-    		String dato = ((Tweet)tweets.get(j)).getTweetEntero(s);
+    		String dato = ((Tweet)tweets.get(j)).getTweetEntero(s) + " \nPuntaje: "+((Tweet)tweets.get(j)).calcularPuntajeTotal();
     		datos.add(dato);
 		}
     	return datos;

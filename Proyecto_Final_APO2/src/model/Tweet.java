@@ -16,7 +16,7 @@ public class Tweet implements Serializable,Agregar{
 	public Tweet(String Fecha,Palabra parrafo,String likes2,String reTweets2,int puntajes[]) {
 		this.Fecha = Fecha;
 		this.primera_Palabra = parrafo;
-		this.likes = likes2;
+		this.likes = cambiarLikes(likes2);
 		this.reTweets = reTweets2;
 		if(puntajes == null) {
 			calcularPuntajes(primera_Palabra);
@@ -83,7 +83,9 @@ public class Tweet implements Serializable,Agregar{
 	
 	public int compareTo(Tweet t) {
 		if(this.calcularPuntajeTotal().compareTo(t.calcularPuntajeTotal()) == 0) {
-			return likes.compareTo(t.likes);
+			int a =(likes.equals(""))?0: Integer.parseInt(likes);
+			int b = (t.likes.equals(""))?0:Integer.parseInt(t.likes);
+			return a-b;
 		}else {
 			return this.calcularPuntajeTotal().compareTo(t.calcularPuntajeTotal());
 		}
@@ -104,5 +106,16 @@ public class Tweet implements Serializable,Agregar{
 	
 	public String getTweetEntero(String s) {
 		return primera_Palabra.getTweetEntero(s);
+	}
+	
+	public String cambiarLikes(String dato) {
+		System.out.println(dato);
+		String[] n = dato.split(",");
+		dato="";
+		for (int i = 0; i < n.length; i++) {
+			dato += n[i]; 
+		}
+		System.out.println(dato);
+		return dato;
 	}
 }
