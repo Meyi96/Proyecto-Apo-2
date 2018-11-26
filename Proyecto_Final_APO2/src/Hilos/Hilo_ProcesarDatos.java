@@ -209,6 +209,11 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		return fin;
 	}
 	
+	/**
+	 * identificarPalabra - Metodo para identificar que tipo de palabra se va a añadir al tweet y su respectivo puntaje
+	 * @param s - Es un String con la palabra a identificar
+	 * @return salida un arreglo de enteros 
+	 */
 	private int[] identificarPalabra(String s) {
 		int salida[] = new int[3];
 		salida[0] = 0;

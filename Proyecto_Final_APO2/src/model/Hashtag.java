@@ -18,7 +18,7 @@ public class Hashtag extends Palabra implements Serializable, Agregar{
 	}
 	
 	public void setSiguienteHashtag(Hashtag siguiente_palabra) {
-		this.siguiente_palabra = siguiente_palabra;
+		this.siguienteHashtag = siguiente_palabra;
 	}
 	
 	public int compareTo(Hashtag temp) {
@@ -38,10 +38,10 @@ public class Hashtag extends Palabra implements Serializable, Agregar{
 	}
 	
 	public void agregarUltimo(Hashtag p) {
-		if(this.getSiguientePalabra() == null) {
-			this.setSiguiente_palabra(p);
+		if(this.getSiguienteHashtag() == null) {
+			this.setSiguienteHashtag(p);
 		}else {
-			this.getSiguientePalabra().agregarUltimo(p);
+			this.getSiguienteHashtag().agregarUltimo(p);
 		}
 	}
 	
