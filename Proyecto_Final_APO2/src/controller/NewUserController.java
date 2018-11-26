@@ -21,8 +21,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import model.AbrirLink;
 
-public class NewUserController implements Initializable{
+public class NewUserController implements Initializable, AbrirLink{
 	
 	@FXML
     private TextArea dataTextArea;
@@ -51,11 +52,6 @@ public class NewUserController implements Initializable{
     	System.out.println();
     }
     
-    
-    
-    public void goLink(String link) throws IOException, URISyntaxException {
-    	Desktop.getDesktop().browse(new URI(link));
-    }
 
     @FXML
     void clean(ActionEvent event) {
@@ -115,6 +111,12 @@ public class NewUserController implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		hilo = new Hilo_Interfaz1(this);
 		hilo.start();
+	}
+
+
+	@Override
+	public void goLink(String link) throws IOException, URISyntaxException {
+		Desktop.getDesktop().browse(new URI(link));
 	}
 
 	

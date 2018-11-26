@@ -1,5 +1,6 @@
 package controller;
 
+import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.ResourceBundle;
 
+import MyException.PosicionNoExistenteException;
 import View.Main;
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
@@ -16,13 +18,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import model.AbrirLink;
 import model.Hashtag;
 import model.Link;
 
-public class TrendsLinksController implements Initializable{
+public class TrendsLinksController implements Initializable, AbrirLink{
 
 	@FXML
     private ListView<String> linksListView;
@@ -59,6 +64,26 @@ public class TrendsLinksController implements Initializable{
     		datos.add(dato);
 		}
     	return datos;
+	}
+    
+    @FXML
+    void openLink(MouseEvent event) throws IOException, URISyntaxException {
+    	if(linksListView.getSelectionModel().getSelectedIndex() != -1) {
+    		goLink(linksListView.getSelectionModel().getSelectedItem());
+    	}else {
+    		try {
+				throw new PosicionNoExistenteException();
+			} catch (PosicionNoExistenteException e) {
+				Alert alert = new Alert(AlertType.INFORMATION);
+	    		alert.setContentText(e.getMessage());
+	    		alert.showAndWait();
+			}
+    	}
+    }
+    
+    @Override
+	public void goLink(String link) throws IOException, URISyntaxException {
+		Desktop.getDesktop().browse(new URI(link));
 	}
 	
 	@Override

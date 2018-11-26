@@ -46,7 +46,7 @@ public class Hashtag extends Palabra implements Serializable, Agregar{
 	 */
 	public int compareTo(Hashtag temp) {
 		if(this.repeticiones == temp.repeticiones) {
-			return this.palabra.compareTo(temp.palabra);
+			return this.palabra.compareToIgnoreCase(temp.palabra)*-1;
 		}else {
 			return this.repeticiones - temp.repeticiones;
 		}
