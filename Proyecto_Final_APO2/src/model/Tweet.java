@@ -100,10 +100,6 @@ public class Tweet implements Serializable,Agregar{
 		}
 	}
 	
-	public void tweetsOrdenados(ArrayList<Object> objeto, char tipo, Usuario actual) {
-		actual.ordenamiento(objeto, tipo);
-	}
-	
 	public String getTweetEntero(String s) {
 		return primera_Palabra.getTweetEntero(s);
 	}

@@ -230,7 +230,7 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		}else if(s.length()>=1 && s.substring(0, 1).compareToIgnoreCase("#") == 0){
 			Hashtag temp = new Hashtag(s, null, 0);
 			if(hashtags.contiene(s)) {
-				hashtags.dar(s).setPuntuaion(hashtags.dar(s).getPuntuacion()+1);
+				hashtags.dar(s).setRepeticion(hashtags.dar(s).getRepeticiones()+1);
 			}else {
 				hashtags.agregar(temp);
 			}
