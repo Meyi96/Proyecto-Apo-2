@@ -1,132 +1,126 @@
-Ability to Act
+Act
 Abstentionism
 Activism
-Adaptation subsystem
-Administrative Decentralization
+Adaptation
+Administrative 
+Decentralization
 Advancement
-Amplifier Feedback
-Answer's capacity
-Apathy Policy
-Apatia Stabilizer
+Apathy 
+Policy
 Apoliticism
-Appliance Matches
-Area of ​​Decision
+Decision
 Authoritarianism
 Authority
 Autogestion
 Autonomy
 Autotransformation
-Average Voter
-Balance of Power
-Basic Valuation Orientation
+Voter
+Balance 
+Power
 Bipartisanship
-Booty System
 Bourgeoisie
 Budget
-Budget Analysis
-Budget Prediction
-Bullying Potential
+Budget
 Bureaucracy
 Bureaucratization
-Campaign Financing
-Capabilities of the Political System
+Campaign 
+Financing
+Political 
+System
 Capitalism
-Captive Vow
+Captive
 Center
-Centrifugal System
-Centripetal System
-Chain of command
-Change of goals
-Chosen class
-Civil Service
-Class Awareness
-Class Coalition
+command
+class
+Civil 
+Service
+Coalition
 Clericalism
-Closure O Closing
 Co-management
-Coalition Potential
+Potential
 Coercion
-Cognitive Corruption
-Colonial dependence
+Corruption
+Colonial 
 Colonialism
 Command System
 Committee
-Common benefit
-Communication Impact
+Communication 
 Communism
-Compatibility Of Interests
+Compatibility 
 Confederacy
-Conflict System
+Conflict
 Conservatism
 Conspiracy
 Constitution
-Constitutional-pluralist regime
+Constitutional-pluralist 
 Counterculture
 Coup
-Crisis of Political Development
-De Gini Index
-Decision Latitude
-Decision making
-Decision Point
+Development
+Decision
 Delay
 Demagogy
-Democratic Centralism
-Democratization Process
-Demographic Transition
-Dependency Burden
+Democratic 
+Centralism
+Democratization 
+Process
+Demographic 
+Transition
+Dependency 
+Burden
 Depoliticization
 Deregulation
-Dictatorship of the Proletariat
+Dictatorship 
+Proletariat
 Diplomacy
-Direct Tax
+Tax
 Dis-representation
-Discovery Policy
-Discretion Of The Executive Branch
+Discovery 
+Policy
+Executive 
+Branch
 Dissent
-Dogmatic Policy
-Economic independence
-Economic Infrastructure
-Effectiveness and efficiency
+Dogmatic
+Economic 
+independence
+Economic 
+Infrastructure
+Effectiveness 
+efficiency
 Elections
-Electoral Behavior
-Electoral Systems
-Electoral Volatility
-Elite
-Elite Central
-Elite Media
-Elite Of Interests
-Emergency Government
+Volatility
+Central
+Elite 
+Media
+Emergency 
+Government
 Establishment
-Exception status
-Exchange Vote
-Expected Subjective Utility
-Expected Vote
-Extreme Ideology
+Exception
+Exchange 
+Vote
+Ideology
 Extremism
-Federal government
+Federal
 Federalism
-Feedback Cycle
-Financing With Deficit
-Floating Vote
-Foreign Policy of a State
+Financing
+Deficit
+Floating 
+Vote
+State
 Freedom
-Friend enemy
-Functional Equivalence
-Gain
-General interest
-General Political Will
-General Welfare Clause
-Goal Search System
-Goals Search Subsystem
-Government As Directorate
-Gross national product
-Group Aggregation
-Group Solidarity
+Friend 
+enemy
+Functional 
+Equivalence
+Gain 
+Will
+Welfare 
+Clause
+Goal
+Subsystem
+Directorate
 Guerrilla
-Guidelines Maintenance Subsystem
-Habits of the Peoples
 Health
-Hegemony Crisis
+Hegemony 
 Herodianism
 Homeland
 Human rights
@@ -134,285 +128,108 @@ I Politician
 Ideology
 Illustration
 Imperialism
-Indicative Planning
 Indirect Tax
-Industrial-military complex
+Industrial-military 
+complex
 Industrialization
 Inflation
 Influence
-Influence Pyramid
 Institutionalization
 Insurrection
-Integration Capability
-Integration subsystem
 Interdependence
-Interest groups
-International community
-International conflict
-International policy
-International Polycentrism
-International relations
 Jacobinism
 Justice
-Labor union
+union
 Law
 Leadership
-Learning capacity
 Left
 Legality
 Legitimacy
-Liability Flow
 Liberalism
 Limit Zone
 Load
-Lorenz Curve
 Macropolitica
-Majority And Minority
-Majority Government
-Marginal Elite
 Market
-Mass Electoral Matches
-Match Systems
-Match Systems
-Matching Identification
-Membership Vote
-Merit System
 Meritocracy
 Micropolitics
-Migratory Impact
 Militarism
-Modal Personality
-Moderate Ideology
-Modern Political System
-Modern society
 Modernization
 Multi-party
 Multifunctionality
-Multiple Membership
 Nation
-National Income
-National Interest
-National Priority
 Nationalism
 Nationalization
-Negative Feedback
-Negative Reward
-Neocolonial dependence
+Neocolonial 
 Neocolonialism
 Neocorporativism
 Nepotism
-Normal Vote
-Notable Matches
 Obedience
-Obedience Habits
 Oligarchy
-One party
-Opinion Vote
-Opportunity cost
-Over-representation Policy and Sub-representation
-Overload of Governments
-Pacifica Resolution of Conflicts
-Parliamentary government
-Partisan Discipline
-Party Ideology
+party
+Conflicts
+Parliamentary
+Partisan 
+Discipline
+Ideology
 Patriotism
-Personal Income
-Phases of Political Reality
-Pluralistic Individualism
+Income
 Poliarchy
-Political Acculturation
-Political Action
-Political Action
-Political Adversary
-Political Agreement
-Political Arena
-Political Assimilation
-Political Attitude
-Political Attribution
-Political Awareness
-Political brake
-Political Change
-Political Charism
-Political class
-Political Coalition
-Political coherence
-Political cohesion
-Political combination
-Political Communication
-Political Community
-Political Consensus
-Political Cooptation
-Political corruption
-Political Creativity
-Political culture
-Political decay
-Political Decentralization
-Political decision
-Political deliberation
-Political Demobilization
-Political dependence
-Political Development
-Political differentiation
-Political Discrimination
-Political Dissociation
-Political Domain
-Political Driving
-Political dysfunctionality
-Political Effectiveness
-Political Endoculturation
-Political Equality
-Political Forces
-Political Fractionalization
-Political Function
-Political Growth
-Political hegemony
-Political Identity
-Political imbalance
-Political Independence
-Political Innovation
-Political Instigation
-Political Institution
-Political Integration
-Political Intention
-Political Interest
-Political Learning
-Political Loyalty
-Political manipulation
-Political Mobility
-Political Mobilization
-Political Movement
-Political Myth
-Political Obstruction
-Political participation
-Political party
-Political Pluralism
-Political power
-Political Pragmatism
-Political Process
-Political propaganda
-Political reaction
-Political Realization
-Political regime
-Political Relations
-Political Representation
-Political Reputation
-Political responsibility
-Political Responsiveness
-Political savvy
-Political Security
-Political segmentation
-Political Selection
-Political situation
-Political Socialization
-Political spontaneity
-Political stability
-Political stratum
-Political structure
-Political style
-Political Support
-Political Symbol
-Political system
-Political Transition
-Political Values
-Political Voluntarism
-Political-administrative team
-Political-social conflict
 Politicization
-Popular sovereignty
+sovereignty
 Populisms
-Positive Reward
-Power Customization
-Power Distribution
-Power Factors
-Power Policy
 Praetorianism
-Presidential Government
-Pressure groups
-Primary elections
-Primitive Communism
-Principle of Legitimacy
-Priority Scale
+Communism
+Legitimacy
 Privatization
 Productivity
-Progressive Tax
 Proletariat
 Property
-Protection of Minorities
-Provincial dependency
-Public administration
-Public opinion
-Public order
-Public sector
-Quality of life
+Minorities
+administration
+opinion
+order
+sector
+Quality
 Radicalism
 Reactionary
-Real Democracy
+Democracy
 Reason
 Rectitude
-Redistribution of Wealth
 Reform
-Regressive Tax
-Representative Government
-Residual Faculties
-Resource Distribution
 Respect
 Revolution
 Right
-Right Idea
-Rupture Lines ("cleavage")
 Satelismo
-Satellite Dependency
 Secession
 Secularization
 Self-criticism
 Self-direction
 Self-government
-Separation of powers
-Social class
-Social democracy
-Social Media
-Social Mobility
-Social Mobilization
-Social order
 Socialism
-Society In Transition
 Sofocracy
-Solidarity System
 State
 Straight
 Strategy
 Subelite
 Syndicalism
-System of Matches
 Tactic
 Tax
 Technocracy
 Totalitarianism
-Traditional Political System
-Traditional Society
 Tyranny
 Unanimity
 Underdevelopment
-Unequal Development
-Unique Party Regime
+Regime
 Unitarianism
-Unitary Government
-Unwritten Constitution
 Urbanization
 Utilitarianism
 Utopia
-Values ​​Compatibility
-Variable Sum Game
 Veto
 Village
 Vote
-Vote Punishment
-Voting Done
-Voting Frequency
+Voting
 War
 Wealth
-World Development
-World Government
-Written Constitution
+World 
+Constitution
 Zelotism
-Zero Sum Game

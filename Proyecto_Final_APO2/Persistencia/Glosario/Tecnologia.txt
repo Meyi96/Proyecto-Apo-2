@@ -55,10 +55,9 @@ genetics
 gunpowder
 hardware
 history
-home automation
+automation
 hypertext
 hypothesis
-industrial Revolution
 industry
 infographics
 information
@@ -120,7 +119,6 @@ telescope
 test
 theory
 thermodynamics
-To be
 tool
 toyotismo
 transmission

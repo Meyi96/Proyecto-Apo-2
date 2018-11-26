@@ -9,19 +9,15 @@ arc
 arrow
 assignment
 athlete
-athlete
 Athletics
 attack
 auction
 back
 ball
-ball
-ball
 bandage
 base
 basket
 basketball
-bike
 bike
 boot
 boots
@@ -41,12 +37,7 @@ climb
 club
 club
 coach
-coach
 corner
-cousin
-crack
-crossbar
-crossbar
 crossbar
 cyclist
 debut
@@ -56,7 +47,6 @@ defending
 define
 delivery
 Derby
-Diana
 discount
 disk
 distance
@@ -76,7 +66,6 @@ expelled
 extension
 extension
 Fainting
-fair play
 fence
 fencing
 field
@@ -86,13 +75,7 @@ football
 Forward
 friendly
 goal
-goal
-goal
-goal
-goal
 goalie
-goalie
-goalkeeper
 goalkeeper
 Golf
 golfer
@@ -103,7 +86,6 @@ gymnast
 gymnastics
 hammer
 harrow
-harrow
 hat
 hat-trick
 head
@@ -113,8 +95,7 @@ helmet
 hobby
 hooligan
 horse
-horse rider
-I rejected
+rider
 impulse
 infringement
 injured
@@ -128,10 +109,8 @@ lack
 launching
 league
 leather
-left handed
 libero
 lock
-locker room
 maillot
 male
 Marathon
@@ -141,11 +120,9 @@ marker
 match
 medal
 medalist
-midfield player
+midfield
 minutes
-Mr.
-muscle cramp
-muscle cramp
+muscle
 net
 net
 obstacle
@@ -156,7 +133,6 @@ pants
 parade
 pass
 patatal
-pay per view
 penalty
 penalty
 pennant
@@ -192,50 +168,42 @@ scissors
 scout
 season
 season
-shin guard
+shin
 shoe
 shoot
 shooter
-shooting guard
+shooting
 side
 signing
 skater
 skier
 skip
-so much
-so much
-soccer player
+soccer
 speed
 spout
 spur
 stadium
 stadium
-steering wheel
+steering
+wheel
 stop
 Street
 sung
 sweat
 swim
-T shirt
 tacos
 tactic
-take out
-take out
 technique
-tennis player
+tennis
+player
 tie
-time trial
-to fit in
-top scorer
+scorer
 Torch
 track
-tripped up
 tunnel
 uncheck
 useful
 victory
-victory
-viewer
 viewer
 volley
 volley
@@ -244,5 +212,4 @@ weather
 weight
 whistle
 witness
-working day
 world
