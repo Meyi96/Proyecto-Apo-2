@@ -12,6 +12,10 @@ public class PalabraRelevante  extends Palabra implements Serializable,Agregar{
 	 * PalabraRelevante - Metodo constructor de la clase
 	 * @param palabra
 	 * @param puntuaciones
+	 * pos : palabra se inicializa
+	 * pos : puntucion se inicializa
+	 * pos : der se incializa
+	 * pos : izq se inicializa
 	 */
 	public PalabraRelevante(String palabra, int[] puntuaciones) {
 		super(palabra, puntuaciones);

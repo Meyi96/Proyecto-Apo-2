@@ -8,16 +8,30 @@ public class Palabra implements Serializable, Agregar{
 	protected Palabra siguiente_palabra;
 	protected int puntuaciones[];
 
-	
+	/**
+	 * Palabra - Metodo constructor de Palabra
+	 * @param palabra - Un {@link String} con la informacion de la palabra 
+	 * @param puntuaciones - Una arreglo de int con la puntuacion en cada categoria
+	 * pos : palabra se inicializa
+	 * pos : puntucion se inicializa
+	 */
 	public Palabra(String palabra,int puntuaciones[]) {
 		this.palabra = palabra;
 		this.puntuaciones = puntuaciones;
 	}
 	
+	/**
+	 * getPalabra - Metodo para retornar un {@link String} con la palabra caracteristica de la {@link Palabra}
+	 * @return palabra - un {@link String} con la palabra caracteristica
+	 */
 	public String getPalabra() {
 		return palabra;
 	}
-
+	
+	/**
+	 * setPalabra - Metodo para cambiar el valor de la palabra caracteristica
+	 * @param palabra - El {@link String} con el que se reemplazara el valor bu
+	 */
 	public void setPalabra(String palabra) {
 		this.palabra = palabra;
 	}

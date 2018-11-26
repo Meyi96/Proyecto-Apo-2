@@ -101,7 +101,7 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 				if(dato.compareTo("Verified account") == 0) {
 					a = recopilarTweet(Texto_Bruto,contador+1,nombre_Usuario);
 					temp = (Tweet)a[0];
-					contador = (int)a[1];
+					contador = (int)a[1]; 
 					Puntaje_Usuario[0] += temp.getPuntajes()[0];
 					Puntaje_Usuario[1] += temp.getPuntajes()[1];
 					Puntaje_Usuario[2] += temp.getPuntajes()[2];
@@ -175,8 +175,9 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		while(!seguir && dato != null && dato.compareTo("Verified account") != 0 && dato.compareTo("Who to follow ·  Refresh · View all") != 0) {
 			String herramienta[] = dato.split(" ");
 			if(herramienta.length >= 6 && herramienta[herramienta.length-1].compareTo("message") == 0 && herramienta[herramienta.length-2].compareTo("Direct") == 0) {
-				reTweets = herramienta[5];
-				likes = herramienta[9];
+				herramienta = t.get(c-1).split(" ");
+				reTweets = herramienta[2];
+				likes = herramienta[4];
 				seguir = true;	
 				//System.out.println("No agregado por Herramienta   //// "+dato+ " LOL "+ herramienta[5] + " LOL "+herramienta[9]);
 			}else if(Cont_en_Tweet == 2) {

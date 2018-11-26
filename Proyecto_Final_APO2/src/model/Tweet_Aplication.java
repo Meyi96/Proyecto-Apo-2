@@ -59,6 +59,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			NombreArchivos = temp.NombreArchivos;
 			entrada.close();
 			Datos = new ArrayList<>();
+			NombreArchivos.remove(0);
 			Thread[] a = new Thread[NombreArchivos.size()];
 			cargarPalabrasRelevantes();
 			for (int I = 0; I < NombreArchivos.size(); I++) {
@@ -159,7 +160,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			if(raizRelevante == null) {
 				raizRelevante = a;
 			}else {
-				raizRelevante.agregar(a);
+				raizRelevante.AgregarRelevante(a);
 			}
 			temp = rd.readLine();
 		}
@@ -176,7 +177,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			if(raizRelevante == null) {
 				raizRelevante = a;
 			}else {
-				raizRelevante.agregar(a);
+				raizRelevante.AgregarRelevante(a);
 			}
 			temp = rd.readLine();
 		}
@@ -193,7 +194,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			if(raizRelevante == null) {
 				raizRelevante = a;
 			}else {
-				raizRelevante.agregar(a);
+				raizRelevante.AgregarRelevante(a);
 			}
 			temp = rd.readLine();
 		}
