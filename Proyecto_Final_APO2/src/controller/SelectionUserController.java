@@ -26,7 +26,7 @@ public class SelectionUserController  implements Initializable{
 
 	    @FXML
 	    private Button selection;
-	    
+	    private ArrayList<Object> usuarios;
 	    
 	    @FXML
 	    void back(MouseEvent event) throws IOException {
@@ -71,11 +71,12 @@ public class SelectionUserController  implements Initializable{
 
 	    @FXML
 	    void seletionUser(ActionEvent event) throws IOException {
+	    	System.out.println(usersListView.getSelectionModel().getSelectedIndex());
 	    	FXMLLoader loader = new FXMLLoader();
 	    	loader.setLocation(getClass().getResource("/View/ViewTweets.fxml"));
 	    	Parent parent = loader.load();
 	    	ViewTweetsController controller = (ViewTweetsController)loader.getController();
-	    	controller.usuarioSeleccionado(Main.getN().buscarUsuario(usersListView.getSelectionModel().getSelectedItem()));
+	    	controller.usuarioSeleccionado((Usuario)usuarios.get(usersListView.getSelectionModel().getSelectedIndex()));
 	    	Scene scene = new Scene(parent);
 	    	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 	    	stage.setScene(scene);
@@ -85,7 +86,6 @@ public class SelectionUserController  implements Initializable{
 	    @FXML
 	    void userSelectionList(MouseEvent event) {
 	    	selection.setVisible(true);
-	    	System.out.println(usersListView.getSelectionModel().getSelectedItem());
 	    }
 
 		@Override
@@ -95,11 +95,11 @@ public class SelectionUserController  implements Initializable{
 		
 		public Collection<String>inicioOrden(char tipo){
 			usersListView.getItems().clear();
-	    	ArrayList<Object> usuarios = new ArrayList<Object>();
+	    	usuarios = new ArrayList<Object>();
 	    	Collection<String> datos = new ArrayList<String>();
 	    	Main.getN().ordenamiento(usuarios, tipo);
 	    	for (int j = 0; j < usuarios.size() ; j++) {
-	    		String dato = ((Usuario)usuarios.get(j)).getNombre();
+	    		String dato = ((Usuario)usuarios.get(j)).getNombre() + " Cantidad de tweets: " + ((Usuario)usuarios.get(j)).getCantidad();
 	    		datos.add(dato);
 			}
 	    	return datos;
