@@ -1,6 +1,7 @@
 package View;
 	
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -34,7 +35,7 @@ public class Main extends Application {
 		}
 	}
 	
-	public static void main(String[] args) throws IOException, ClassNotFoundException {
+	public static void main(String[] args) throws IOException, ClassNotFoundException, URISyntaxException {
 		n = new Tweet_Aplication();
 		launch(args);
 	}

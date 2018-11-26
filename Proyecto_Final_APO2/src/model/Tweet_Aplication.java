@@ -13,6 +13,7 @@ import java.io.LineNumberInputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collection;
 import javax.tools.FileObject;
@@ -44,8 +45,9 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	 * pos: Se instancia y se agregan elementos a la lista de tendenciasLinks
 	 * pos: Se instancia y se agregan elementos al ArrayList de Datos
 	 * pos: Se instancia y se agregan elementos al ArrayList de NombresAechivos 
+	 * @throws URISyntaxException 
 	 */
-	public Tweet_Aplication() throws IOException, ClassNotFoundException {
+	public Tweet_Aplication() throws IOException, ClassNotFoundException, URISyntaxException {
 		usuarioRaiz = new Usuario("", "", "", null,0,null);
 		try {
 			File wr = new File("./Persistencia/Aplicacion/Aplicacion_persistente");

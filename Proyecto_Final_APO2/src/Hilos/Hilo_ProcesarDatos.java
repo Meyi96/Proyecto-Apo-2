@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 import model.Hashtag;
@@ -120,6 +121,8 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 			rd.close();
 		}catch(IOException e) {
 			e.printStackTrace();
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
 		}
 			
 	}
@@ -154,8 +157,9 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 	 * @param c - Un numero entero con el numero de linea que se está procesando en Arraylist	c != null c >= 15
 	 * @param n - Un String con el nombre del usuario n != null	n != ""
 	 * @return fin - Un arreglo de tipo {@link Object} que contiene el numero de la ultima linea que se estaba procesando y el Tweet creado
+	 * @throws URISyntaxException 
 	 */
-	private Object[] recopilarTweet(ArrayList<String> t, int c, String n) {
+	private Object[] recopilarTweet(ArrayList<String> t, int c, String n) throws URISyntaxException {
 		String dato = t.get(c);
 		Tweet temp;
 		Palabra salida = new Palabra("", null);
@@ -213,8 +217,9 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 	 * identificarPalabra - Metodo para identificar que tipo de palabra se va a añadir al tweet y su respectivo puntaje
 	 * @param s - Es un String con la palabra a identificar
 	 * @return salida un arreglo de enteros 
+	 * @throws URISyntaxException 
 	 */
-	private int[] identificarPalabra(String s) {
+	private int[] identificarPalabra(String s) throws URISyntaxException {
 		int salida[] = new int[3];
 		salida[0] = 0;
 		salida[1] = 0;
