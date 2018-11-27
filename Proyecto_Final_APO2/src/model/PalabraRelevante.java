@@ -29,6 +29,22 @@ public class PalabraRelevante  extends Palabra implements Serializable,Agregar{
 	}
 	
 	/**
+	 * getDer - Metodo que da La palabra relavante que esta a la izquierda de su raiz 
+	 * @return el objeto de la izquierda de la raiz
+	 */
+	public PalabraRelevante getIzq() {
+		return izq;
+	}
+	
+	/**
+	 * getDer - Metodo que da La palabra relavante que esta a la derecha de su raiz 
+	 * @return el objeto de la dercha de la raiz
+	 */
+	public PalabraRelevante getDer() {
+		return der;
+	}
+
+	/**
 	 * buscarPalabra - Metodo para encontrar una {@link PalabraRelevante} a partir de un String
 	 * @param s - El String con el que se buscara la {@link PalabraRelevante} s != null s != ""
 	 * @return Una {@link PalabraRelevante} con la palabra buscada, si no se encuentra retorna null
