@@ -41,7 +41,7 @@ public class Link extends Palabra implements Serializable,Agregar{
 	 * Link - método constructor de la clase. Posteriormente el link lo usa para instanciar un objeto URI.
 	 * @param palabra - Link en cadena de texto como tal de la clase.
 	 * @param puntuaciones - arreglo de puntuaciones que puede tener el link.
-	 * @throws URISyntaxException 
+	 * @throws URISyntaxException Se arroja si hay problemas con el link
 	 */
 	public Link(String palabra, int[] puntuaciones) throws URISyntaxException {
 		super(palabra, puntuaciones);
@@ -58,7 +58,7 @@ public class Link extends Palabra implements Serializable,Agregar{
 
 	/**
 	 * setSiguienteLink - Método que modifica el valor del siguiente link al que se está usando en el momento de llamar al método.
-	 * @param siguienteLink
+	 * @param siguienteLink - El nuevo {@link Link} que se va a agregar.
 	 */
 	public void setSiguienteLink(Link siguienteLink) {
 		this.siguienteLink = siguienteLink;
