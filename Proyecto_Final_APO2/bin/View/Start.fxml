@@ -13,12 +13,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#closeLabel" prefHeight="365.0" prefWidth="500.0" style="-fx-background-color: #5EAADE;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StartController">
    <children>
-      <Label layoutX="149.0" layoutY="14.0" text="Bienvenido" textAlignment="CENTER" textFill="WHITE">
+      <Label layoutX="123.0" layoutY="15.0" text="Bienvenido a" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Bell MT" size="44.0" />
          </font>
       </Label>
-      <Label layoutX="149.0" layoutY="66.0" text="a &quot;nombre&quot;" textAlignment="CENTER" textFill="WHITE">
+      <Label layoutX="98.0" layoutY="66.0" text="Tweet aplication" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Bell MT" size="44.0" />
          </font>
@@ -58,7 +58,7 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="4.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="94.0" fitWidth="93.0" layoutX="4.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Image/pajaro.png" />
          </image>

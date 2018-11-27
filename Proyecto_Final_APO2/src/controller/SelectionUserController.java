@@ -44,30 +44,6 @@ public class SelectionUserController  implements Initializable{
 	    }
 
 	    @FXML
-	    void filterNTweets(ActionEvent event) {
-	    	selection.setVisible(false);
-	    	Main.getN().setUsuarioActual(null);
-	    }
-
-	    @FXML
-	    void filterPolitics(ActionEvent event) {
-	    	selection.setVisible(false);
-	    	Main.getN().setUsuarioActual(null);
-	    }
-
-	    @FXML
-	    void filterSport(ActionEvent event) {
-	    	selection.setVisible(false);
-	    	Main.getN().setUsuarioActual(null);
-	    }
-
-	    @FXML
-	    void filterTechnology(ActionEvent event) {
-	    	selection.setVisible(false);
-	    	Main.getN().setUsuarioActual(null);
-	    }
-
-	    @FXML
 	    void orderNTweets(ActionEvent event) {
 	    	usersListView.getItems().addAll(inicioOrden('t'));
 	    	Main.getN().setUsuarioActual(null);

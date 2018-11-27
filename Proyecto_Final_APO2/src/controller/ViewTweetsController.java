@@ -28,9 +28,6 @@ public class ViewTweetsController implements Initializable{
 	
     @FXML
     private Label nameLabel;
-
-    @FXML
-    private TextArea newTweetTextArea;
     private Usuario seleccionado;
 
     @FXML
@@ -40,12 +37,19 @@ public class ViewTweetsController implements Initializable{
     }
 
     @FXML
-    void addTweet(ActionEvent event) {
-
+    void relaciones(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(getClass().getResource("/View/ShowMentions.fxml"));
+    	Parent parent = loader.load();
+    	Scene scene = new Scene(parent);
+    	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+    	stage.setScene(scene);
+    	stage.show();
     }
 
     @FXML
     void back(MouseEvent event) throws IOException {
+    	Main.getN().setUsuarioActual(null);
     	FXMLLoader loader = new FXMLLoader();
     	loader.setLocation(getClass().getResource("/View/SelectionUser.fxml"));
     	Parent parent = loader.load();
@@ -55,10 +59,7 @@ public class ViewTweetsController implements Initializable{
     	stage.show();
     }
 
-    @FXML
-    void clean(ActionEvent event) {
-    	newTweetTextArea.setText("");
-    }
+    
 
     @FXML
     void orderPuntajeLikes(ActionEvent event) {
@@ -86,6 +87,7 @@ public class ViewTweetsController implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		nameLabel.setText(Main.getN().getUsuarioActual().getNombre());
 	}
     
 }
