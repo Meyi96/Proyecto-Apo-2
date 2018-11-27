@@ -11,6 +11,7 @@ import java.net.URISyntaxException;
  * 27/Noviembre/2018
  */
 public class Mencion extends Palabra implements Serializable,Agregar{
+	static final long serialVersionUID = 42L;
 	private String nombreMencionado;
 	private Usuario usuarioMencionado;
 	/**
