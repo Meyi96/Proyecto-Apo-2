@@ -103,7 +103,7 @@ public class Tweet implements Serializable,Agregar{
 	 * calcularPuntaje - Un metodo para calcular el puntaje de todas las palabras 
 	 * @param p - Una {@link Palabra} de pivote para recorrer todas las palabras de la lista	p != null
 	 */
-	private void calcularPuntajes(Palabra p) {
+	public void calcularPuntajes(Palabra p) {
 		if(p != null) {
 			puntajes[0] += p.getPuntuacion_depor();
 			puntajes[1] += p.getPuntuacion_poli();
