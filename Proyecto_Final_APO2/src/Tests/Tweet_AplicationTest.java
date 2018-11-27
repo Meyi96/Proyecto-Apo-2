@@ -8,7 +8,22 @@ class Tweet_AplicationTest {
 	
 	
 	@Test
-	void test() {
+	void testOrdenamientoTeweets() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	void testOrdenamientoLinks() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	void testOrdenaminetoHashtag() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	void testBuscarUsuario() {
 		fail("Not yet implemented");
 	}
 
