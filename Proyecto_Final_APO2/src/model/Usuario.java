@@ -88,21 +88,42 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 	public void setSeguidos(String seguidos) {
 		this.seguidos = seguidos;
 	}
+	/**
+	 * getLista_tweets - Metodo para obtener la lista de Tweets
+	 * @return lista_tweets - La lista de {@link Tweet}
+	 */
 	public Tweet getLista_tweets() {
 		return lista_tweets;
 	}
+	/**
+	 * setLista_tweets - Actualiza la lista de {@link Tweet}
+	 * @param lista_tweets - La nueva lista de {@link Tweet} lista_tweets != null
+	 */
 	public void setLista_tweets(Tweet lista_tweets) {
 		this.lista_tweets = lista_tweets;
 	}
-	
+	/**
+	 * agregarTweet - Se agrega un Tweet a lista de {@link Tweet}
+	 * @param agregar - Un {@link Tweet} a agregar en lista  agregar != null
+	 * pos : Se agrega un elemento a la lista de {@link Tweet}
+	 */
 	public void agregarTweet(Tweet agregar) {
 		lista_tweets.agregarUltimo(agregar);
 		Cantidad++;
 	}
+	
+	/**
+	 * getCantidad - Un metododo para retornar la cantidad de Tweet que tiene un Usuario
+	 * @return Cantidad - Un entero con la cantidad de Tweets
+	 */
 	public int getCantidad() {
 		return Cantidad;
 	}
 
+	/**
+	 * setCantidad - Un metododo para actualizar la cantidad de Tweet que tiene un Usuario
+	 * @param cantidad - Un entero con la nueva cantidad de Tweets
+	 */
 	public void setCantidad(int cantidad) {
 		Cantidad = cantidad;
 	}
@@ -114,7 +135,11 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 			agregarArbol(temp);
 		}
 	}
-	
+	/**
+	 * agregarArbol - Metodo para agregar un usuario al arbol de busqueda 
+	 * @param creado - El {@link Usuario} a agregar en el arbol creado != null
+	 * pos : der o izq se inicializacian o en su defecto se agrega un elemento en el arbol
+	 */
 	public void agregarArbol(Usuario creado) {
 		if(this.getNombre().compareTo(creado.getNombre()) > 0) {
 			if(this.izq != null) {
@@ -131,22 +156,38 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 		}
 		
 	}
-	
+	/**
+	 * compareTo - Metodo para comparar dos objetos de tipo Usuario
+	 * @param nuevo - El objeto {@link Usuario} que se va a comparar nuevo != null
+	 * @return un entero representando si el objeto a comparar es mayor (1) o menor (-
+	 */
 	public int compareTo(Usuario nuevo) {
 		if(Cantidad-nuevo.getCantidad()==0) 
 			return Nombre.compareTo(nuevo.getNombre());
 		else
 			return Cantidad-nuevo.getCantidad();
 	}
-
+	
+	/**
+	 * getPuntaje - Metodo que retorna un arreglo de enteros con todos los puntajes de los usurios
+	 * @return Puntaje - Un arreglo de enteros con los puntajes en las 3 categorias
+	 */
 	public int[] getPuntaje() {
 		return Puntaje;
 	}
-
+	
+	/**
+	 * setPuntaje - Actuliza el valor de los puntajes
+	 * @param puntaje -  Un arreglo con el nuevo puntaje para el {@link Usuario} puntaje != null
+	 */
 	public void setPuntaje(int[] puntaje) {
 		Puntaje = puntaje;
 	}
 
+	/**
+	 * inorden - Lista todos los usuarios del arbol en el orden natural del arbol 
+	 * @param objeto - El arreglo de objetos en el que se guardan los objetos organizados
+	 */
 	public void inorden(ArrayList<Object> objeto) {
 			if(izq != null)
 				izq.inorden(objeto);
@@ -155,7 +196,11 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 				der.inorden(objeto);
 	}
 	
-	
+	/**
+	 * ordenamiento - Un metodo que obtiene una colleccion de Usuarios ordenada por varios criterios 
+	 * @param objeto - El arreglo de objetos en el que se guardan los objetos organizados	objeto != null
+	 * @param tipo - Un caracter para definir el tipo de operacion que se va a ejecutar sobre el arreglo de objetos tipo != null tipo = 'a' tipo = 'o'
+	 */
 	public void ordenamiento(ArrayList<Object> objeto, char tipo) {
 		switch (tipo) {
 		case 'a': {
@@ -169,6 +214,10 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 		}
 	}
 	
+	/**
+	 * OrdenamientoNumeroTweets - Un metodo para ordenar los Tweets basado en su orden natural
+	 * @param objeto - Un Arraylist con los elementos a ordenar  objeto != null
+	 */
 	private void OrdenamientoNumeroTweets(ArrayList<Object> objeto) {
 		lista_tweets.obtenerTweets(objeto);
 		for (int i = 1; i < objeto.size()-1; i++) {
@@ -187,6 +236,11 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 		}
 	}
 	
+	/**
+	 * buscarUsuario - Se busca un usuario a partir de de un identificador de String
+	 * @param usuario - Un {@link String} con el nombre	 usuario != null	usuario != ""
+	 * @return Se retorna un {@link Usuario} con el nombre buscado , de no encontrarlo se retorna null
+	 */
 	public Usuario buscarUsuario(String usuario) {
 		if (Nombre.compareTo(usuario) == 0) {
 			return this;
@@ -197,6 +251,10 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 		}
 	}
 	
+	/**
+	 * calcularPuntaje - Metodo para calcular el puntaje obtenido de una Lista De Tweet en todas las categorias
+	 * @param l - El {@link Tweet} que se esta evaluando
+	 */
 	private void calcularPuntaje(Tweet l) {
 		if(l != null) {
 			Puntaje[0] += l.getPuntajes()[0];
