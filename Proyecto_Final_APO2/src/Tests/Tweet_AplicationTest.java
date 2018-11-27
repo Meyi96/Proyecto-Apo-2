@@ -4,8 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import model.Link;
+
 class Tweet_AplicationTest {
-	
+
 	
 	@Test
 	void testOrdenamientoTeweets() {

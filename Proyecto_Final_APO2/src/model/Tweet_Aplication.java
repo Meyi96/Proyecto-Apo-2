@@ -93,6 +93,20 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			guardarProgreso();
 		}
 	}
+	/**
+	 * Tweet_Aplication - Metodo constructor de la clase, usado en las pruebas
+	 * @param raiz
+	 * @param links
+	 * @param tendencias
+	 * @param relevante
+	 */
+	public Tweet_Aplication(Usuario raiz, Link links, Hashtag tendencias, PalabraRelevante relevante) {
+		usuarioActual = null;
+		usuarioRaiz = raiz;
+		this. tendencias= tendencias;
+		tendenciasLinks = links;
+		raizRelevante = relevante;
+	}
 	
 	public Usuario getUsuarioActual() {
 		return usuarioActual;
