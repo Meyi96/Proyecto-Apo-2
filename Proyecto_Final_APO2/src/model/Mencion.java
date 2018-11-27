@@ -1,6 +1,8 @@
 package model;
 
 import java.io.Serializable;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 /**
  * Clase {@link Mencion} / Clase para modelar una palabra tipo Mencion
@@ -55,5 +57,17 @@ public class Mencion extends Palabra implements Serializable,Agregar{
 		this.usuarioMencionado = usuarioMencionado;
 	}
 	
-	
+	/**
+	 * conseguirURL - Retorna el url de la persona mencionada
+	 * @return Un objeto {@link URI} que representa el url de la persona mencionada
+	 */
+	public URI conseguirURL() {
+		try {
+			return new URI("https://twitter.com/"+nombreMencionado);
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
 }
