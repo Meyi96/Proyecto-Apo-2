@@ -62,6 +62,10 @@ public class NewUserController implements Initializable, AbrirLink{
 	    		Main.getN().RegistrarUsuario(data);
 		    	System.out.println();
 	    	}
+	    	dataTextArea.setText("");
+	    	Alert alert = new Alert(AlertType.INFORMATION);
+    		alert.setContentText("Se a agregado con exito");
+    		alert.showAndWait();
 		} catch (TextoVacioException | DatosEnEspaniolException e) {
 			Alert alert = new Alert(AlertType.INFORMATION);
     		alert.setContentText(e.getMessage());

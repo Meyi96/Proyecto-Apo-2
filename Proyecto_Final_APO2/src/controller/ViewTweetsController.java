@@ -88,6 +88,8 @@ public class ViewTweetsController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		nameLabel.setText(Main.getN().getUsuarioActual().getNombre());
+		dataListView.getItems().clear();
+    	dataListView.getItems().addAll(inicioOrden('a'));
 	}
     
 }
