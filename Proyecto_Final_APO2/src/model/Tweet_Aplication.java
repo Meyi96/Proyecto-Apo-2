@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import javax.tools.FileObject;
 import Hilos.Hilo_ProcesarDatos;
+import MyException.TextoVacioException;
 
 /**
  *Clase {@link Tweet_Aplication} / Maneja las operaciones de serializar,cargar,agregar,ordenar informacion de todo el modelo.
@@ -109,32 +110,38 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	 * pre: Arraylist de datos debe esta inicializado
 	 * pre: usuarioRaiz debe estar inicializado
 	 * pos: Se agrega un objeto al arbol de usuarios usuarioRaiz
+	 * @throws TextoVacioException 
 	*/
 
-	public void RegistrarUsuario(String data) throws IOException {
-		System.out.println(data);
-		String info[] = data.split("\n");
-		String nombre_archivo = "./Persistencia/Usuarios/"+info[16];
-		File newF = new File(nombre_archivo);
-		NombreArchivos.add(nombre_archivo);
-		FileWriter write = new FileWriter(newF);
-		BufferedWriter writer = new BufferedWriter(write);
-		for (int i = 0; i < info.length; i++) {
-			System.out.println("Escribiendo");
-			writer.write(info[i]);
-			writer.write("\n");
+	public void RegistrarUsuario(String data) throws IOException, TextoVacioException {
+		if(!data.equals("")) {
+			System.out.println(data);
+			String info[] = data.split("\n");
+			String nombre_archivo = "./Persistencia/Usuarios/"+info[16];
+			File newF = new File(nombre_archivo);
+			NombreArchivos.add(nombre_archivo);
+			FileWriter write = new FileWriter(newF);
+			BufferedWriter writer = new BufferedWriter(write);
+			for (int i = 0; i < info.length; i++) {
+				System.out.println("Escribiendo");
+				writer.write(info[i]);
+				writer.write("\n");
+			}
+			writer.close();
+			Datos.add(new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,nombre_archivo));
+			Thread a = new Thread(Datos.get(Datos.size()-1));
+			a.start();
+			Usuario temp = null;
+			while(temp == null) {
+				temp = Datos.get(Datos.size()-1).getCreado();
+				System.out.println("Creando");
+			}
+			usuarioRaiz.agregar(temp);
+			guardarProgreso();
+		}else {
+			throw new TextoVacioException();
 		}
-		writer.close();
-		Datos.add(new Hilo_ProcesarDatos(tendenciasLinks, tendencias,raizRelevante,nombre_archivo));
-		Thread a = new Thread(Datos.get(Datos.size()-1));
-		a.start();
-		Usuario temp = null;
-		while(temp == null) {
-			temp = Datos.get(Datos.size()-1).getCreado();
-			System.out.println("Creando");
-		}
-		usuarioRaiz.agregar(temp);
-		guardarProgreso();
+		
 	}
 	/**
 	 * guardarProgreso - Metodo para serializar el estado actual del modelo

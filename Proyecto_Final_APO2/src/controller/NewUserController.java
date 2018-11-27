@@ -7,6 +7,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import Hilos.Hilo_Interfaz1;
+import MyException.TextoVacioException;
 import View.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,8 +16,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
@@ -47,9 +50,15 @@ public class NewUserController implements Initializable, AbrirLink{
 
     @FXML
     void add(ActionEvent event) throws IOException {
-    	String data = dataTextArea.getText();
-    	Main.getN().RegistrarUsuario(data);
-    	System.out.println();
+		try {
+	    	String data = dataTextArea.getText();
+			Main.getN().RegistrarUsuario(data);
+	    	System.out.println();
+		} catch (TextoVacioException e) {
+			Alert alert = new Alert(AlertType.INFORMATION);
+    		alert.setContentText(e.getMessage());
+    		alert.showAndWait();
+		}
     }
     
 
