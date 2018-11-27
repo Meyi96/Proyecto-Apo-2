@@ -13,5 +13,5 @@ public interface AbrirLink {
 	 * @throws IOException Se arroja si no se encuentra el archivo o hay errores al escribir o leer el archivo
 	 * @throws URISyntaxException  Se arroja si hay problemas con el link
 	 */
-	public void goLink(URI link) throws IOException, URISyntaxException;
+	public void goLink(URI link) throws IOException;
 }

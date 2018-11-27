@@ -137,7 +137,7 @@ public class NewUserController implements Initializable, AbrirLink{
 
 
 	@Override
-	public void goLink(URI link) throws IOException, URISyntaxException {
+	public void goLink(URI link) throws IOException{
 		Desktop.getDesktop().browse(link);
 	}
 
