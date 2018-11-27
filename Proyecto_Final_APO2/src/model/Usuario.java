@@ -152,7 +152,7 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 	 * pos : der o izq se inicializacian o en su defecto se agrega un elemento en el arbol
 	 */
 	public void agregarArbol(Usuario creado) {
-		if(this.getNombre().compareTo(creado.getNombre()) > 0) {
+		if(this.getNombre().compareToIgnoreCase(creado.getNombre()) > 0) {
 			if(this.izq != null) {
 				izq.agregarArbol(creado);
 			}else {
@@ -174,7 +174,7 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 	 */
 	public int compareTo(Usuario nuevo) {
 		if(Cantidad-nuevo.getCantidad()==0) 
-			return Nombre.compareTo(nuevo.getNombre());
+			return Nombre.compareToIgnoreCase(nuevo.getNombre());
 		else
 			return Cantidad-nuevo.getCantidad();
 	}
