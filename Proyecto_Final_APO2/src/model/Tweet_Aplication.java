@@ -114,7 +114,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 
 	public void RegistrarUsuario(String data) throws IOException, TextoVacioException {
 		if(!data.equals("")) {
-			System.out.println(data);
+			//System.out.println(data);
 			String info[] = data.split("\n");
 			String nombre_archivo = "./Persistencia/Usuarios/"+info[16];
 			File newF = new File(nombre_archivo);
@@ -122,7 +122,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			FileWriter write = new FileWriter(newF);
 			BufferedWriter writer = new BufferedWriter(write);
 			for (int i = 0; i < info.length; i++) {
-				System.out.println("Escribiendo");
+				//System.out.println("Escribiendo");
 				writer.write(info[i]);
 				writer.write("\n");
 			}
@@ -170,7 +170,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		String temp = rd.readLine();
 		while(temp != null) {
 
-			System.out.println("Agregando "+ temp);
+			//System.out.println("Agregando "+ temp);
 			int Puntos[] = {1,0,0};
 			PalabraRelevante a = new PalabraRelevante(temp.trim(), Puntos);
 			if(raizRelevante == null) {
@@ -187,7 +187,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		
 		temp = rd.readLine();
 		while(temp != null) {
-			System.out.println("Agregando "+ temp);
+			//System.out.println("Agregando "+ temp);
 			int Puntos[] = {0,1,0};
 			PalabraRelevante a = new PalabraRelevante(temp.trim(), Puntos);
 			if(raizRelevante == null) {
@@ -204,7 +204,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 		
 		temp = rd.readLine();
 		while(temp != null) {
-			System.out.println("Agregando "+ temp);
+			//System.out.println("Agregando "+ temp);
 			int Puntos[] = {0,0,1};
 			PalabraRelevante a = new PalabraRelevante(temp.trim(), Puntos);
 			if(raizRelevante == null) {

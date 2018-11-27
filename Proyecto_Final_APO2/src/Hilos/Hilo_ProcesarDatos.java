@@ -114,11 +114,6 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 				dato = Texto_Bruto.get(contador);
 			}
 			
-			System.out.println();
-			System.out.println(nombre_Usuario);
-			System.out.println(seguidores);
-			System.out.println(seguidos);
-			
 			creado = new Usuario(nombre_Usuario, seguidores, seguidos, lista_t ,cantidad,Puntaje_Usuario,menciones);
 			rd.close();
 		}catch(IOException e) {

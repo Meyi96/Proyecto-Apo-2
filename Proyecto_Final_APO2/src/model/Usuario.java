@@ -31,7 +31,7 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 	 * @param lista_tweets - Una lista de {@link Tweet} con algunos de los Tweets publicados por el {@link Usuario} 
 	 * @param Cantidad - Un entero con la cantidad de Tweets cargados en la aplicacion del usuario
 	 * @param Puntaje - Un arreglo con todas las puntuaciones del usuario en tres categorías
-	 * @param ArrayList menciones - Un ArrayList con las menciones 
+	 * @param menciones - Un ArrayList con las menciones 
 	 * pos : Se incializa el nombre
 	 * pos : Se inicializa seguidores
 	 * pos : se inicializa seguidos
