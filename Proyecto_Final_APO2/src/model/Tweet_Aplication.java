@@ -50,7 +50,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	 * @throws URISyntaxException Se arroja si hay problemas con el link
 	 */
 	public Tweet_Aplication() throws IOException, ClassNotFoundException, URISyntaxException {
-		usuarioRaiz = new Usuario("", "", "", null,0,null);
+		usuarioRaiz = new Usuario("", "", "", null,0,null,null);
 		usuarioActual = null;
 		try {
 			File wr = new File("./Persistencia/Aplicacion/Aplicacion_persistente");

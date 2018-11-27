@@ -21,6 +21,7 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 	private int Puntaje[];
 	private Usuario izq;
 	private Usuario der;
+	private ArrayList<Mencion> menciones;
 	
 	/**
 	 * Usuario - Metodo constructor de la clase Usuario 
@@ -30,20 +31,23 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 	 * @param lista_tweets - Una lista de {@link Tweet} con algunos de los Tweets publicados por el {@link Usuario} 
 	 * @param Cantidad - Un entero con la cantidad de Tweets cargados en la aplicacion del usuario
 	 * @param Puntaje - Un arreglo con todas las puntuaciones del usuario en tres categorías
+	 * @param ArrayList menciones - Un ArrayList con las menciones 
 	 * pos : Se incializa el nombre
 	 * pos : Se inicializa seguidores
 	 * pos : se inicializa seguidos
 	 * pos : Se inicializa la lista_tweets
 	 * pos : Se inicializa la Cantidad 
 	 * pos : Se inicializa Puntaje
+	 * pos : Se incializan las menciones
 	 */
-	public Usuario(String nombre, String seguidores, String seguidos, Tweet lista_tweets, int Cantidad, int Puntaje[]) {
+	public Usuario(String nombre, String seguidores, String seguidos, Tweet lista_tweets, int Cantidad, int Puntaje[],ArrayList<Mencion> menciones) {
 		super();
 		Nombre = nombre;
 		this.seguidores = seguidores;
 		this.seguidos = seguidos;
 		this.lista_tweets = lista_tweets;
 		this.Cantidad = Cantidad;
+		this.menciones = menciones;
 		if(Puntaje == null) {
 			calcularPuntaje(lista_tweets);
 		}else {
@@ -270,7 +274,22 @@ public class Usuario implements Serializable, Ordenamiento,Agregar{
 			calcularPuntaje(l.getSiguiente());
 		}
 	}
-
+	
+	/**
+	 * getMenciones - Metodo que retorna un Arraylist de {@link Mencion} con todos las menciones del usurio
+	 * @return menciones - Un Arraylist de {@link Mencion} con las menciones del usuario
+	 */
+	public ArrayList<Mencion> getMenciones() {
+		return menciones;
+	}
+	/**
+	 * setMenciones - Metodo que modifica un Arraylist de {@link Mencion}
+	 * @param menciones - Un Arraylist de {@link Mencion} con las nuevas menciones del usuario menciones != null
+	 */
+	public void setMenciones(ArrayList<Mencion> menciones) {
+		this.menciones = menciones;
+	}
+	
 	
 	
 }

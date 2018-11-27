@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import model.Hashtag;
 import model.Link;
+import model.Mencion;
 import model.Palabra;
 import model.PalabraRelevante;
 import model.Tweet;
@@ -25,7 +26,7 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 	private Link primer_link;
 	private Hashtag hashtags;
 	private PalabraRelevante raiz_relevantes;
-	
+	private ArrayList<Mencion> menciones;
 	/**
 	 * Hilo_ProcesarDatos - Metodo constructor de la clase
 	 * @param primer_link Una lista de tipo Link con todos los links del Usuario 	primer_link != null
@@ -43,6 +44,7 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		this.hashtags = hashtags;
 		this.raiz_relevantes = raiz_relevantes;
 		this.nombre_archivo = nombre_archivo;
+		menciones = new ArrayList<>();
 	}
 	
 	/**
@@ -117,7 +119,7 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 			System.out.println(seguidores);
 			System.out.println(seguidos);
 			
-			creado = new Usuario(nombre_Usuario, seguidores, seguidos, lista_t ,cantidad,Puntaje_Usuario);
+			creado = new Usuario(nombre_Usuario, seguidores, seguidos, lista_t ,cantidad,Puntaje_Usuario,menciones);
 			rd.close();
 		}catch(IOException e) {
 			e.printStackTrace();
@@ -224,7 +226,10 @@ public class Hilo_ProcesarDatos implements Runnable,Serializable{
 		salida[0] = 0;
 		salida[1] = 0;
 		salida[2] = 0;
-		if(s.length()>=6 && s.substring(0, 5).compareToIgnoreCase("http:") == 0) {
+		if(s.length()>=2 && s.substring(0, 1).compareToIgnoreCase("@") == 0) {
+			Mencion temp = new Mencion(s,salida, s.substring(1,s.length()));
+			menciones.add(temp);
+		}else if(s.length()>=6 && s.substring(0, 5).compareToIgnoreCase("http:") == 0) {
 			Link temp = new Link(s,null);
 			primer_link.agregarUltimoL(temp);
 		}else if(s.length()>=1 && s.substring(0, 1).compareToIgnoreCase("#") == 0){
