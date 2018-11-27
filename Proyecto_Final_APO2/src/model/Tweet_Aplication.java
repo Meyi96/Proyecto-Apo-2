@@ -39,15 +39,15 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 	
 	/**
 	 * Tweet_Aplication - Metodo constructor de la clase, se cargan los datos de prueba
-	 * @throws IOException
-	 * @throws ClassNotFoundException
+	 * @throws IOException	Se arroja si no se encuentra el archivo o hay errores al escribir o leer el archivo
+	 * @throws ClassNotFoundException Se arroja si no se encuentra 
 	 * pos: Se instancia y se agregan elementos al arbol usuarioRaiz
 	 * pos: Se instancia y se agregan elementos al arbol raizRelevante
 	 * pos: Se instancia y se agregan elementos a la lista de tendencias
 	 * pos: Se instancia y se agregan elementos a la lista de tendenciasLinks
 	 * pos: Se instancia y se agregan elementos al ArrayList de Datos
 	 * pos: Se instancia y se agregan elementos al ArrayList de NombresAechivos 
-	 * @throws URISyntaxException 
+	 * @throws URISyntaxException Se arroja si hay problemas con el link
 	 */
 	public Tweet_Aplication() throws IOException, ClassNotFoundException, URISyntaxException {
 		usuarioRaiz = new Usuario("", "", "", null,0,null);
@@ -104,12 +104,12 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 
 	/**
 	 * RegistrarUsuario - Metodo para agregar usuarios apartir de texto en bruto
-	 * @throws IOException
+	 * @throws IOException - Se arroja si no se encuentra el archivo o hay errores al escribir o leer el archivo
 	 * @param data : Texto en bruto traido desde Twiter data != null data != ""
 	 * pre: Arraylist de datos debe esta inicializado
 	 * pre: usuarioRaiz debe estar inicializado
 	 * pos: Se agrega un objeto al arbol de usuarios usuarioRaiz
-	 * @throws TextoVacioException 
+	 * @throws TextoVacioException Se lanza cuando no hay texto para agregar usuario
 	*/
 
 	public void RegistrarUsuario(String data) throws IOException, TextoVacioException {
