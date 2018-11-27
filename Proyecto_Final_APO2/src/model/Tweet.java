@@ -158,13 +158,18 @@ public class Tweet implements Serializable,Agregar{
 	}
 	 /**
 	  * getTweetEntero - Metodo para obtener todo el texto en bruto
-	  * @param s
-	  * @return
+	  * @param s - Cadena vacía que se recibe para posteriormente ser enviada al método getTweetEntero de la clase palabra.
+	  * @return String - Retorna una cadena de texto que contiene todas las palabras del tweet.
 	  */
 	public String getTweetEntero(String s) {
 		return primera_Palabra.getTweetEntero(s);
 	}
 	
+	/**
+	 * cambiarLikes - Método que modifica el formato en el que se muestran los likes en twitter a uno que java pueda comparar facilmente.
+	 * @param dato - El número de likes del tweet en formato de twitter.
+	 * @return String - El número de likes en un String limpio. 
+	 */
 	public String cambiarLikes(String dato) {
 		System.out.println(dato);
 		String[] n = dato.split(",");
