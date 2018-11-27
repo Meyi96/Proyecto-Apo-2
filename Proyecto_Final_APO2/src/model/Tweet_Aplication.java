@@ -147,7 +147,7 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			Usuario temp = null;
 			while(temp == null) {
 				temp = Datos.get(Datos.size()-1).getCreado();
-				System.out.println("Creando");
+				//System.out.println("Creando");
 			}
 			usuarioRaiz.agregar(temp);
 			guardarProgreso();
