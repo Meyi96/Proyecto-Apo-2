@@ -92,7 +92,8 @@ public class NewUserController implements Initializable, AbrirLink{
     
     @FXML
     void goToVideo(ActionEvent event) throws IOException, URISyntaxException {
-    	goLink("https://www.youtube.com/watch?v=MhQec4a26gU&feature=youtu.be");
+    	URI link = new URI("https://www.youtube.com/watch?v=MhQec4a26gU&feature=youtu.be");
+    	goLink(link);
     }
     
     public boolean moverCirculos(boolean a) {
@@ -136,8 +137,8 @@ public class NewUserController implements Initializable, AbrirLink{
 
 
 	@Override
-	public void goLink(String link) throws IOException, URISyntaxException {
-		Desktop.getDesktop().browse(new URI(link));
+	public void goLink(URI link) throws IOException, URISyntaxException {
+		Desktop.getDesktop().browse(link);
 	}
 
 	

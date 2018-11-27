@@ -1,6 +1,7 @@
 package model;
 
 import java.io.IOException;
+import java.net.URI;
 import java.net.URISyntaxException;
 
 public interface AbrirLink {
@@ -12,5 +13,5 @@ public interface AbrirLink {
 	 * @throws IOException Se arroja si no se encuentra el archivo o hay errores al escribir o leer el archivo
 	 * @throws URISyntaxException  Se arroja si hay problemas con el link
 	 */
-	public void goLink(String link) throws IOException, URISyntaxException;
+	public void goLink(URI link) throws IOException, URISyntaxException;
 }

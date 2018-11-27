@@ -31,6 +31,7 @@ public class TrendsLinksController implements Initializable, AbrirLink{
 
 	@FXML
     private ListView<String> linksListView;
+	private ArrayList<Object> links;
 
     @FXML
     void back(MouseEvent event) throws IOException {
@@ -55,7 +56,7 @@ public class TrendsLinksController implements Initializable, AbrirLink{
     
     public Collection<String> inicioOrden(char tipo){
 		linksListView.getItems().clear();
-    	ArrayList<Object> links = new ArrayList<Object>();
+		links = new ArrayList<Object>();
     	Collection<String> datos = new ArrayList<String>();
     	Main.getN().ordenamiento(links, tipo);
     	for (int j = 0; j < links.size() ; j++) {
@@ -69,7 +70,7 @@ public class TrendsLinksController implements Initializable, AbrirLink{
     @FXML
     void openLink(MouseEvent event) throws IOException, URISyntaxException {
     	if(linksListView.getSelectionModel().getSelectedIndex() != -1) {
-    		goLink(linksListView.getSelectionModel().getSelectedItem());
+    		goLink(((Link)links.get(linksListView.getSelectionModel().getSelectedIndex())).getIdentificador());
     	}else {
     		try {
 				throw new PosicionNoExistenteException();
@@ -82,8 +83,8 @@ public class TrendsLinksController implements Initializable, AbrirLink{
     }
     
     @Override
-	public void goLink(String link) throws IOException, URISyntaxException {
-		Desktop.getDesktop().browse(new URI(link));
+	public void goLink(URI link) throws IOException, URISyntaxException {
+		Desktop.getDesktop().browse(link);
 	}
 	
 	@Override
