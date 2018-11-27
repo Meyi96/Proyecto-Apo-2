@@ -7,6 +7,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import Hilos.Hilo_Interfaz1;
+import MyException.DatosEnEspaniolException;
 import MyException.TextoVacioException;
 import View.Main;
 import javafx.event.ActionEvent;
@@ -52,9 +53,16 @@ public class NewUserController implements Initializable, AbrirLink{
     void add(ActionEvent event) throws IOException {
 		try {
 	    	String data = dataTextArea.getText();
-			Main.getN().RegistrarUsuario(data);
-	    	System.out.println();
-		} catch (TextoVacioException e) {
+	    	String[] posibleEspanol = data.split(" ");
+	    	if(posibleEspanol[0].equals("Atajos")) {
+	    		posibleEspanol = null;
+	    		throw new DatosEnEspaniolException();
+	    	}else {
+	    		posibleEspanol = null;
+	    		Main.getN().RegistrarUsuario(data);
+		    	System.out.println();
+	    	}
+		} catch (TextoVacioException | DatosEnEspaniolException e) {
 			Alert alert = new Alert(AlertType.INFORMATION);
     		alert.setContentText(e.getMessage());
     		alert.showAndWait();
