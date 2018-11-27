@@ -4,6 +4,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Clase {@link Usuario} / Clase para modelar un Usuario
+ * @author Nelson Quiñones Virgen - Fabio Andres Mejía - Marco Antonio Perez
+ * Version 1.0
+ * 27/Noviembre/2018
+ */
+
 public class Usuario implements Serializable, Ordenamiento,Agregar{
 	static final long serialVersionUID = 42L;
 	private String Nombre;

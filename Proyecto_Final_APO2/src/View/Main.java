@@ -6,7 +6,6 @@ import java.net.URISyntaxException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
-import model.Ejemplo;
 import model.Tweet_Aplication;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;

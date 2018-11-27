@@ -3,6 +3,13 @@ import java.io.Serializable;
 import java.net.*;
 import java.util.ArrayList;
 
+/**
+ * Clase {@link Link} / Clase para modelar una palabra tipo Link
+ * @author Nelson Quiñones Virgen - Fabio Andres Mejía - Marco Antonio Perez
+ * Version 1.0
+ * 27/Noviembre/2018
+ */
+
 public class Link extends Palabra implements Serializable,Agregar{
 	static final long serialVersionUID = 42L;
 	private URI identificador;

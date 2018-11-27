@@ -22,7 +22,7 @@ import MyException.TextoVacioException;
 
 /**
  *Clase {@link Tweet_Aplication} / Maneja las operaciones de serializar,cargar,agregar,ordenar informacion de todo el modelo.
- *Nelson Quiñones Virgen - Fabio Andres Mejía - Marco Antonio Perez 
+ *@author Nelson Quiñones Virgen - Fabio Andres Mejía - Marco Antonio Perez 
  *Version 1.0 
  *27/Noviembre/2018 
 */
@@ -62,7 +62,6 @@ public class Tweet_Aplication implements Serializable, Ordenamiento{
 			NombreArchivos = temp.NombreArchivos;
 			entrada.close();
 			Datos = new ArrayList<>();
-			NombreArchivos.remove(0);
 			Thread[] a = new Thread[NombreArchivos.size()];
 			cargarPalabrasRelevantes();
 			for (int I = 0; I < NombreArchivos.size(); I++) {

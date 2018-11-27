@@ -2,6 +2,13 @@ package model;
 
 import java.io.Serializable;
 
+/**
+ * Clase {@link Palabra} / Clase para modelar una Palabra 
+ * @author Nelson Quiñones Virgen - Fabio Andres Mejía - Marco Antonio Perez
+ * Version 1.0
+ * 27/Noviembre/2018
+ */
+
 public class Palabra implements Serializable, Agregar{
 	static final long serialVersionUID = 42L;
 	protected String palabra;

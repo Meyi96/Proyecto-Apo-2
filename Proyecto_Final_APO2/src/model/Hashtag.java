@@ -3,6 +3,12 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Clase {@link Hashtag} / Clase para modelar una palabra tipo HashTag
+ * @author Nelson Quiñones Virgen - Fabio Andres Mejía - Marco Antonio Perez
+ * Version 1.0
+ * 27/Noviembre/2018
+ */
 public class Hashtag extends Palabra implements Serializable, Agregar{
 	static final long serialVersionUID = 42L;
 	private int repeticiones;
