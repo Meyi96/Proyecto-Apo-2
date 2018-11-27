@@ -79,4 +79,11 @@ class TweetTest {
 		assertEquals("Soy nuevo", t1.getTweetEntero(""));
 	}
 	
+	@Test
+	void testCompareTo() {
+		setUpScenario1();
+		assertTrue(t1.compareTo(t2) > 0);
+		assertTrue(t2.compareTo(t3) < 0);
+	}
+	
 }

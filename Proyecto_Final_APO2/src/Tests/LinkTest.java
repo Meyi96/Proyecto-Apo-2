@@ -53,4 +53,11 @@ class LinkTest {
 		assertEquals(l2, objeto.get(1));
 	}
 	
+	@Test
+	void testCompareTo() {
+		setUpScenario1();
+		assertTrue(l1.compareTo(l2) < 0);
+		assertTrue(l2.compareTo(l1) > 0);
+	}
+	
 }
